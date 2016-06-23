@@ -1,0 +1,25 @@
+# unix
+alias ls='ls -Ghv'
+alias ll='ls -l'
+alias l.='ls -Ad .*'
+alias la='ls -A'
+alias grep='grep --color -s'
+alias df='df -h'
+alias du='du'
+alias sr='screen -r'
+
+# git
+alias gil='git log --graph --abbrev-commit --stat -C --decorate --date=local'
+alias gils="git log --graph --abbrev-commit --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' -C --decorate --date=local"
+alias gis='git status'
+alias gid='git diff -C --date=local'
+alias giw='git show -C --date=local --decorate'
+alias gic='git checkout'
+
+# sift
+alias s='sift'
+
+# crontab
+alias crontab="VIM_CRONTAB=true crontab"
+
+alias docker-ip="docker inspect -f '{{ .NetworkSettings.IPAddress }}'"

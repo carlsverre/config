@@ -1,0 +1,35 @@
+# load version control support
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' unstagedstr "%{$fg[red]%}*"
+zstyle ':vcs_info:*' stagedstr "%{$fg[red]%}+"
+zstyle ':vcs_info:*' formats "$bright_cyan%b%u%c"
+zstyle ':vcs_info:*' actionformats "$bright_cyan%b%u%c|%a"
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b:%r'
+zstyle ':vcs_info:bzr:*' use-simple true
+zstyle ':vcs_info:*' enable git hg bzr svn cvs
+
+# cache hostname if logged in remotely
+rem_hostname=`[[ -n $SSH_CLIENT ]] && hostname | tr -d '\n' && echo -n " "`
+
+precmd () {
+    # update version control info
+    vcs_info
+
+    # get truncated pwd (4 blocks)
+    SHORT_PWD=`print -Pn "%4~"`
+    [[ "${SHORT_PWD:0:1}" =~ "[^/~]" ]] && SHORT_PWD=".../$SHORT_PWD"
+
+    #set title
+    print -Pn "\e]0;%3~\a"
+}
+
+# main prompt
+PROMPT='%F{yellow}${rem_hostname}%f'        # show hostname if remote
+PROMPT+='%F{white}${SHORT_PWD}%f '           # truncated pwd
+PROMPT+='%F{green}$ '                      # end of prompt
+PROMPT+='%f%b'                              # reset colors
+
+RPROMPT='%(?..%F{red}%f%b%? )'              # exit status
+RPROMPT+='%F{green}${vcs_info_msg_0_}'      # version control status
+RPROMPT+='%f%b'                             # reset colors

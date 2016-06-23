@@ -1,0 +1,96 @@
+"------  Visual Options  ------"
+
+syntax enable                       " enable syntax highlighting
+set number                          " enable line numbers
+set nowrap                          " disable word wrap
+set vb                              " visual bell
+set showmatch                       " show matching bracket
+set ttyfast                         " Force vim into fast mode
+
+set laststatus=2                    " always use a status line
+
+"------  Behavior  ------"
+
+set backspace=indent,eol,start      " normal backspace behavior
+set history=1000                    " 1000 item history
+set undolevels=1000                 " 1000 item undo buffer
+let mapleader=","                   " set leader to ,
+set title                           " update the terminals title
+set tabstop=4                       " tab = 4 spaces
+set shiftwidth=4                    " indent to 4 spaces
+set softtabstop=4                   " Number of spaces that a <Tab> counts for
+set expandtab                       " use spaces instead of tabs
+set autoindent                      " auto indent
+set smartindent                     " use vim smart indenting
+
+" Ignore these files when completing names
+set wildignore+=.svn,CVS,.git,*.o,*.a,*.class,*.mo
+set wildignore+=*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif
+set wildignore+=*/tmp/*,*.zip,*.pyc
+
+set iskeyword+=_,$,@,%,#
+
+set wildmode=longest,list:longest           " Shell style tab completion
+
+filetype indent on
+filetype plugin on
+
+set encoding=utf-8
+
+"------  Searching  ------"
+
+set incsearch                       " Search while typing
+set ignorecase                      " Case insensitive searching
+set smartcase                       " lowercase = case insensitive, any uppercase = case sensitive
+set hlsearch                        " highlight all search results
+
+" following line clears the search highlights when pressing <Leader>s
+nnoremap <Leader>s :nohlsearch<CR>
+
+set grepprg=grep\ -nH\ $*           " set grep to always display a file name
+
+"------  Buffers  ------"
+
+" change buffers using <Leader>{[,]}
+nmap <silent> \[ :bp<CR>
+nmap <silent> \] :bn<CR>
+
+" switch between unsaved buffers w/o needing to save
+set hidden
+
+"------  Windows  ------"
+
+" Move easily between windows
+noremap <C-J> <C-W>j
+noremap <C-K> <C-W>k
+noremap <C-H> <C-W>h
+noremap <C-L> <C-W>l
+
+" Keybindings for splitting windows
+noremap <Leader>v :split<CR>
+noremap <Leader>V :vsplit<CR>
+
+"------  Text Width Stuff  ------"
+
+set tw=80
+set fo-=c
+set fo-=t
+set modeline
+set modelines=3
+set sr
+set whichwrap=h,l,~,[,]
+
+"------  Helpful keybindings  ------"
+
+" ,T = Delete all Trailing space in file
+map <Leader>T :%s/\s\+$//<CR>
+
+" Sometimes you just need to teach vim whose boss
+noremap <Leader>r :redraw!<CR>
+
+" I make the mistake of typing W and Q instead of w and q
+nmap :W :w
+nmap :Q :q
+
+" Kill the evil EX mode
+nmap Q <Nop>

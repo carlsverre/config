@@ -1,0 +1,21 @@
+[user]
+    name = Carl Sverre
+    email = "(none)"
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+[pager]
+    color = true
+[core]
+    pager = less -FXRS -x4
+    preloadindex = true
+    excludesfile = /Users/carl/.gitignore
+[merge]
+    defaultToUpstream = true
+[rerere]
+    enabled = true
+[push]
+    default = simple
+[pull]
+    default = simple

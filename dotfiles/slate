@@ -1,0 +1,60 @@
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+
+config windowHintsSpread true
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpreadSearchWidth 60
+config windowHintsSpreadSearchHeight 60
+
+config windowHintsTopLeftX (windowSizeX/3)-(windowHintsWidth/2);0
+config windowHintsTopLeftY (windowSizeY/3)-(windowHintsHeight/2);0
+
+# setup position aliases
+alias full              move screenOriginX;screenOriginY screenSizeX;screenSizeY
+alias full-double       move screenOriginX;screenOriginY screenSizeX*2;screenSizeY
+alias lefthalf          move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
+alias righthalf         move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+alias tophalf           move screenOriginX;screenOriginY screenSizeX;screenSizeY/2
+alias bottomhalf        move screenOriginX;screenOriginY+screenSizeY/2 screenSizeX;screenSizeY/2
+
+alias top4              move screenOriginX;screenOriginY screenSizeX;screenSizeY/4
+alias bottom34          move screenOriginX;screenOriginY+screenSizeY/4 screenSizeX;3*screenSizeY/4
+
+alias center            move screenOriginX+screenSizeX/5;screenOriginY screenSizeX-((screenSizeX/5)*2);screenSizeY
+alias center-big        move screenOriginX+screenSizeX/8;screenOriginY screenSizeX-((screenSizeX/8)*2);screenSizeY
+
+alias left-big          move screenOriginX;screenOriginY screenSizeX-(screenSizeX/5);screenSizeY
+alias right-big         move screenOriginX+screenSizeX/5;screenOriginY screenSizeX-(screenSizeX/5);screenSizeY
+
+# push left/right/bottom/top half size
+bind h:cmd;shift        ${lefthalf}
+bind l:cmd;shift        ${righthalf}
+bind j:cmd;shift        ${bottomhalf}
+bind k:cmd;shift        ${tophalf}
+
+bind u:cmd;shift        ${center}
+bind u:cmd;shift;ctrl   ${center-big}
+
+# x/8 left/right
+bind left:cmd;shift;ctrl    ${left-big}
+bind right:cmd;shift;ctrl   ${right-big}
+bind up:cmd;shift;ctrl      ${top4}
+bind down:cmd;shift;ctrl    ${bottom34}
+
+# maximize
+bind space:cmd;shift         ${full}
+bind space:cmd;shift;ctrl    ${full-double}
+
+# left/right window movement
+bind h:cmd;shift;ctrl   throw left resize
+bind l:cmd;shift;ctrl   throw right resize
+bind j:cmd;shift;ctrl   throw down resize
+bind k:cmd;shift;ctrl   throw up resize
+
+# Window Hints
+bind esc:cmd hint hjkl;yuiopnm,./
+
+# Reload slate
+bind s:cmd;ctrl;shift     relaunch

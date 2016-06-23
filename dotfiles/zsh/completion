@@ -1,0 +1,15 @@
+# COMPLETION
+fpath=(~/.zsh/completion_functions $fpath)
+
+autoload -Uz compinit
+compinit
+zmodload -a complist
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zshcache
+zstyle :compinstall filename "$HOME/.zshrc"
+
+# MOSH completion
+compdef mosh=ssh
