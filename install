@@ -8,6 +8,7 @@ function link {
     local target="${2:-.$name}";
     local left="$ROOTDIR/dotfiles/$name"
     local right="$HOME/$target"
+    mkdir -p $(dirname $right)
     if [[ -e "$right" ]]; then
         local current_src="$(readlink -f "$right")"
         if [[ "$current_src" == "$left" ]]; then
@@ -31,3 +32,5 @@ link vimrc_basic
 link Xdefaults
 link zshrc
 link zsh
+
+ln -i -s "$ROOTDIR" "$HOME/.nixpkgs"

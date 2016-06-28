@@ -1,2 +1,2 @@
-Run `./updaterc` to sync dotfiles.
-Run `nix-env -f . -i` to install environment.
+Run `./install` to sync dotfiles into the homedir.
+Run `nix-env -i dev-env` to install environment.
