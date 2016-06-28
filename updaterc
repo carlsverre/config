@@ -1,10 +1,23 @@
 #!/usr/bin/env bash
+set -e
 
 ROOTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 function link {
-    local name = "$1";
-    local target = "${2:-.$name}";
+    local name="$1";
+    local target="${2:-.$name}";
+    local left="$ROOTDIR/dotfiles/$name"
+    local right="$HOME/$target"
+    if [[ -e "$right" ]]; then
+        local current_src="$(readlink -f "$right")"
+        if [[ "$current_src" == "$left" ]]; then
+            echo "[ok] $right -> $left"
+            return 0
+        fi
+        echo "[!!] $right already exists, currently looks like:"
+        ls -l "$right"
+    fi
+    echo "[++] $right -> $left"
     ln -i -s "$ROOTDIR/dotfiles/$name" "$HOME/$target"
 }
 

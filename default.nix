@@ -13,6 +13,6 @@ let
 in rec {
   devEnv = pkgs.buildEnv {
     name = "dev-env";
-    paths = nvim ++ tools ++ dotfiles;
+    paths = nvim ++ tools;
   };
 }
