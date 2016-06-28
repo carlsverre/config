@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+ROOTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+function link {
+    local name = "$1";
+    local target = "${2:-.$name}";
+    ln -i -s "$ROOTDIR/dotfiles/$name" "$HOME/$target"
+}
+
+link gitconfig
+link gitignore
+link i3status.conf
+link i3 .config/i3
+link sift.conf
+link slate
+link vimrc_basic
+link Xdefaults
+link zshrc
+link zsh

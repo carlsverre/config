@@ -7,7 +7,7 @@ let
     name = "neovim-${neovim.version}-configured";
     inherit (neovim) version;
 
-    nativeBuildInputs = [ makeWrapper ];
+    nativeBuildInputs = [ makeWrapper pkgs.git ];
 
     buildCommand = ''
       mkdir -p $out/bin
@@ -17,9 +17,8 @@ let
       ln -s $out/bin/nvim $out/bin/vim
       mkdir -p $out/config/nvim
       cp ${vimUtils.vimrcFile configure} $out/config/nvim/init.vim
-      # wrapProgram $out/bin/nvim --add-flag "-u $out/config"
-      # wrapProgram $out/bin/nvim --set XDG_CONFIG_DIRS $out/config
-      # $out/bin/nvim -i NONE --headless +UpdateRemotePlugins +qall
+      wrapProgram $out/bin/nvim --set XDG_CONFIG_DIRS $out/config
+      $out/bin/nvim -i NONE --headless +UpdateRemotePlugins +qall
     '';
   };
 in with pkgs; [

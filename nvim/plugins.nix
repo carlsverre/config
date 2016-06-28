@@ -23,17 +23,7 @@ in {
     };
   };
 
-  deoplete = buildVimPlugin {
-    name = "deoplete";
-    src = fetchFromGitHub {
-      owner = "Shougo";
-      repo = "deoplete.nvim";
-      rev = "master";
-      sha256 = "1q1jly0i6jbi78jg35c0w8qm81jdsh39gg21zwcmmj81wvnpzcg4";
-    };
-  };
-
-  "vim-misc" = buildVimPlugin {
+  vim-misc = buildVimPlugin {
     name = "vim-misc";
     src = fetchFromGitHub {
       owner = "xolox";
@@ -54,7 +44,7 @@ in {
     dependencies = [ "vim-misc" ];
   };
 
-  "vim-javascript" = buildVimPlugin {
+  vim-javascript = buildVimPlugin {
     name = "vim-javascript";
     src = fetchFromGitHub {
       owner = "pangloss";
@@ -84,7 +74,7 @@ in {
     };
   };
 
-  "python-syntax" = buildVimPlugin {
+  python-syntax = buildVimPlugin {
     name = "python-syntax";
     src = fetchFromGitHub {
       owner = "hdima";
@@ -94,7 +84,7 @@ in {
     };
   };
 
-  "deoplete-go" = buildVimPlugin {
+  deoplete-go = buildVimPlugin {
     name = "deoplete-go";
     src = fetchFromGitHub {
       owner = "zchee";
@@ -102,26 +92,6 @@ in {
       rev = "master";
       sha256 = "1bi0ryjpjjcazb4pm2cmqcb445wg42mmzhxs5nflny210mq99b2a";
     };
-    dependencies = [ "deoplete" ];
-  };
-
-  "deoplete-jedi" = buildVimPlugin {
-    name = "deoplete-jedi";
-    src = fetchFromGitHub {
-      owner = "zchee";
-      repo = "deoplete-jedi";
-      rev = "master";
-      sha256 = "0hcyx027i5sajl63607zjskhdwsvinkr2zg0h0jw7bxg1vwz9ppk";
-    };
-    dependencies = [ "deoplete" "jedi" ];
-  };
-
-  "vim-pi" = buildVimPlugin {
-    name = "vim-pi";
-    src = fetchgit {
-      url = "https://bitbucket.org/vimcommunity/vim-pi.git";
-      rev = "43de8193df0a9437e4a329fce0dad9e455842b01";
-      sha256 = "0icngpsvvdw3s4l38858imb6gq229jqjygca90pslfrmbbhkqhbq";
-    };
+    dependencies = [ "deoplete-nvim" ];
   };
 }

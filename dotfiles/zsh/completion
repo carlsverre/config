@@ -1,6 +1,3 @@
-# COMPLETION
-fpath=(~/.zsh/completion_functions $fpath)
-
 autoload -Uz compinit
 compinit
 zmodload -a complist

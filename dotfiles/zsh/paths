@@ -1,8 +1,0 @@
-# for rubygems + rvm
-if [ -d ~/.gem/ruby/1.8/bin ]; then
-  export PATH="$HOME/.gem/ruby/1.8/bin:$PATH"
-fi
-
-if [ -d ~/local ]; then
-  export PATH="$HOME/local/bin:$PATH"
-fi

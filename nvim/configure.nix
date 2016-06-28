@@ -22,10 +22,9 @@ in
         { name = "tagbar"; }
         { name = "vim-nix"; }
         { name = "grepper"; }
-        { name = "deoplete-nvim-2016-06-11"; }
+        { name = "deoplete-nvim"; }
         { name = "rooter"; }
         { name = "easytags"; }
-        { name = "vim-pi"; }
         { name = "vim-misc"; }
 
         # javascript
