@@ -2,9 +2,14 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+exec --no-startup-id xsetroot -solid "#000000"
+exec --no-startup-id xset r rate 200 50
 
-font pango:DejaVu Sans Mono 10
+set $mod Mod4
+
+focus_follows_mouse no
+
+font pango: DejaVu Sans Mono, FontAwesome, 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -15,12 +20,16 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
+bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q sset Master 5%- unmute
+bindsym XF86AudioMute exec amixer -q sset Master toggle
+
 # start dmenu (a program launcher)
-# bindsym $mod+space exec /nix/store/qrc5fm5z1pki25mcdw4kmnx8s9zqqn8v-dmenu-4.6/bin/dmenu_run
+bindsym $mod+space exec /nix/store/qrc5fm5z1pki25mcdw4kmnx8s9zqqn8v-dmenu-4.6/bin/dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+space exec --no-startup-id i3-dmenu-desktop
+# bindsym $mod+space exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+h focus left

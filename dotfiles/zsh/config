@@ -42,6 +42,6 @@ local WORDCHARS=${WORDCHARS//\//}
 
 stty stop undef
 
-export EDITOR=nvim
-export MANPAGER="/bin/sh -c \"col -bx | nvim -c 'set ft=man' -R -M -\""
+export EDITOR=vim
+# export MANPAGER="/bin/sh -c \"col -bx | nvim -c 'set ft=man' -R -M -\""
 export GREP_COLORS='ms=01;36:mc=01;31:sl=:cx=:fn=35:ln=33:bn=33:se=01;34'

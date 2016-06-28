@@ -1,57 +1,94 @@
-"------  Install Plugins ------"
+"------  Visual Options  ------"
 
-call plug#begin('~/.config/nvim/plugged')
+syntax enable                       " enable syntax highlighting
+set number                          " enable line numbers
+set nowrap                          " disable word wrap
+set vb                              " visual bell
+set showmatch                       " show matching bracket
 
-" Features
-Plug 'Shougo/vimproc.vim'
-Plug 'altercation/vim-colors-solarized'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeFind' }
-Plug 'airblade/vim-gitgutter'
-Plug 'airblade/vim-rooter'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'benekastah/neomake'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'mhinz/vim-grepper'
-Plug 'bling/vim-airline'
-Plug 'mbbill/undotree'
-Plug 'direnv/direnv.vim'
-Plug 'Shougo/deoplete.nvim'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-easytags'
-Plug 'majutsushi/tagbar'
+set laststatus=2                    " always use a status line
 
-" Javascript
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+"------  Behavior  ------"
 
-" Python
-Plug 'zchee/deoplete-jedi'
-Plug 'davidhalter/jedi-vim', { 'for': 'python' }
-Plug 'hdima/python-syntax', { 'for': 'python' }
+set backspace=indent,eol,start      " normal backspace behavior
+set history=1000                    " 1000 item history
+set undolevels=1000                 " 1000 item undo buffer
+let mapleader=","                   " set leader to ,
+set title                           " update the terminals title
+set tabstop=4                       " tab = 4 spaces
+set shiftwidth=4                    " indent to 4 spaces
+set softtabstop=4                   " Number of spaces that a <Tab> counts for
+set expandtab                       " use spaces instead of tabs
+set autoindent                      " auto indent
+set smartindent                     " use vim smart indenting
 
-" Haskell
-Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
-Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
-Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
-Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
+" Ignore these files when completing names
+set wildignore+=.svn,CVS,.git,*.o,*.a,*.class,*.mo
+set wildignore+=*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif
+set wildignore+=*/tmp/*,*.zip,*.pyc
 
-" Scala
-Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
+set iskeyword+=_,$,@,%,#
 
-" Go
-Plug 'zchee/deoplete-go', { 'do': 'make' }
-Plug 'fatih/vim-go', { 'for': 'go', 'tag': 'v1.5' }
+set wildmode=longest,list:longest   " Shell style tab completion
 
-"------  Bring in local overrides  ------"
-let s:localrc = expand($HOME . '/.nvimlocal')
-if filereadable(s:localrc)
-    source $HOME/.nvimlocal
-endif
+filetype indent on
+filetype plugin on
 
-"------  Finalize Plug  ------"
-call plug#end()
+set encoding=utf-8
 
-filetype plugin indent on
+"------  Searching  ------"
+
+set incsearch                       " Search while typing
+set ignorecase                      " Case insensitive searching
+set smartcase                       " lowercase = case insensitive, any uppercase = case sensitive
+set hlsearch                        " highlight all search results
+
+" following line clears the search highlights when pressing <Leader>s
+nnoremap <Leader>s :nohlsearch<CR>
+
+set grepprg=grep\ -nH\ $*           " set grep to always display a file name
+
+"------  Buffers  ------"
+
+" switch between unsaved buffers w/o needing to save
+set hidden
+
+"------  Windows  ------"
+
+" Move easily between windows
+noremap <C-J> <C-W>j
+noremap <C-K> <C-W>k
+noremap <C-H> <C-W>h
+noremap <C-L> <C-W>l
+
+" Keybindings for splitting windows
+noremap <Leader>v :split<CR>
+noremap <Leader>V :vsplit<CR>
+
+"------  Text Width Stuff  ------"
+
+set tw=80
+set fo-=c
+set fo-=t
+set modeline
+set modelines=3
+set sr
+set whichwrap=h,l,~,[,]
+
+"------  Helpful keybindings  ------"
+
+" ,T = Delete all Trailing space in file
+map <Leader>T :%s/\s\+$//<CR>
+
+" Sometimes you just need to teach vim whose boss
+noremap <Leader>r :redraw!<CR>
+
+" I make the mistake of typing W and Q instead of w and q
+nmap :W :w
+nmap :Q :q
+
+" Kill the evil EX mode
+nmap Q <Nop>
 
 "------  Set custom colorscheme stuff  ------"
 
@@ -59,8 +96,6 @@ set background=dark
 colorscheme solarized
 
 "------  Vim Config Stuff  ------"
-
-map <silent> <leader>R :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " Set swp files to go to a central location
 set backupdir=$HOME/.config/nvim/swp//,/tmp//,.
@@ -99,7 +134,7 @@ if &listchars ==# 'eol:$'
 endif
 
 "------  Visual Mode related  ------"
-"
+
 function! VisualSelection(direction) range
   let l:saved_reg = @"
   execute "normal! vgvy"
@@ -180,7 +215,7 @@ function! s:is_whitespace()
 endfunction
 
 "------  Vim Airline ------"
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#hunks#enabled = 0
 
 "------  NERDTree Options  ------"
