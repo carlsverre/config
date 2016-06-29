@@ -30,6 +30,10 @@ let
     ipython
   ];
 
+  node-env = with python27Packages; [
+    nodejs
+  ];
+
   x11 = [
     xclip
   ];
@@ -46,6 +50,7 @@ in
           ++ dev-tools
           ++ go-env
           ++ python-env
+          ++ node-env
           ++ x11;
       };
     };
