@@ -4,6 +4,35 @@ with pkgs;
 
 let
   nvim-paths = pkgs.callPackage ./nvim {};
+
+  nix-tools = [
+    nix-prefetch-scripts
+    nix-repl
+    nix-prefetch-git
+  ];
+
+  dev-tools = [
+    git
+    jq
+    curl
+    ctags
+    nmap
+    fzf
+  ];
+
+  go-env = [
+    go
+    gotools
+  ];
+
+  python-env = with python27Packages; [
+    python
+    ipython
+  ];
+
+  x11 = [
+    xclip
+  ];
 in
   rec {
     allowUnfree = true;
@@ -11,15 +40,13 @@ in
     packageOverrides = pkgs : rec {
       dev-env = pkgs.buildEnv {
         name = "dev-env";
-        paths = nvim-paths ++ [
-          python27Packages.ipython
-          which
-          xclip
-          git
-          nix-prefetch-scripts
-          nix-repl
-          nix-prefetch-git
-        ];
+        paths =
+          nvim-paths
+          ++ nix-tools
+          ++ dev-tools
+          ++ go-env
+          ++ python-env
+          ++ x11;
       };
     };
   }
