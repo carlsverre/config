@@ -18,6 +18,7 @@ let
     ctags
     nmap
     fzf
+    hexchat
   ];
 
   go-env = [
