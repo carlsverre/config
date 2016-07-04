@@ -3,34 +3,20 @@ set -e
 
 ROOTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-function link {
-    local name="$1";
-    local target="${2:-.$name}";
-    local left="$ROOTDIR/dotfiles/$name"
-    local right="$HOME/$target"
-    mkdir -p $(dirname $right)
-    if [[ -e "$right" ]]; then
-        local current_src="$(readlink -f "$right")"
-        if [[ "$current_src" == "$left" ]]; then
-            echo "[ok] $right -> $left"
-            return 0
-        fi
-        echo "[!!] $right already exists, currently looks like:"
-        ls -l "$right"
-    fi
-    echo "[++] $right -> $left"
-    ln -i -s "$ROOTDIR/dotfiles/$name" "$HOME/$target"
-}
+# bring in helper functions
+source $ROOTDIR/lib.sh
 
-link gitconfig
-link gitignore
-link i3status.conf
-link i3 .config/i3
-link sift.conf
-link slate
-link vimrc_basic
-link Xdefaults
-link zshrc
-link zsh
+# install all of our dotfiles
+install_dotfile gitconfig
+install_dotfile gitignore
+install_dotfile i3status.conf
+install_dotfile i3 .config/i3
+install_dotfile sift.conf
+install_dotfile slate
+install_dotfile vimrc_basic
+install_dotfile Xdefaults
+install_dotfile zshrc
+install_dotfile zsh
 
-ln -i -s "$ROOTDIR" "$HOME/.nixpkgs"
+# link this repo into home as .nixpkgs
+safelink "$HOME/.nixpkgs" "$ROOTDIR"
