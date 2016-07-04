@@ -19,6 +19,7 @@ let
     nmap
     fzf
     hexchat
+    fasd
   ];
 
   go-env = [

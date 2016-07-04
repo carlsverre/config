@@ -2,6 +2,7 @@ source ~/.zsh/aliases
 source ~/.zsh/completion
 source ~/.zsh/config
 source ~/.zsh/prompt
+source ~/.zsh/fasd
 
 if [ -f ~/.localrc ]; then
     . ~/.localrc
