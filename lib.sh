@@ -27,8 +27,9 @@ function safelink {
         # otherwise, we need to warn the user
         echo "[!!] $pointer already exists, currently looks like:"
         ls -l "$pointer"
+    else
+        echo "[++] $pointer -> $target"
     fi
-    echo "[++] $pointer -> $target"
 
     # setup the symlink, -i will ask the user before overwriting a symlink
     ln -i -s "$target" "$pointer"
