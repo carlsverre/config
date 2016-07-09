@@ -102,10 +102,7 @@ set backupdir=$HOME/.config/nvim/swp//,/tmp//,.
 set directory=$HOME/.config/nvim/swp//,/tmp//,.
 
 " Share clipboard
-set clipboard^=unnamed
-if has('unnamedplus')
-    set clipboard^=unnamedplus
-endif
+set clipboard+=unnamedplus
 
 " Better tab-completion
 set wildmenu
