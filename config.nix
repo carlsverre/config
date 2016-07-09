@@ -20,6 +20,7 @@ let
     fzf
     hexchat
     fasd
+    gnumake
   ];
 
   go-env = [
