@@ -1,6 +1,6 @@
 [user]
     name = Carl Sverre
-    email = "(none)"
+    useConfigOnly = true
 [color]
     diff = auto
     status = auto
