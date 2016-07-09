@@ -29,7 +29,7 @@ let
   ];
 
   python-env = with python27Packages; [
-    python
+    python27Full
     ipython
   ];
 

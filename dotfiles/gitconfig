@@ -10,7 +10,7 @@
 [core]
     pager = less -FXRS -x4
     preloadindex = true
-    excludesfile = /Users/carl/.gitignore
+    excludesfile = ~/.gitignore
 [merge]
     defaultToUpstream = true
 [rerere]
