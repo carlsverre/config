@@ -28,19 +28,19 @@ let
     gotools
   ];
 
-  python-env = with python27Packages; [
-    python27Full
-    ipython
-    flake8
-  ];
-
-  node-env = with python27Packages; [
+  node-env = [
     nodejs
   ];
 
   x11 = [
     xclip
   ];
+
+  python-global = [
+    python27Full
+    python3
+  ];
+
 in
   rec {
     allowUnfree = true;
@@ -53,9 +53,25 @@ in
           ++ nix-tools
           ++ dev-tools
           ++ go-env
-          ++ python-env
           ++ node-env
+          ++ python-global
           ++ x11;
+      };
+
+      python2-tools = pkgs.buildEnv {
+        name = "python2-tools";
+        paths = with python27Packages; [
+          ipython
+          pylint
+        ];
+      };
+
+      python3-tools = pkgs.buildEnv {
+        name = "python3-tools";
+        paths = with python35Packages; [
+          ipython
+          pylint
+        ];
       };
     };
   }

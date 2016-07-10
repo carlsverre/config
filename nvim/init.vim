@@ -199,6 +199,7 @@ set completeopt+=longest
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
+let g:deoplete#sources#jedi#python_path = "python3"
 
 imap <silent><expr><Tab> pumvisible() ? "\<C-n>"
     \ : (<SID>is_whitespace() ? "\<Tab>"
@@ -290,24 +291,9 @@ nmap <leader>B :CtrlPTag<CR>
 "------  GitGutter  ------"
 highlight clear SignColumn
 
-"------  jedi-vim  ------"
-autocmd FileType python setlocal omnifunc=jedi#completions
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-
-let g:jedi#use_tabs_not_buffers = 0
-let g:jedi#popup_on_dot = 0
-let g:jedi#popup_select_first = 0
-let g:jedi#show_call_signatures = 0
-let g:jedi#goto_assignments_command = "<leader>D"
-
-" Kill these keybindings
-let g:jedi#rename_command = ""
-
 "------  NeoMake  ------"
 
-let g:neomake_python_enabled_makers = ['flake8']
-let g:neomake_haskell_enabled_makers = ['ghc_mod']
+let g:neomake_python_enabled_makers = ['pylint']
 let g:neomake_go_enabled_makers = ['golint', 'govet']
 let g:neomake_javascript_enabled_makers = ['eslint']
 

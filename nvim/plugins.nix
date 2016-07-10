@@ -64,16 +64,6 @@ in {
     };
   };
 
-  jedi = buildVimPlugin {
-    name = "jedi";
-    src = fetchFromGitHub {
-      owner = "davidhalter";
-      repo = "jedi-vim";
-      rev = "master";
-      sha256 = "1anjgdis0d33rdqj71vglr72xp4pl9m747szmf7cgjkjs9gpy9a2";
-    };
-  };
-
   python-syntax = buildVimPlugin {
     name = "python-syntax";
     src = fetchFromGitHub {

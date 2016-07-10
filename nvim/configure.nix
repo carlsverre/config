@@ -33,7 +33,6 @@ in
 
         # python
         { name = "deoplete-jedi"; }
-        { name = "jedi"; }
         { name = "python-syntax"; }
 
         # go

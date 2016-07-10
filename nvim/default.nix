@@ -7,7 +7,7 @@ let
     name = "neovim-${neovim.version}-configured";
     inherit (neovim) version;
 
-    nativeBuildInputs = [ makeWrapper pkgs.git ];
+    nativeBuildInputs = [ makeWrapper git ];
 
     buildCommand = ''
       mkdir -p $out/bin
