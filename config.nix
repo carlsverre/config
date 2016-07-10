@@ -31,6 +31,7 @@ let
   python-env = with python27Packages; [
     python27Full
     ipython
+    flake8
   ];
 
   node-env = with python27Packages; [
