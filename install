@@ -14,7 +14,7 @@ install_dotfile i3 .config/i3
 install_dotfile sift.conf
 install_dotfile slate
 install_dotfile vimrc_basic
-install_dotfile Xdefaults
+install_dotfile Xresources
 install_dotfile zshrc
 install_dotfile zsh
 
