@@ -11,6 +11,10 @@ let
     nix-prefetch-git
   ];
 
+  security = [
+    keybase-go
+  ];
+
   dev-tools = [
     git
     jq
@@ -21,6 +25,7 @@ let
     hexchat
     fasd
     gnumake
+    sift
   ];
 
   go-env = [
@@ -41,6 +46,13 @@ let
     python3
   ];
 
+  games = [
+    (dwarf-fortress.override {
+      theme = dwarf-fortress-packages.cla-theme;
+    })
+    dwarf-therapist
+  ];
+
 in
   rec {
     allowUnfree = true;
@@ -51,11 +63,13 @@ in
         paths =
           nvim-paths
           ++ nix-tools
+          ++ security
           ++ dev-tools
           ++ go-env
           ++ node-env
           ++ python-global
-          ++ x11;
+          ++ x11
+          ++ games;
       };
 
       python2-tools = pkgs.buildEnv {
