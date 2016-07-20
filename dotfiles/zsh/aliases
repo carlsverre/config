@@ -5,8 +5,6 @@ alias l.='ls -Ad .*'
 alias la='ls -A'
 alias grep='grep --color -s'
 alias df='df -h'
-alias du='du'
-alias sr='screen -r'
 
 # git
 alias gil='git log --graph --abbrev-commit --stat -C --decorate --date=local'
@@ -19,7 +17,5 @@ alias gic='git checkout'
 # sift
 alias s='sift'
 
-# crontab
-alias crontab="VIM_CRONTAB=true crontab"
-
+# docker
 alias docker-ip="docker inspect -f '{{ .NetworkSettings.IPAddress }}'"

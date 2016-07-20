@@ -37,7 +37,7 @@ bindkey "^L" forward-char
 bindkey '^[[3~' delete-char
 bindkey '^[[1;5C' forward-word
 bindkey '^[[1;5D' backward-word
-bindkey '\C-v' edit-command-line
+bindkey '^v' edit-command-line
 local WORDCHARS=${WORDCHARS//\//}
 
 stty stop undef
