@@ -126,27 +126,27 @@ let g:python_highlight_all=1
 set list
 
 " But only interesting whitespace
-if &listchars ==# 'eol:$'
-  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
-endif
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+
+au Filetype go setlocal nolist
 
 "------  Visual Mode related  ------"
 
 function! VisualSelection(direction) range
-  let l:saved_reg = @"
-  execute "normal! vgvy"
+    let l:saved_reg = @"
+    execute "normal! vgvy"
 
-  let l:pattern = escape(@", '\\/.*$^~[]')
-  let l:pattern = substitute(l:pattern, "\n$", "", "")
+    let l:pattern = escape(@", '\\/.*$^~[]')
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
 
-  if a:direction == 'b'
-    execute "normal ?" . l:pattern . "^M"
-  elseif a:direction == 'f'
-    execute "normal /" . l:pattern . "^M"
-  endif
+    if a:direction == 'b'
+        execute "normal ?" . l:pattern . "^M"
+    elseif a:direction == 'f'
+        execute "normal /" . l:pattern . "^M"
+    endif
 
-  let @/ = l:pattern
-  let @" = l:saved_reg
+    let @/ = l:pattern
+    let @" = l:saved_reg
 endfunction
 
 " Visual mode pressing * or # searches for the current selection
@@ -293,17 +293,16 @@ highlight clear SignColumn
 
 "------  NeoMake  ------"
 
+let g:neomake_serialize = 1
+let g:neomake_serialize_abort_on_error = 1
+
 let g:neomake_python_enabled_makers = ['pylint']
-let g:neomake_go_enabled_makers = ['golint', 'govet']
+let g:neomake_go_enabled_makers = ['golint', 'govet', 'go']
 let g:neomake_javascript_enabled_makers = ['eslint']
 
 autocmd! BufWritePost * Neomake
 
 nmap <Leader><Leader> :lopen<CR>
-
-"------  necoghc  ------"
-
-let g:necoghc_enable_detailed_browse = 1
 
 "------  Grepper  ------"
 let g:grepper = {
@@ -339,14 +338,14 @@ let g:undotree_SetFocusWhenToggle = 1
 
 " Called once right before you start selecting multiple cursors
 function! Multiple_cursors_before()
-  if exists(':NeoCompleteLock')==2
-    exe 'NeoCompleteLock'
-  endif
+    if exists(':NeoCompleteLock')==2
+        exe 'NeoCompleteLock'
+    endif
 endfunction
 
 " Called once only when the multiple selection is canceled (default <Esc>)
 function! Multiple_cursors_after()
-  if exists(':NeoCompleteUnlock')==2
-    exe 'NeoCompleteUnlock'
-  endif
+    if exists(':NeoCompleteUnlock')==2
+        exe 'NeoCompleteUnlock'
+    endif
 endfunction

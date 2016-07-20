@@ -4,6 +4,7 @@ with pkgs;
 
 let
   nvim-paths = pkgs.callPackage ./nvim {};
+  my-tools = pkgs.callPackage ./tools {};
 
   nix-tools = [
     nix-prefetch-scripts
@@ -31,6 +32,9 @@ let
   go-env = [
     go
     gotools
+    gotags
+    golint
+    go2nix
   ];
 
   node-env = [
@@ -63,6 +67,7 @@ in
         paths =
           nvim-paths
           ++ nix-tools
+          ++ my-tools
           ++ security
           ++ dev-tools
           ++ go-env
