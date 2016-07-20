@@ -9,6 +9,7 @@ exec --no-startup-id synclient TouchpadOff=1
 set $mod Mod4
 
 focus_follows_mouse no
+workspace_auto_back_and_forth yes
 
 font pango: DejaVu Sans Mono, FontAwesome, 10
 
@@ -25,12 +26,11 @@ bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q sset Master 5%- unmute
 bindsym XF86AudioMute exec amixer -q sset Master toggle
 
+bindsym XF86MonBrightnessUp exec light -A 5
+bindsym XF86MonBrightnessDown exec light -U 5
+
 # start dmenu (a program launcher)
-bindsym $mod+space exec /nix/store/qrc5fm5z1pki25mcdw4kmnx8s9zqqn8v-dmenu-4.6/bin/dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+space exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+space exec dmenu_run
 
 # change focus
 bindsym $mod+h focus left
@@ -45,10 +45,10 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
-bindsym $mod+Shift+d split h
+bindsym $mod+Shift+d split h; exec i3-sensible-terminal
 
 # split in vertical orientation
-bindsym $mod+d split v
+bindsym $mod+d split v; exec i3-sensible-terminal
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -91,8 +91,6 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -100,23 +98,21 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+    # These bindings trigger as soon as you enter the resize mode
 
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
 bar {
-        status_command /nix/store/bc1q4hx3rdqxi9svzcmy9bpxlnkgj3c4-i3status-2.10/bin/i3status
-        tray_output primary
+    status_command i3status
+    tray_output primary
 }
