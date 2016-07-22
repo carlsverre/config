@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+signal_i3blocks() {
+    pkill -RTMIN+1 i3blocks
+}
+
+if [[ -n "$BLOCK_BUTTON" ]]; then
+    if [[ "$BLOCK_BUTTON" == "1" ]]; then
+        # mouse 1 pressed
+        pavucontrol -t 3 --name "pavucontrol-bar"
+        signal_i3blocks
+    else
+        amixer -q sset Master toggle
+        signal_i3blocks
+    fi
+fi
+
+VOLUME=$(amixer get Master | grep -E -o '[0-9]{1,3}?%' | head -1)
+ICON=""  # fontawesome sound icon
+COLOR=""
+if [[ -z "$(amixer get Master | grep -o "\[on\]" | head -n1)" ]]; then
+    ICON=" "  # fontawesome muted icon
+    COLOR="#cc241d"
+fi
+
+echo "  $ICON $VOLUME "
+echo "$VOLUME "
+echo "$COLOR"
+
+signal_i3blocks
