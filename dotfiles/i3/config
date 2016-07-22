@@ -2,9 +2,10 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-exec --no-startup-id xsetroot -solid "#000000"
+exec --no-startup-id feh --randomize --bg-fill ~/.wallpapers/*
 exec --no-startup-id xset r rate 200 50
 exec --no-startup-id synclient TouchpadOff=1
+exec --no-startup-id compton --config ~/.compton.conf &
 
 # disable window titles and add simple border for i3-gaps
 for_window [class="^.*"] border pixel 1
@@ -144,7 +145,7 @@ set $blue          #268bd2
 set $cyan          #2aa198
 set $green         #859900
 
-set $transparent     #00000000
+set $status_bg     #000000aa
 
 #                       BORDER      BACKGROUND  TEXT        INDICATOR   CHILD_BORDER
 #client.focused          $black      $black      $darkwhite  $darkblack  $darkblack
@@ -162,14 +163,14 @@ bar {
 
     colors {
         statusline  $primary
-        background  $transparent
-        separator   $transparent
+        background  $status_bg
+        separator   $status_bg
 
 #                          BORDER       BACKGROUND   TEXT
-        focused_workspace  $transparent $background  $primary
-        inactive_workspace $transparent $transparent $secondary
-        active_workspace   $transparent $background  $secondary
-        urgent_workspace   $red         $transparent $secondary
-        binding_mode       $transparent $yellow      $background
+        focused_workspace  $status_bg   $background  $primary
+        inactive_workspace $status_bg   $status_bg   $secondary
+        active_workspace   $status_bg   $background  $secondary
+        urgent_workspace   $red         $status_bg   $secondary
+        binding_mode       $status_bg   $yellow      $background
     }
 }

@@ -44,6 +44,8 @@ let
   x11 = [
     xclip
     pavucontrol
+    feh
+    compton
   ];
 
   sys-utils = [
