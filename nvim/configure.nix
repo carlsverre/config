@@ -18,6 +18,7 @@ in
         { name = "neomake"; }
         { name = "ctrlp"; }
         { name = "airline"; }
+        { name = "vim-airline-themes"; }
         { name = "undotree"; }
         { name = "tagbar"; }
         { name = "vim-nix"; }
