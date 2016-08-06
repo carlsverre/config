@@ -42,14 +42,8 @@ let
   ];
 
   x11 = [
-    xclip
     pavucontrol
     feh
-    compton
-  ];
-
-  sys-utils = [
-    acpi
   ];
 
   python-global = [
@@ -81,7 +75,6 @@ in
           ++ node-env
           ++ python-global
           ++ x11
-          ++ sys-utils
           ++ games;
       };
 
