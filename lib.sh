@@ -4,6 +4,19 @@ if [ -z "$ROOTDIR" ]; then
     exit 1
 fi
 
+function is_mac {
+    test $(uname -s) = "Darwin"
+}
+
+function canonical_path {
+    local path="$1"
+    if is_mac; then
+        python -c "import os;print(os.path.realpath('$path'))"
+    else
+        readlink -f "$path"
+    fi
+}
+
 # Sets up a simlink at $pointer pointing at $target
 function safelink {
     local pointer="$1"
@@ -16,7 +29,7 @@ function safelink {
     if [[ -e "$pointer" ]]; then
         # if it exists, figure out its canonical path
         # if its not a symlink this will just return the abspath to $pointer
-        local current_target="$(readlink -f "$pointer")"
+        local current_target="$(canonical_path "$pointer")"
 
         # if its pointing at the right spot, we are done
         if [[ "$current_target" == "$target" ]]; then
