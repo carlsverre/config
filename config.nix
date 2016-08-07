@@ -23,6 +23,7 @@ let
     nix-prefetch-scripts
     nix-repl
     nix-prefetch-git
+    nox
   ];
 
   security = pkg-set {
@@ -36,7 +37,7 @@ let
       git
       jq
       curl
-      ctags
+      ctagsWrapped.ctagsWrapped
       nmap
       fasd
       gnumake

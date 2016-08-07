@@ -1,3 +1,5 @@
+# vim:set ft=sh:
+
 autoload -Uz compinit
 compinit
 zmodload -a complist

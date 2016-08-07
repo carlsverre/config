@@ -1,0 +1,29 @@
+# vim:set ft=sh:
+
+# fe [query] - Open fzf, initialized with query
+#   - Bypasses fzf if there is one match
+fe() {
+  local target
+  target=$(fzf --query="$1" --select-1)
+  [ -n "$target" ] && ${EDITOR:-vim} "$target"
+}
+
+# fj info - Select jump directory from all jump directories
+#   - Bypasses fzf if there is one match
+fj() {
+  local target
+  target=$(fasd -dl "$1" | fzf --select-1)
+  [ -n "$target" ] && cd "$target"
+}
+
+fnix() {
+  nix-env -qa \* -P --no-name | fzf --query="$1"
+}
+
+xnix-install () {
+  xargs nix-env -iA "$@"
+}
+
+fnix-uninstall() {
+  nix-env -q | fzf --query="$1" -m | xargs nix-env -e
+}

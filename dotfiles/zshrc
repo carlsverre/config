@@ -3,6 +3,7 @@ source ~/.zsh/completion
 source ~/.zsh/config
 source ~/.zsh/prompt
 source ~/.zsh/fasd
+source ~/.zsh/fzf
 
 if [ -f ~/.localrc ]; then
     . ~/.localrc

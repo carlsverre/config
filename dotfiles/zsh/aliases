@@ -1,3 +1,5 @@
+# vim:set ft=sh:
+
 # unix
 alias ls='ls -Ghv'
 alias ll='ls -l'

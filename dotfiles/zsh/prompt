@@ -1,3 +1,5 @@
+# vim:set ft=sh:
+
 # load version control support
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' unstagedstr "%{$fg[red]%}*"

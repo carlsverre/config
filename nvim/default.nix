@@ -23,5 +23,5 @@ let
   };
 in with pkgs; [
   nvim
-  ctags
+  ctagsWrapped.ctagsWrapped
 ]

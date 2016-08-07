@@ -1,3 +1,5 @@
+# vim:set ft=sh:
+
 # function to execute built-in cd
 fasd_cd() {
   if [ $# -le 1 ]; then
