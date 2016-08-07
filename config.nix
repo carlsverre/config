@@ -3,6 +3,19 @@
 with pkgs;
 
 let
+  is-osx = builtins.currentSystem == "x86_64-darwin";
+  is-linux = builtins.currentSystem != "x86_64-darwin";
+
+  pkg-set = {
+    all ? [],
+    osx ? [],
+    linux ? []
+  }: (
+    all
+    ++ (if is-osx then osx else [])
+    ++ (if is-linux then linux else [])
+  );
+
   nvim-paths = pkgs.callPackage ./nvim {};
   my-tools = pkgs.callPackage ./tools {};
 
@@ -12,22 +25,29 @@ let
     nix-prefetch-git
   ];
 
-  security = [
-    keybase-go
-  ];
+  security = pkg-set {
+    linux = [
+      keybase-go
+    ];
+  };
 
-  dev-tools = [
-    git
-    jq
-    curl
-    ctags
-    nmap
-    fzf
-    hexchat
-    fasd
-    gnumake
-    sift
-  ];
+  dev-tools = pkg-set {
+    all = [
+      git
+      jq
+      curl
+      ctags
+      nmap
+      fasd
+      gnumake
+    ];
+
+    linux = [
+      hexchat
+      sift
+      fzf
+    ];
+  };
 
   go-env = [
     go
@@ -41,22 +61,26 @@ let
     nodejs
   ];
 
-  x11 = [
-    pavucontrol
-    feh
-  ];
+  x11 = pkg-set {
+    linux = [
+      pavucontrol
+      feh
+    ];
+  };
 
   python-global = [
     python27Full
     python3
   ];
 
-  games = [
-    (dwarf-fortress.override {
-      theme = dwarf-fortress-packages.cla-theme;
-    })
-    dwarf-therapist
-  ];
+  games = pkg-set {
+    linux = [
+      (dwarf-fortress.override {
+        theme = dwarf-fortress-packages.cla-theme;
+      })
+      dwarf-therapist
+    ];
+  };
 
 in
   rec {
