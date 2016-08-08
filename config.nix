@@ -108,6 +108,7 @@ in
         paths = with python27Packages; [
           ipython
           pylint
+          flake8
         ];
       };
 
@@ -116,6 +117,7 @@ in
         paths = with python35Packages; [
           ipython
           pylint
+          flake8
         ];
       };
     };
