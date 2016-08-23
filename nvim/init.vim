@@ -159,9 +159,6 @@ set undodir=$HOME/.config/nvim/undo/
 set undoreload=10000
 set undofile
 
-"------  Buffer management  ------"
-nnoremap <silent> <leader>d :bdelete<CR>
-
 "------  Tab management  ------"
 nnoremap <silent> \[ :tabp<CR>
 nnoremap <silent> \] :tabn<CR>
