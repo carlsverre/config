@@ -35,6 +35,7 @@ in
         # python
         { name = "deoplete-jedi"; }
         { name = "python-syntax"; }
+        { name = "jedi-vim"; }
 
         # go
         { name = "deoplete-go"; }

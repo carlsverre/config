@@ -18,6 +18,12 @@ let
 
   nvim-paths = pkgs.callPackage ./nvim {};
   my-tools = pkgs.callPackage ./tools {};
+  eslint = pkgs.callPackage ./node/eslint.nix {};
+
+  node-env = [
+    nodejs
+    eslint
+  ];
 
   nix-tools = [
     nix-prefetch-scripts
@@ -58,10 +64,6 @@ let
     go2nix
   ];
 
-  node-env = [
-    nodejs
-  ];
-
   x11 = pkg-set {
     linux = [
       pavucontrol
@@ -70,8 +72,16 @@ let
   };
 
   python-global = [
-    python27Full
-    python3
+    (python27Full.buildEnv.override {
+      extraLibs = with python27Packages; [
+        jedi
+      ];
+    })
+    (python3.buildEnv.override {
+      extraLibs = with python35Packages; [
+        jedi
+      ];
+    })
   ];
 
   games = pkg-set {
@@ -105,20 +115,18 @@ in
 
       python2-tools = pkgs.buildEnv {
         name = "python2-tools";
-        paths = with python27Packages; [
-          ipython
-          pylint
-          flake8
-        ];
+        paths = with python27Packages; pkg-set {
+          all = [ ipython flake8 ];
+          linux = [ pylint ];
+        };
       };
 
       python3-tools = pkgs.buildEnv {
         name = "python3-tools";
-        paths = with python35Packages; [
-          ipython
-          pylint
-          flake8
-        ];
+        paths = with python35Packages; pkg-set {
+          all = [ ipython flake8 ];
+          linux = [ pylint ];
+        };
       };
     };
   }

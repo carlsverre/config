@@ -84,4 +84,13 @@ in {
     };
     dependencies = [ "deoplete-nvim" ];
   };
+
+  jedi-vim = buildVimPlugin {
+    name = "jedi-vim";
+    src = fetchgit {
+      url = "https://github.com/davidhalter/jedi-vim";
+      rev = "443e7fe555dcbd6e08a0b9e235c06f3f0cc309a4";
+      sha256 = "06nmh8jw25i5ha5j25lgp7qc31rw6bl0fh8mpc03xd39c2isxayf";
+    };
+  };
 }
