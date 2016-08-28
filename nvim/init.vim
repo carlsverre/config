@@ -196,7 +196,7 @@ set completeopt+=longest
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
-let g:deoplete#sources#jedi#python_path = "python3"
+let g:deoplete#sources#jedi#python_path = g:python3_host_prog
 
 imap <silent><expr><Tab> pumvisible() ? "\<C-n>"
     \ : (<SID>is_whitespace() ? "\<Tab>"
@@ -214,6 +214,7 @@ endfunction
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#popup_on_dot = 0
 let g:jedi#completions_enabled = 0
+let g:jedi#show_call_signatures = "0"
 
 let g:jedi#goto_command = "<leader>d"
 let g:jedi#goto_assignments_command = ""
