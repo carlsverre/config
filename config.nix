@@ -89,7 +89,6 @@ let
       (dwarf-fortress.override {
         theme = dwarf-fortress-packages.cla-theme;
       })
-      dwarf-therapist
     ];
   };
 
