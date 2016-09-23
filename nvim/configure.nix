@@ -17,6 +17,7 @@ in
         { name = "multiple-cursors"; }
         { name = "neomake"; }
         { name = "ctrlp"; }
+        { name = "ctrlp-cmatcher"; }
         { name = "airline"; }
         { name = "vim-airline-themes"; }
         { name = "undotree"; }
