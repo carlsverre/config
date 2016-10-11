@@ -47,6 +47,8 @@ let
       nmap
       fasd
       gnumake
+      python27Full
+      python3
     ];
 
     linux = [
@@ -71,19 +73,6 @@ let
     ];
   };
 
-  python-global = [
-    (python27Full.buildEnv.override {
-      extraLibs = with python27Packages; [
-        jedi
-      ];
-    })
-    (python3.buildEnv.override {
-      extraLibs = with python35Packages; [
-        jedi
-      ];
-    })
-  ];
-
   games = pkg-set {
     linux = [
       (dwarf-fortress.override {
@@ -91,7 +80,6 @@ let
       })
     ];
   };
-
 in
   rec {
     allowUnfree = true;
@@ -107,7 +95,6 @@ in
           ++ dev-tools
           ++ go-env
           ++ node-env
-          ++ python-global
           ++ x11
           ++ games;
       };
