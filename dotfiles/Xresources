@@ -7,7 +7,7 @@ Xft.hintstyle:              hintslight
 URxvt.depth:                32
 URxvt.loginShell:           true
 
-URxvt*termName:             xterm-256color
+URxvt*termName:             rxvt-unicode-256color
 
 ! Normal
 URxvt*keysym.Home:          \033OH
