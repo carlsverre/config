@@ -209,6 +209,12 @@ function! s:is_whitespace()
     return !col || getline('.')[col - 1]  =~? '\s'
 endfunction
 
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return deoplete#mappings#close_popup() . "\<CR>"
+endfunction
+
 "------  Jedi ------"
 
 let g:jedi#auto_vim_configuration = 0
