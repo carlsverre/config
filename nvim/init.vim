@@ -198,6 +198,8 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 let g:deoplete#sources#jedi#python_path = g:python3_host_prog
 
+let deoplete#tag#cache_limit_size = 5000000
+
 imap <silent><expr><Tab> pumvisible() ? "\<C-n>"
     \ : (<SID>is_whitespace() ? "\<Tab>"
     \ : deoplete#mappings#manual_complete())

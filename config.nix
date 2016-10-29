@@ -43,7 +43,7 @@ let
       git
       jq
       curl
-      ctagsWrapped.ctagsWrapped
+      (ctagsWrapped.ctagsWrapped.override { name = "ctags"; })
       nmap
       fasd
       gnumake

@@ -7,5 +7,5 @@ in with pkgs; [
     configure = configure;
     vimAlias = true;
   })
-  ctagsWrapped.ctagsWrapped
+  (ctagsWrapped.ctagsWrapped.override { name = "ctags"; })
 ]
