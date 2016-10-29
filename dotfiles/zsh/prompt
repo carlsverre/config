@@ -28,8 +28,8 @@ precmd () {
 
 # main prompt
 PROMPT='%F{yellow}${rem_hostname}%f'        # show hostname if remote
-PROMPT+='%F{white}${SHORT_PWD}%f '           # truncated pwd
-PROMPT+='%F{green}$ '                      # end of prompt
+PROMPT+='%F{white}${SHORT_PWD}%f '          # truncated pwd
+PROMPT+='%F{green}$ '                       # end of prompt
 PROMPT+='%f%b'                              # reset colors
 
 RPROMPT='%(?..%F{red}%f%b%? )'              # exit status

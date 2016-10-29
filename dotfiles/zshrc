@@ -4,6 +4,7 @@ source ~/.zsh/config
 source ~/.zsh/prompt
 source ~/.zsh/fasd
 source ~/.zsh/fzf
+source ~/.zsh/direnv
 
 if [ -f ~/.localrc ]; then
     . ~/.localrc

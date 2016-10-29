@@ -30,6 +30,7 @@ let
     nix-repl
     nix-prefetch-git
     nox
+    patchelf
   ];
 
   security = pkg-set {
@@ -49,6 +50,7 @@ let
       gnumake
       python27Full
       python3
+      direnv
     ];
 
     linux = [
