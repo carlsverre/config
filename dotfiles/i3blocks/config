@@ -20,7 +20,6 @@ border=#98971a
 
 [iface]
 label= eth
-instance=enp0s31f6
 command=~/.config/i3blocks/render_iface
 interval=2
 border=#98971a
