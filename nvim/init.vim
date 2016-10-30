@@ -332,13 +332,17 @@ nmap <Leader><Leader> :lopen<CR>
 
 "------  Grepper  ------"
 let g:grepper = {
-    \ 'tools': ['sift', 'git', 'grep'],
+    \ 'tools': ['git', 'sift'],
     \ 'open':  0,
     \ 'jump':  1,
-    \ }
+    \ 'sift': {
+    \   'grepprg':    'sift --git --binary-skip -s -n --no-color --no-group $* .',
+    \   'grepformat': '%f:%l:%m',
+    \   'escape':     '\+*^$()[].',
+    \ }}
 
-nmap <leader>g :Grepper -tool sift -nojump -open -switch<CR>
-nmap <leader>G :Grepper -tool sift -nojump -open -switch -cword -noprompt<CR>
+nmap <leader>g :Grepper -tool git -nojump -open -switch<CR>
+nmap <leader>G :Grepper -tool git -nojump -open -switch -cword -noprompt<CR>
 
 "------  JSX  ------"
 let g:jsx_ext_required = 0

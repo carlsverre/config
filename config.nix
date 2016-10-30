@@ -16,7 +16,7 @@ let
     ++ (if is-linux then linux else [])
   );
 
-  nvim-paths = pkgs.callPackage ./nvim {};
+  nvim = pkgs.callPackage ./nvim {};
   my-tools = pkgs.callPackage ./tools {};
   eslint = pkgs.callPackage ./node/eslint.nix {};
 
@@ -60,6 +60,7 @@ let
       python3
       direnv
       unzip
+      nvim
     ];
 
     linux = [
@@ -95,8 +96,7 @@ in
       dev-env = pkgs.buildEnv {
         name = "dev-env";
         paths =
-          nvim-paths
-          ++ nix-tools
+          nix-tools
           ++ linux-tools
           ++ my-tools
           ++ security

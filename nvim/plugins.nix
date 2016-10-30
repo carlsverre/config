@@ -18,8 +18,8 @@ in {
     src = fetchFromGitHub {
       owner = "mhinz";
       repo = "vim-grepper";
-      rev = "233e179d3bfe35d502737992e68551c170295676";
-      sha256 = "05wnr388r9ql7db6a0dhvj0clym4invrfbsgal22nlr71jif4xfh";
+      rev = "71599e09856a54d9525b61b87f4f03fffc4968ae";
+      sha256 = "1lvrhm912kd26x7czcjg4wrwz6yl61d7vigdh6j223aki7a9nav7";
     };
   };
 
