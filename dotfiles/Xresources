@@ -3,6 +3,7 @@ Xft.antialias:              false
 Xft.rgba:                   rgb
 Xft.hinting:                true
 Xft.hintstyle:              hintslight
+Xft.lcdfilter:              lcddefault
 
 URxvt.depth:                32
 URxvt.loginShell:           true
@@ -18,6 +19,7 @@ URxvt*keysym.F3:            \033OR
 URxvt*keysym.F4:            \033OS
 
 ! Fonts
+URxvt.allowBold:            true
 URxvt*font:                 xft:Hack-Regular:size=10:antialias=true:hinting=slight
 URxvt*boldfont:             xft:Hack-Bold:size=10:antialias=true:hinting=slight
 

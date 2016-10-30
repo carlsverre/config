@@ -165,8 +165,8 @@ bar {
     status_command i3blocks
     i3bar_command i3bar -t
     position bottom
-    font pango:Hack, FontAwesome 11
-    height 38
+    font pango:Hack, FontAwesome 10
+    height 34
 
     colors {
         statusline  $primary
