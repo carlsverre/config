@@ -50,5 +50,5 @@ IPADDR=$(ip addr show $IF | perl -n -e "/$AF ([^\/]+).* scope global/ && print \
 
 #------------------------------------------------------------------------
 
-echo "$IPADDR " # full text
-echo "$IPADDR " # short text
+echo " $IPADDR " # full text
+echo " $IPADDR " # short text

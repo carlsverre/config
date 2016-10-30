@@ -19,7 +19,7 @@ interval=2
 border=#98971a
 
 [iface]
-label= eth
+label=
 command=~/.config/i3blocks/render_iface
 interval=2
 border=#98971a
