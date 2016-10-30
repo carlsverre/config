@@ -39,8 +39,8 @@ bindsym XF86AudioMute exec amixer -q sset Master toggle; exec pkill -RTMIN+1 i3b
 bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5
 
-# start dmenu (a program launcher)
-bindsym $mod+space exec dmenu_run
+# start rofi (a program launcher)
+bindsym $mod+space exec "rofi -combi-modi window,drun -show combi"
 
 # change focus
 bindsym $mod+h focus left
