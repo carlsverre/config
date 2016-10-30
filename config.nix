@@ -30,8 +30,15 @@ let
     nix-repl
     nix-prefetch-git
     nox
-    patchelf
   ];
+
+  linux-tools = pkg-set {
+    linux = [
+      patchelf
+      hwinfo
+      lshw
+    ];
+  };
 
   security = pkg-set {
     linux = [
@@ -44,6 +51,7 @@ let
       git
       jq
       curl
+      wget
       (ctagsWrapped.ctagsWrapped.override { name = "ctags"; })
       nmap
       fasd
@@ -51,6 +59,7 @@ let
       python27Full
       python3
       direnv
+      unzip
     ];
 
     linux = [
@@ -72,14 +81,10 @@ let
     linux = [
       pavucontrol
       feh
-    ];
-  };
-
-  games = pkg-set {
-    linux = [
-      (dwarf-fortress.override {
-        theme = dwarf-fortress-packages.cla-theme;
-      })
+      rofi
+      arandr
+      xorg.xdpyinfo
+      xclip
     ];
   };
 in
@@ -92,13 +97,13 @@ in
         paths =
           nvim-paths
           ++ nix-tools
+          ++ linux-tools
           ++ my-tools
           ++ security
           ++ dev-tools
           ++ go-env
           ++ node-env
-          ++ x11
-          ++ games;
+          ++ x11;
       };
 
       python2-tools = pkgs.buildEnv {
