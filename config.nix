@@ -20,11 +20,6 @@ let
   my-tools = pkgs.callPackage ./tools {};
   eslint = pkgs.callPackage ./node/eslint.nix {};
 
-  node-env = [
-    nodejs
-    eslint
-  ];
-
   nix-tools = [
     nix-prefetch-scripts
     nix-repl
@@ -40,9 +35,24 @@ let
     ];
   };
 
-  security = pkg-set {
+  network-tools = pkg-set {
+    linux = [
+      tcpdump
+      nmap
+      curl
+      wget
+    ];
+  };
+
+  security-tools = pkg-set {
     linux = [
       keybase-go
+    ];
+  };
+
+  desktop-apps = pkg-set {
+    linux = [
+      hexchat
     ];
   };
 
@@ -50,10 +60,7 @@ let
     all = [
       git
       jq
-      curl
-      wget
       (ctagsWrapped.ctagsWrapped.override { name = "ctags"; })
-      nmap
       fasd
       gnumake
       python27Full
@@ -64,21 +71,13 @@ let
     ];
 
     linux = [
-      hexchat
       sift
       fzf
+      mysql
     ];
   };
 
-  go-env = [
-    go
-    gotools
-    gotags
-    golint
-    go2nix
-  ];
-
-  x11 = pkg-set {
+  x11-tools = pkg-set {
     linux = [
       pavucontrol
       feh
@@ -88,6 +87,20 @@ let
       xclip
     ];
   };
+
+  node-env = [
+    nodejs
+    eslint
+  ];
+
+  go-env = [
+    go
+    gotools
+    gotags
+    golint
+    go2nix
+  ];
+
 in
   rec {
     allowUnfree = true;
@@ -97,13 +110,15 @@ in
         name = "dev-env";
         paths =
           nix-tools
-          ++ linux-tools
           ++ my-tools
-          ++ security
+          ++ linux-tools
+          ++ network-tools
+          ++ security-tools
+          ++ desktop-apps
           ++ dev-tools
+          ++ x11-tools
           ++ go-env
-          ++ node-env
-          ++ x11;
+          ++ node-env;
       };
 
       python2-tools = pkgs.buildEnv {
