@@ -2,6 +2,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+exec --no-startup-id xrandr --dpi 144
 exec --no-startup-id feh --randomize --bg-fill ~/.wallpapers/*
 exec --no-startup-id xset r rate 200 50
 exec --no-startup-id synclient TouchpadOff=1
@@ -23,7 +24,7 @@ floating_modifier $mod
 smart_gaps on
 smart_borders on
 
-gaps inner 8
+gaps inner 5
 gaps outer 0
 
 # start a terminal
@@ -40,7 +41,7 @@ bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5
 
 # start rofi (a program launcher)
-bindsym $mod+space exec "rofi -combi-modi window,drun -show combi"
+bindsym $mod+space exec "rofi -show run"
 
 # change focus
 bindsym $mod+h focus left

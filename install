@@ -21,3 +21,6 @@ install_dotfile zsh
 
 # link this repo into home as .nixpkgs
 safelink "$HOME/.nixpkgs" "$ROOTDIR"
+
+# add a link to bin
+safelink "$HOME/bin" "$ROOTDIR/bin"

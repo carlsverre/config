@@ -5,6 +5,15 @@ Xft.hinting:                true
 Xft.hintstyle:              hintslight
 Xft.lcdfilter:              lcddefault
 
+! Rofi configuration
+
+rofi.kb-row-up:             Up,Control-k,Control-p,Shift+Tab
+rofi.kb-row-down:           Down,Control-j,Control-n
+rofi.kb-remove-to-eol:      Control-Shift-k
+rofi.kb-accept-entry:       Control+m,Return,KP_Enter
+
+! URxvt configuration
+
 URxvt.depth:                32
 URxvt.loginShell:           true
 

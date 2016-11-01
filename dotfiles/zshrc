@@ -1,6 +1,7 @@
 source ~/.zsh/aliases
 source ~/.zsh/completion
 source ~/.zsh/config
+source ~/.zsh/path
 source ~/.zsh/prompt
 source ~/.zsh/fasd
 source ~/.zsh/fzf

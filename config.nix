@@ -53,6 +53,7 @@ let
   desktop-apps = pkg-set {
     linux = [
       hexchat
+      i3lock
     ];
   };
 
@@ -74,6 +75,7 @@ let
       sift
       fzf
       mysql
+      gcolor2
     ];
   };
 
@@ -83,8 +85,9 @@ let
       feh
       rofi
       arandr
-      xorg.xdpyinfo
       xclip
+      xorg.xdpyinfo
+      xorg.xev
     ];
   };
 
