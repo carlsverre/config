@@ -283,6 +283,16 @@ let g:tagbar_type_go = {
     \ 'ctagsargs' : '-sort -silent'
 \ }
 
+let g:tagbar_type_markdown = {
+    \ 'ctagstype' : 'markdown',
+    \ 'kinds' : [
+        \ 'h:headings',
+        \ 'l:links',
+        \ 'i:images'
+    \ ],
+    \ "sort" : 0
+\ }
+
 "------  EasyTags Options  ------"
 set cpoptions+=d
 set tags=./.ctags

@@ -8,6 +8,7 @@ source $ROOTDIR/lib.sh
 
 # install all of our dotfiles
 install_dotfile compton.conf
+install_dotfile ctags
 install_dotfile gitconfig
 install_dotfile gitignore
 install_dotfile i3 .config/i3
