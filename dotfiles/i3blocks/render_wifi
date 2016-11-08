@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+SSID=$(nmcli -t -f GENERAL.CONNECTION d show wlp4s0 | cut -d: -f2)
+if [[ -n "$SSID" ]]; then
+    echo "$SSID"
+fi
