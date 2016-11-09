@@ -14,7 +14,7 @@ markup=pango
 
 [wireless]
 label=   
-command=~/.config/i3blocks/render_wifi
+command=[[ -z "$(iwgetid -r)" ]] || echo "$(iwgetid -r) "
 interval=2
 border=#98971a
 
