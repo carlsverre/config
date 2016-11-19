@@ -41,6 +41,7 @@ let
       nmap
       curl
       wget
+      ipcalc
     ];
   };
 
@@ -81,10 +82,11 @@ let
 
   x11-tools = pkg-set {
     linux = [
-      pavucontrol
-      feh
-      rofi
       arandr
+      autorandr
+      feh
+      pavucontrol
+      rofi
       xclip
       xorg.xdpyinfo
       xorg.xev

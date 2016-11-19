@@ -7,6 +7,7 @@ ROOTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source $ROOTDIR/lib.sh
 
 # install all of our dotfiles
+install_dotfile autorandr
 install_dotfile compton.conf
 install_dotfile ctags
 install_dotfile gitconfig

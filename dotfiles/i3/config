@@ -167,7 +167,7 @@ bar {
     i3bar_command i3bar -t
     position bottom
     font pango:Hack, FontAwesome 10
-    height 34
+    height 30
 
     colors {
         statusline  $primary

@@ -295,7 +295,7 @@ let g:tagbar_type_markdown = {
 
 "------  EasyTags Options  ------"
 set cpoptions+=d
-set tags=./.ctags
+set tags=./.tags
 let g:easytags_dynamic_files = 2
 let g:easytags_resolve_links = 1
 let g:easytags_suppress_ctags_warning = 1
