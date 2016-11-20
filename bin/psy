@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+DIR="$PWD"
+cd $HOME/dev/psyduck/
+exec nix-shell --command "cd $PWD && psy $@"
