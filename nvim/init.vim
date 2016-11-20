@@ -367,6 +367,7 @@ let g:go_highlight_build_constraints = 1
 
 au FileType go nmap gb <Plug>(go-doc-browser)
 au FileType go nmap gi <Plug>(go-info)
+au FileType go nmap <Leader>d <Plug>(go-def)
 
 "------  Undo Tree  ------"
 

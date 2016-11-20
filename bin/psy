@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-DIR="$PWD"
+export DIR="$PWD"
 cd $HOME/dev/psyduck/
-exec nix-shell --command "cd $PWD && psy $@"
+exec nix-shell --command "cd $DIR && psy $@"
