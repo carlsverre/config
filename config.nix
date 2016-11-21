@@ -37,11 +37,12 @@ let
 
   network-tools = pkg-set {
     linux = [
-      tcpdump
-      nmap
       curl
-      wget
       ipcalc
+      nmap
+      openvpn
+      tcpdump
+      wget
     ];
   };
 

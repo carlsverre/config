@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+VPN_DIR="$HOME/.vpn"
+CONFIG="$VPN_DIR/$1.conf"
+
+if [[ -z "$1" ]]; then
+    pgrep openvpn
+elif [[ "$1" == "exit" ]]; then
+    sudo pkill openvpn
+elif [[ -f "$CONFIG" ]]; then
+    sudo pkill openvpn
+    echo "starting vpn"
+    sudo --background openvpn "$CONFIG" >"$VPN_DIR/log" 2>&1
+    sleep 0.5
+    tail "$VPN_DIR/log"
+    route
+else
+    echo "no config named $1 found in $VPN_DIR"
+    exit 1
+fi
