@@ -56,6 +56,7 @@ let
     linux = [
       hexchat
       i3lock
+      slack
     ];
   };
 
