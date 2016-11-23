@@ -101,6 +101,7 @@ let
   music-apps = pkg-set {
     linux = [
       ncmpcpp
+      mpc
     ];
   };
 
