@@ -5,6 +5,11 @@ border_left=0
 border_right=0
 border_bottom=0
 
+[mpd]
+command=~/.config/i3blocks/render_mpd
+interval=persist
+border=#cc241d
+
 [volume]
 command=~/.config/i3blocks/render_volume
 interval=10
