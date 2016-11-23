@@ -98,6 +98,12 @@ let
     ];
   };
 
+  music-apps = pkg-set {
+    linux = [
+      ncmpcpp
+    ];
+  };
+
   node-env = [
     nodejs
     eslint
@@ -127,6 +133,7 @@ in
           ++ desktop-apps
           ++ dev-tools
           ++ x11-tools
+          ++ music-apps
           ++ go-env
           ++ node-env;
       };
