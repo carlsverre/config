@@ -79,6 +79,9 @@ let
       fzf
       mysql
       gcolor2
+      rlwrap
+      imagemagick
+      sqlite
     ];
   };
 
