@@ -3,8 +3,8 @@
 
 buildGoPackage rec {
   name = "gogetdoc-${version}";
-  version = "20160710-${stdenv.lib.strings.substring 0 7 rev}";
-  rev = "2f2de98cbfb125bd27b382a2c0b75a64f8a81fb5";
+  version = "20161004-${stdenv.lib.strings.substring 0 7 rev}";
+  rev = "54e15dfc8cfdb34d9c674721999d302286e85e62";
 
   goPackagePath = "github.com/zmb3/gogetdoc";
   subPackages = [ "." ];
@@ -12,8 +12,12 @@ buildGoPackage rec {
   src = fetchgit {
     inherit rev;
     url = "https://github.com/zmb3/gogetdoc";
-    sha256 = "05w0g0331k55spp22ls2cymd31ifv0g3bidjh1nd5a62844vp6qg";
+    sha256 = "0m726y9vw24b682yg7h60zg2aw5yika3kd2c6n67ankhsk2j624i";
   };
 
   goDeps = ./deps.nix;
+
+  # TODO: add metadata https://nixos.org/nixpkgs/manual/#sec-standard-meta-attributes
+  meta = {
+  };
 }

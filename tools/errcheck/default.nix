@@ -3,8 +3,8 @@
 
 buildGoPackage rec {
   name = "errcheck-${version}";
-  version = "20160706-${stdenv.lib.strings.substring 0 7 rev}";
-  rev = "aa69c6199800e8aeeedf51950f830458e4cb73e3";
+  version = "20161118-${stdenv.lib.strings.substring 0 7 rev}";
+  rev = "db0ca22445717d1b2c51ac1034440e0a2a2de645";
 
   goPackagePath = "github.com/kisielk/errcheck";
   subPackages = [ "." ];
@@ -12,8 +12,12 @@ buildGoPackage rec {
   src = fetchgit {
     inherit rev;
     url = "https://github.com/kisielk/errcheck";
-    sha256 = "164g111vx5q723y0y9sfvdh1czyhggv16lhgajxzgqlwah435klp";
+    sha256 = "1q2vy71r7wq1hyr3wr7w6i5w8v27armi9aa6m33nv4zbzcwkskzb";
   };
 
   goDeps = ./deps.nix;
+
+  # TODO: add metadata https://nixos.org/nixpkgs/manual/#sec-standard-meta-attributes
+  meta = {
+  };
 }

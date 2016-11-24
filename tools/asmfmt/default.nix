@@ -3,8 +3,8 @@
 
 buildGoPackage rec {
   name = "asmfmt-${version}";
-  version = "20160612-${stdenv.lib.strings.substring 0 7 rev}";
-  rev = "3149d9139654f366cca93adb0f0fa1640e319aa0";
+  version = "20160829-${stdenv.lib.strings.substring 0 7 rev}";
+  rev = "39a37c8aed8095e0fdfb07f78fc8acbd465d9627";
 
   goPackagePath = "github.com/klauspost/asmfmt";
   subPackages = [ "cmd/asmfmt" ];
@@ -12,8 +12,12 @@ buildGoPackage rec {
   src = fetchgit {
     inherit rev;
     url = "https://github.com/klauspost/asmfmt";
-    sha256 = "0f0yniq0v75xmdkg7bfkyx9q4lhmwz59y16gr5yg908l8s22lqq0";
+    sha256 = "0a2pkm5glqr1rx3f380f543fjdmj5945nvfiqd5angddp7f0g8iv";
   };
 
   goDeps = ./deps.nix;
+
+  # TODO: add metadata https://nixos.org/nixpkgs/manual/#sec-standard-meta-attributes
+  meta = {
+  };
 }

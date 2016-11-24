@@ -16,4 +16,8 @@ buildGoPackage rec {
   };
 
   goDeps = ./deps.nix;
+
+  # TODO: add metadata https://nixos.org/nixpkgs/manual/#sec-standard-meta-attributes
+  meta = {
+  };
 }

@@ -72,6 +72,7 @@ let
       direnv
       unzip
       nvim
+      gcc
     ];
 
     linux = [
@@ -113,7 +114,6 @@ let
   go-env = [
     go
     gotools
-    gotags
     golint
     go2nix
   ];
