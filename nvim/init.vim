@@ -333,7 +333,7 @@ let g:neomake_serialize = 1
 let g:neomake_serialize_abort_on_error = 1
 
 let g:neomake_python_enabled_makers = ['flake8']
-let g:neomake_go_enabled_makers = ['golint', 'govet', 'go']
+let g:neomake_go_enabled_makers = ['go', 'golint', 'govet']
 let g:neomake_javascript_enabled_makers = ['eslint']
 
 autocmd! BufWritePost * Neomake
@@ -358,6 +358,7 @@ nmap <leader>G :Grepper -tool git -nojump -open -switch -cword -noprompt<CR>
 let g:jsx_ext_required = 0
 
 "------ Go ------"
+let g:go_highlight_types = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
