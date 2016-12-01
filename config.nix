@@ -68,7 +68,7 @@ let
       fasd
       gnumake
       python27Full
-      python3
+      # python3
       direnv
       unzip
       nvim
@@ -142,7 +142,11 @@ in
       python2-tools = pkgs.buildEnv {
         name = "python2-tools";
         paths = with python27Packages; pkg-set {
-          all = [ ipython flake8 ];
+          all = [
+            ipython
+            flake8
+            virtualenv
+          ];
           linux = [ pylint ];
         };
       };
@@ -150,7 +154,11 @@ in
       python3-tools = pkgs.buildEnv {
         name = "python3-tools";
         paths = with python35Packages; pkg-set {
-          all = [ ipython flake8 ];
+          all = [
+            ipython
+            flake8
+            virtualenv
+          ];
           linux = [ pylint ];
         };
       };
