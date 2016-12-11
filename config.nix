@@ -43,6 +43,7 @@ let
       openvpn
       tcpdump
       wget
+      bind
     ];
   };
 
@@ -83,6 +84,7 @@ let
       rlwrap
       imagemagick
       sqlite
+      file
     ];
   };
 

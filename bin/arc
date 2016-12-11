@@ -1,3 +1,0 @@
-#!/usr/bin/env nix-shell
-#!nix-shell -i sh -p php
-exec $HOME/arcanist/bin/arc "$@"

@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
 export DIR="$PWD"
 cd $HOME/dev/psyduck/
-exec nix-shell --command "cd $DIR && psy $@"
+COMMAND="cd $DIR && psy"
+for var in "$@"; do
+    COMMAND="$COMMAND \"$var\""
+done
+
+exec nix-shell --command "$COMMAND"
