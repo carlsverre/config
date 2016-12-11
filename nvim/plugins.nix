@@ -288,4 +288,15 @@ in {
     dependencies = [];
 
   };
+
+  floobits-neovim = buildVimPluginFrom2Nix { # created by nix#NixDerivation
+    name = "floobits-neovim-2016-10-07";
+    src = fetchgit {
+      url = "git://github.com/floobits/floobits-neovim";
+      rev = "85d3493d05ac1d7f5606d40fbe619df16af917bc";
+      sha256 = "16c12dgk60mmhyijfk4f33k8i48r1hpjlnxlvdk5kymv7b2xq0fa";
+    };
+    dependencies = [];
+
+  };
 }
