@@ -32,6 +32,7 @@ let
       patchelf
       hwinfo
       lshw
+      pciutils
     ];
   };
 
@@ -74,6 +75,7 @@ let
       unzip
       nvim
       gcc
+      awscli
     ];
 
     linux = [
@@ -118,6 +120,7 @@ let
     gotools
     golint
     go2nix
+    glide
   ];
 
 in

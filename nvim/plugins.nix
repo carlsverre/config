@@ -288,4 +288,15 @@ in {
     dependencies = [];
 
   };
+
+  vimoutliner = buildVimPluginFrom2Nix { # created by nix#NixDerivation
+    name = "vimoutliner-2016-07-22";
+    src = fetchgit {
+      url = "git://github.com/vimoutliner/vimoutliner";
+      rev = "bd80cee8d9df9530c730ec4237de7ebe197b3642";
+      sha256 = "0ynf60vzahif8ccb50kssjk64bh3r8bai3x37n6qb1gi5m61yn3z";
+    };
+    dependencies = [];
+
+  };
 }

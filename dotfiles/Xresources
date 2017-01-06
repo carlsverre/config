@@ -32,12 +32,17 @@ URxvt.allowBold:            true
 URxvt*font:                 xft:Hack-Regular:size=10:antialias=true:hinting=slight
 URxvt*boldfont:             xft:Hack-Bold:size=10:antialias=true:hinting=slight
 
+! Note, equal is used rather than plus for increase
+! since its easier to go up/down without pressing shift half the time
+URxvt.keysym.C-equal:       perl:font-size:increase
+URxvt.keysym.C-minus:       perl:font-size:decrease
+
 ! Scrollbar
 URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
 
 ! Perl extensions
-URxvt.perl-ext-common:      default,matcher,selection-to-clipboard
+URxvt.perl-ext-common:      default,matcher,selection-to-clipboard,font-size
 URxvt.matcher.button:       1
 URxvt.url-launcher:         xdg-open
 

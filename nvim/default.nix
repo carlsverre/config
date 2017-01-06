@@ -28,6 +28,7 @@ in
           { name = "vim-rooter"; }
           { name = "vim-easytags"; }
           { name = "vim-misc"; }
+          { name = "vimoutliner"; }
 
           # nix
           { name = "vim2nix"; }

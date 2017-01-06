@@ -14,6 +14,7 @@ set backspace=indent,eol,start      " normal backspace behavior
 set history=1000                    " 1000 item history
 set undolevels=1000                 " 1000 item undo buffer
 let mapleader=","                   " set leader to ,
+let maplocalleader=','              " set leader harder
 set title                           " update the terminals title
 set tabstop=4                       " tab = 4 spaces
 set shiftwidth=4                    " indent to 4 spaces
@@ -391,3 +392,7 @@ function! Multiple_cursors_after()
         exe 'NeoCompleteUnlock'
     endif
 endfunction
+
+"------  vimoutliner  ------"
+
+autocmd FileType votl setlocal nolist
