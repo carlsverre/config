@@ -59,6 +59,7 @@ let
       hexchat
       i3lock
       slack
+      skype
     ];
   };
 
@@ -73,6 +74,7 @@ let
       # python3
       direnv
       unzip
+      p7zip
       nvim
       gcc
       awscli
@@ -87,6 +89,7 @@ let
       imagemagick
       sqlite
       file
+      tree
     ];
   };
 
@@ -95,6 +98,7 @@ let
       arandr
       autorandr
       feh
+      imv
       pavucontrol
       rofi
       xclip
@@ -123,6 +127,11 @@ let
     glide
   ];
 
+  java-env = [
+    idea.idea-community
+    (spark.override { mesosSupport = false; })
+  ];
+
 in
   rec {
     allowUnfree = true;
@@ -141,7 +150,8 @@ in
           ++ x11-tools
           ++ music-apps
           ++ go-env
-          ++ node-env;
+          ++ node-env
+          ++ java-env;
       };
 
       python2-tools = pkgs.buildEnv {
