@@ -127,11 +127,6 @@ let
     glide
   ];
 
-  java-env = [
-    idea.idea-community
-    (spark.override { mesosSupport = false; })
-  ];
-
 in
   rec {
     allowUnfree = true;
@@ -150,8 +145,7 @@ in
           ++ x11-tools
           ++ music-apps
           ++ go-env
-          ++ node-env
-          ++ java-env;
+          ++ node-env;
       };
 
       python2-tools = pkgs.buildEnv {
