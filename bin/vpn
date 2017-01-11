@@ -11,8 +11,7 @@ elif [[ -f "$CONFIG" ]]; then
     sudo pkill openvpn
     echo "starting vpn"
     sudo --background openvpn "$CONFIG" >"$VPN_DIR/log" 2>&1
-    sleep 0.5
-    tail "$VPN_DIR/log"
+    tail -f "$VPN_DIR/log" | sed '/Initialization Sequence Completed/ q'
     route
 else
     echo "no config named $1 found in $VPN_DIR"
