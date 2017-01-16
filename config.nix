@@ -33,6 +33,7 @@ let
       hwinfo
       lshw
       pciutils
+      parted
     ];
   };
 
@@ -60,6 +61,7 @@ let
       i3lock
       slack
       skype
+      spotify
     ];
   };
 

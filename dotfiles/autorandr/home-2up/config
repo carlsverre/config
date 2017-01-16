@@ -1,12 +1,12 @@
 output eDP1
 primary
 mode 1600x900
-pos 152x1080
+pos 0x444
 rotate normal
 rate 60.00
 output DP1
 mode 1920x1080
-pos 0x0
+pos 1600x0
 rotate normal
 rate 60.00
 output DP2
