@@ -62,6 +62,15 @@ let
       slack
       skype
       spotify
+      (google-chrome.override {
+        channel = "stable";
+        pulseSupport = true;
+        chromium = (chromium.override {
+          channel = "stable";
+          enablePepperFlash = true;
+          pulseSupport = true;
+        });
+      })
     ];
   };
 
