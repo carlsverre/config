@@ -89,6 +89,7 @@ let
       nvim
       gcc
       awscli
+      gdb
     ];
 
     linux = [
