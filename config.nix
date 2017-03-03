@@ -53,6 +53,7 @@ let
       keybase
       kbfs
       openssl
+      gnupg
     ];
   };
 
