@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+infocmp -x | ssh -t "$@" 'cat > "/tmp/$TERM.info" && tic -x "/tmp/$TERM.info" && rm "/tmp/$TERM.info"'
+exec ssh "$@"

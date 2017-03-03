@@ -22,3 +22,4 @@
 "github:zchee/deoplete-go"
 "github:zchee/deoplete-jedi"
 "github:vimoutliner/vimoutliner"
+"github:hashivim/vim-terraform"

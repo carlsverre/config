@@ -17,7 +17,6 @@ let
   );
 
   nvim = pkgs.callPackage ./nvim {};
-  my-tools = pkgs.callPackage ./tools {};
   eslint = pkgs.callPackage ./node/eslint.nix {};
 
   nix-tools = [
@@ -82,7 +81,6 @@ let
       fasd
       gnumake
       python27Full
-      # python3
       direnv
       unzip
       p7zip
@@ -90,6 +88,7 @@ let
       gcc
       awscli
       gdb
+      ncurses
     ];
 
     linux = [
@@ -148,7 +147,6 @@ in
         name = "dev-env";
         paths =
           nix-tools
-          ++ my-tools
           ++ linux-tools
           ++ network-tools
           ++ security-tools

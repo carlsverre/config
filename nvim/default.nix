@@ -46,6 +46,9 @@ in
           # go
           { name = "deoplete-go"; }
           { name = "vim-go"; }
+
+          # terraform
+          { name = "vim-terraform"; }
         ];
       };
     };
