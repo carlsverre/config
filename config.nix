@@ -51,6 +51,7 @@ let
   security-tools = pkg-set {
     linux = [
       keybase-go
+      openssl
     ];
   };
 
