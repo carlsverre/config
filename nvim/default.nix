@@ -49,6 +49,9 @@ in
 
           # terraform
           { name = "vim-terraform"; }
+
+          # freemark/ftl
+          { name = "vim-freemarker"; }
         ];
       };
     };

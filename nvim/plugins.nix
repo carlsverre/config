@@ -310,4 +310,15 @@ in {
     dependencies = [];
 
   };
+
+  vim-freemarker = buildVimPluginFrom2Nix { # created by nix#NixDerivation
+    name = "vim-freemarker-2016-06-30";
+    src = fetchgit {
+      url = "git://github.com/andreshazard/vim-freemarker";
+      rev = "c6ea515d64a401679ef8db5d63d78843a2341dd7";
+      sha256 = "0jzpi2jcl1ddcj3kjh0ha9zqpppkrp93vll5nil7awh831m50a0l";
+    };
+    dependencies = [];
+
+  };
 }
