@@ -92,6 +92,7 @@ let
       awscli
       gdb
       ncurses
+      zip
     ];
 
     linux = [
@@ -131,6 +132,7 @@ let
   node-env = [
     nodejs
     eslint
+    flow
   ];
 
   go-env = [

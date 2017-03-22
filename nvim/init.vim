@@ -335,11 +335,15 @@ let g:neomake_serialize_abort_on_error = 1
 
 let g:neomake_python_enabled_makers = ['flake8']
 let g:neomake_go_enabled_makers = ['go', 'golint', 'govet']
-let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_javascript_enabled_makers = ['flow', 'eslint']
 
 autocmd! BufWritePost * Neomake
 
 nmap <Leader><Leader> :lopen<CR>
+
+"------  Vim-Javascript  ------"
+
+let g:javascript_plugin_flow = 1
 
 "------  Grepper  ------"
 let g:grepper = {
