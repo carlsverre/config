@@ -37,6 +37,7 @@ in
           # javascript
           { name = "vim-javascript"; }
           { name = "vim-jsx"; }
+          { name = "nrun-vim"; }
 
           # python
           { name = "deoplete-jedi"; }

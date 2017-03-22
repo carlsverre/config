@@ -321,4 +321,15 @@ in {
     dependencies = [];
 
   };
+
+  nrun-vim = buildVimPluginFrom2Nix { # created by nix#NixDerivation
+    name = "nrun-vim-2016-09-25";
+    src = fetchgit {
+      url = "git://github.com/jaawerth/nrun.vim";
+      rev = "2078cdbd29d4b4701e3f99a12e61b36a29a3a0c2";
+      sha256 = "1mb6zs892k0s104dnp0h33ixp60q1kanqflm8dvmsap1mv87ydg8";
+    };
+    dependencies = [];
+
+  };
 }
