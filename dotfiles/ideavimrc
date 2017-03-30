@@ -1,0 +1,37 @@
+set incsearch                       " Search while typing
+set smartcase                       " lowercase = case insensitive, any uppercase = case sensitive
+set ignorecase                      " Case insensitive searching
+set hlsearch                        " highlight all search results
+set clipboard+=unnamedplus          " use system clipboard
+set visualbell                      " visual bell
+
+" following line clears the search highlights when pressing ,s
+nnoremap ,s :nohlsearch<CR>
+
+"------  Windows  ------"
+
+" Move easily between windows
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-H> <C-W>h
+nnoremap <C-L> <C-W>l
+
+" Keybindings for splitting windows
+nnoremap ,v :split<CR>
+nnoremap ,V :vsplit<CR>
+
+" ,T = Delete all Trailing space in file
+nnoremap ,T :%s/\s\+$//<CR>
+
+" ============================================================================
+" IDE actions
+" ============================================================================
+
+" change tabs using \[ or \[
+nnoremap \[ :action PreviousTab<CR>
+nnoremap \] :action NextTab<CR>
+
+nnoremap <C-f> :action FindInPath<CR>
+nnoremap ,t :action GotoFile<CR>
+nnoremap ,d :action GotoDeclaration<CR>
+nnoremap ,a :action SelectInProjectView<CR>

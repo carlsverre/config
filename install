@@ -13,6 +13,7 @@ install_dotfile ctags
 install_dotfile dunstrc .config/dunstrc
 install_dotfile gitconfig
 install_dotfile gitignore
+install_dotfile ideavimrc
 install_dotfile i3 .config/i3
 install_dotfile i3blocks .config/i3blocks
 install_dotfile sift.conf
