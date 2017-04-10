@@ -33,5 +33,6 @@ nnoremap \] :action NextTab<CR>
 
 nnoremap <C-f> :action FindInPath<CR>
 nnoremap ,t :action GotoFile<CR>
+nnoremap ,g :action GotoSymbol<CR>
 nnoremap ,d :action GotoDeclaration<CR>
 nnoremap ,a :action SelectInProjectView<CR>

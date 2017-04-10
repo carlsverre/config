@@ -105,6 +105,8 @@ let
       sqlite
       file
       tree
+      apg
+      postgresql
     ];
   };
 
