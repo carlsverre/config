@@ -22,6 +22,7 @@ set softtabstop=4                   " Number of spaces that a <Tab> counts for
 set expandtab                       " use spaces instead of tabs
 set autoindent                      " auto indent
 set smartindent                     " use vim smart indenting
+set backupcopy=yes                  " always write out a new file and then copy it over the original on save
 
 " Ignore these files when completing names
 set wildignore+=.svn,CVS,.git,*.o,*.a,*.class,*.mo
