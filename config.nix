@@ -64,6 +64,7 @@ let
       slack
       skype
       spotify
+      firefox
       (google-chrome.override {
         channel = "stable";
         pulseSupport = true;
@@ -89,6 +90,7 @@ let
       p7zip
       nvim
       gcc
+      libstdcxx5
       awscli
       gdb
       ncurses
@@ -172,6 +174,7 @@ in
             ipython
             flake8
             virtualenv
+            Fabric
           ];
           linux = [ pylint ];
         };
@@ -184,6 +187,7 @@ in
             ipython
             flake8
             virtualenv
+            Fabric
           ];
           linux = [ pylint ];
         };
