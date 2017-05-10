@@ -92,6 +92,7 @@ let
       gcc
       libstdcxx5
       awscli
+      azure-cli
       gdb
       ncurses
       zip
