@@ -8,6 +8,9 @@ in with node-packages; pkgs.stdenv.mkDerivation {
   nativeBuildInputs = [
     eslint
     eslint-plugin-react
+    eslint-plugin-babel
+    eslint-plugin-import
+    eslint-plugin-flowtype
     babel-eslint
     pkgs.makeWrapper
   ];
