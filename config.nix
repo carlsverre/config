@@ -84,7 +84,6 @@ let
       (ctagsWrapped.ctagsWrapped.override { name = "ctags"; })
       fasd
       gnumake
-      python27Full
       direnv
       unzip
       p7zip
@@ -110,6 +109,7 @@ let
       tree
       apg
       postgresql
+      qtcreator
     ];
   };
 
@@ -124,6 +124,7 @@ let
       xclip
       xorg.xdpyinfo
       xorg.xev
+      mplayer
     ];
   };
 
@@ -148,9 +149,25 @@ let
     glide
   ];
 
+  python2-env = with python27Packages; pkg-set {
+    all = [
+      python27Full
+      ipython
+      flake8
+      virtualenv
+      Fabric
+    ];
+    linux = [ pylint ];
+  };
+
 in
   rec {
     allowUnfree = true;
+
+    firefox = {
+      enableAdobeFlash = true;
+      enableAdobeFlashDRM = true;
+    };
 
     packageOverrides = pkgs : rec {
       dev-env = pkgs.buildEnv {
@@ -165,33 +182,8 @@ in
           ++ x11-tools
           ++ music-apps
           ++ go-env
-          ++ node-env;
-      };
-
-      python2-tools = pkgs.buildEnv {
-        name = "python2-tools";
-        paths = with python27Packages; pkg-set {
-          all = [
-            ipython
-            flake8
-            virtualenv
-            Fabric
-          ];
-          linux = [ pylint ];
-        };
-      };
-
-      python3-tools = pkgs.buildEnv {
-        name = "python3-tools";
-        paths = with python35Packages; pkg-set {
-          all = [
-            ipython
-            flake8
-            virtualenv
-            Fabric
-          ];
-          linux = [ pylint ];
-        };
+          ++ node-env
+          ++ python2-env;
       };
     };
   }
