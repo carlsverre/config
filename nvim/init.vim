@@ -121,6 +121,8 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 autocmd FileType cpp nmap <buffer> <silent> <Leader>d <C-]>
 
+au BufWritePost *.re silent! ReasonPrettyPrint
+
 "------  Python Stuff  ------"
 let g:python_highlight_all=1
 
@@ -337,6 +339,7 @@ let g:neomake_serialize_abort_on_error = 1
 let g:neomake_python_enabled_makers = ['flake8']
 let g:neomake_go_enabled_makers = ['go', 'golint', 'govet']
 let g:neomake_javascript_enabled_makers = ['flow', 'eslint']
+let g:neomake_reason_enabled_makers = ['merlin']
 
 " when switching/opening a JS buffer, set neomake's eslint path, and enable it as a maker
 au BufEnter *.js let b:neomake_javascript_eslint_exe = nrun#Which('eslint')

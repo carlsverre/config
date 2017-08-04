@@ -95,8 +95,6 @@ let
       gdb
       ncurses
       zip
-      ocaml
-      ninja
     ];
 
     linux = [
@@ -143,6 +141,12 @@ let
     flow
   ];
 
+  ocaml-env = [
+    ocaml
+    ocamlPackages.merlin
+    ocamlPackages.reason
+  ];
+
   go-env = [
     go
     gotools
@@ -185,6 +189,7 @@ in
           ++ music-apps
           ++ go-env
           ++ node-env
+          ++ ocaml-env
           ++ python2-env;
       };
     };

@@ -48,6 +48,9 @@ in
           { name = "deoplete-go"; }
           { name = "vim-go"; }
 
+          # reason
+          { name = "vim-reason"; }
+
           # terraform
           { name = "vim-terraform"; }
 

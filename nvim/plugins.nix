@@ -228,6 +228,17 @@ in {
 
   };
 
+  vim-reason = buildVimPluginFrom2Nix { # created by nix#NixDerivation
+    name = "vim-reason-2017-07-25";
+    src = fetchgit {
+      url = "https://github.com/reasonml-editor/vim-reason";
+      rev = "d4c09cfc3c00ec265e207ea06893a1a4441af1d0";
+      sha256 = "1slk5vdgvk42hh24ls7aqlyhp8v0j9irb1rw9y8h88zjh6m8rgyx";
+    };
+    dependencies = [];
+
+  };
+
   nerdtree = buildVimPluginFrom2Nix { # created by nix#NixDerivation
     name = "nerdtree-2017-07-29";
     src = fetchgit {
