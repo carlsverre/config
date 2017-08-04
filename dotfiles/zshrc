@@ -6,6 +6,7 @@ source ~/.zsh/prompt
 source ~/.zsh/fasd
 source ~/.zsh/fzf
 source ~/.zsh/direnv
+source ~/.zsh/node
 
 if [ -f ~/.localrc ]; then
     . ~/.localrc

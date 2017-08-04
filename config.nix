@@ -95,6 +95,8 @@ let
       gdb
       ncurses
       zip
+      ocaml
+      ninja
     ];
 
     linux = [

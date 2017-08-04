@@ -7,21 +7,22 @@ ROOTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source $ROOTDIR/lib.sh
 
 # install all of our dotfiles
+install_dotfile Xresources
 install_dotfile autorandr
 install_dotfile compton.conf
 install_dotfile ctags
 install_dotfile dunstrc .config/dunstrc
 install_dotfile gitconfig
 install_dotfile gitignore
-install_dotfile ideavimrc
 install_dotfile i3 .config/i3
 install_dotfile i3blocks .config/i3blocks
+install_dotfile ideavimrc
+install_dotfile npmrc
 install_dotfile sift.conf
 install_dotfile slate
 install_dotfile vimrc_basic
-install_dotfile Xresources
-install_dotfile zshrc
 install_dotfile zsh
+install_dotfile zshrc
 
 # link this repo into home as .nixpkgs
 safelink "$HOME/.nixpkgs" "$ROOTDIR"

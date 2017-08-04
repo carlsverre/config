@@ -1,7 +1,10 @@
 { pkgs }:
 
 let
-  node-packages = with pkgs; import ./default.nix { inherit pkgs system; };
+  node-packages = with pkgs; import ./default.nix {
+    inherit pkgs system;
+    nodejs = nodejs;
+  };
 
 in with node-packages; pkgs.stdenv.mkDerivation {
   name = "eslint-wrapped";
@@ -27,6 +30,9 @@ in with node-packages; pkgs.stdenv.mkDerivation {
     }
 
     installDependency ${eslint-plugin-react}
+    installDependency ${eslint-plugin-babel}
+    installDependency ${eslint-plugin-import}
+    installDependency ${eslint-plugin-flowtype}
     installDependency ${babel-eslint}
 
     ln -s ${eslint}/bin/eslint $out/bin/
