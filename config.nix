@@ -136,7 +136,7 @@ let
   };
 
   node-env = [
-    nodejs
+    nodejs-8_x
     eslint
     flow
   ];
