@@ -5,7 +5,6 @@
 exec --no-startup-id xrandr --dpi 144
 exec --no-startup-id feh --randomize --bg-fill ~/.wallpapers/*
 exec --no-startup-id xset r rate 200 50
-exec --no-startup-id synclient TouchpadOff=1
 exec --no-startup-id compton --config ~/.compton.conf &
 
 # disable window titles and add simple border for i3-gaps
