@@ -353,15 +353,11 @@ nmap <Leader><Leader> :lopen<CR>
 let g:javascript_plugin_flow = 1
 
 "------  Grepper  ------"
-let g:grepper = {
-    \ 'tools': ['git', 'sift'],
-    \ 'open':  0,
-    \ 'jump':  1,
-    \ 'sift': {
-    \   'grepprg':    'sift --git --binary-skip -s -n --no-color --no-group $* .',
-    \   'grepformat': '%f:%l:%m',
-    \   'escape':     '\+*^$()[].',
-    \ }}
+let g:grepper               = {}
+let g:grepper.tools         = ['git', 'sift']
+let g:grepper.jump          = 1
+let g:grepper.next_tool     = '<leader>g'
+let g:grepper.simple_prompt = 1
 
 nmap <leader>g :Grepper -tool git -nojump -open -switch<CR>
 nmap <leader>G :Grepper -tool git -nojump -open -switch -cword -noprompt<CR>

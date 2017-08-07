@@ -177,8 +177,8 @@ in {
     name = "vim-grepper-2017-07-27";
     src = fetchgit {
       url = "https://github.com/mhinz/vim-grepper";
-      rev = "c12ea4d2234d561e0588061e710ef60faf9b5795";
-      sha256 = "10qwaywcffspbr2l9sx5010s6szcixwylicf4lncwg60v7n6ikhz";
+      rev = "ab3c715c1507c2f4386cbabe9966ccdcf2858754";
+      sha256 = "0xcmi6gwmavdqm8hy5xv6a0320y4mbbqknvz6glyh0b58g3ih87d";
     };
     dependencies = [];
 
