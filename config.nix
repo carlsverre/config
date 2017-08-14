@@ -45,6 +45,7 @@ let
       tcpdump
       wget
       bind
+      traceroute
     ];
   };
 
@@ -166,6 +167,10 @@ let
     linux = [ pylint ];
   };
 
+  scala-env = [
+    scala
+  ];
+
 in
   rec {
     allowUnfree = true;
@@ -190,7 +195,8 @@ in
           ++ go-env
           ++ node-env
           ++ ocaml-env
-          ++ python2-env;
+          ++ python2-env
+          ++ scala-env;
       };
     };
   }
