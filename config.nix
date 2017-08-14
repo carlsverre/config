@@ -169,6 +169,7 @@ let
 
   scala-env = [
     scala
+    sbt
   ];
 
 in
