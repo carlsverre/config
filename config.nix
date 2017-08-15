@@ -96,6 +96,7 @@ let
       gdb
       ncurses
       zip
+      docker_compose
     ];
 
     linux = [
