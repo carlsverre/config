@@ -158,7 +158,9 @@ let
 
   python2-env = with python27Packages; pkg-set {
     all = [
-      python27Full
+      (python27Full.withPackages (ps: [
+        ps.setuptools
+      ]))
       ipython
       flake8
       virtualenv
