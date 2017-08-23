@@ -403,3 +403,6 @@ endfunction
 "------  vimoutliner  ------"
 
 autocmd FileType votl setlocal nolist
+
+"------  todo  ------"
+command Todo e ~/journal/today.otl

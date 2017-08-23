@@ -21,3 +21,6 @@ alias s='sift'
 
 # docker
 alias docker-ip="docker inspect -f '{{ .NetworkSettings.IPAddress }}'"
+
+# todo
+alias todo="~/journal/edit"
