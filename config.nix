@@ -65,7 +65,6 @@ let
       slack
       skype
       spotify
-      firefox
       (google-chrome.override {
         channel = "stable";
         pulseSupport = true;
