@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+unset PYTHONPATH
 export DIR="$PWD"
 cd $HOME/dev/psyduck/
 COMMAND="cd $DIR && psy"
