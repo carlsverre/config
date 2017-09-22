@@ -65,6 +65,8 @@ let
       slack
       skype
       spotify
+      qtcreator
+      gcolor2
       (google-chrome.override {
         channel = "stable";
         pulseSupport = true;
@@ -102,7 +104,6 @@ let
       sift
       fzf
       mysql
-      gcolor2
       rlwrap
       imagemagick
       sqlite
@@ -110,7 +111,7 @@ let
       tree
       apg
       postgresql
-      qtcreator
+      rxvt_unicode.terminfo
     ];
   };
 
