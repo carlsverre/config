@@ -41,7 +41,6 @@ let
       curl
       ipcalc
       nmap
-      openvpn
       tcpdump
       wget
       bind
@@ -54,6 +53,7 @@ let
       keybase
       kbfs
       openssl
+      openvpn
       gnupg
     ];
   };
@@ -129,13 +129,6 @@ let
     ];
   };
 
-  music-apps = pkg-set {
-    linux = [
-      ncmpcpp
-      mpc_cli
-    ];
-  };
-
   node-env = [
     nodejs-8_x
     eslint
@@ -174,6 +167,12 @@ let
     sbt
   ];
 
+  base-tools =
+    nix-tools
+    ++ linux-tools
+    ++ network-tools
+    ++ dev-tools;
+
 in
   rec {
     allowUnfree = true;
@@ -183,18 +182,19 @@ in
       enableAdobeFlashDRM = true;
     };
 
-    packageOverrides = pkgs : rec {
+    packageOverrides = pkgs : {
+      base-env = pkgs.buildEnv {
+        name = "base-env";
+        paths = base-tools;
+      };
+
       dev-env = pkgs.buildEnv {
         name = "dev-env";
         paths =
-          nix-tools
-          ++ linux-tools
-          ++ network-tools
+          base-tools
           ++ security-tools
           ++ desktop-apps
-          ++ dev-tools
           ++ x11-tools
-          ++ music-apps
           ++ go-env
           ++ node-env
           ++ ocaml-env
