@@ -112,6 +112,7 @@ let
       apg
       postgresql
       rxvt_unicode.terminfo
+      lm_sensors
     ];
   };
 
