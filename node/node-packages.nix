@@ -49,13 +49,13 @@ let
         sha1 = "e8bd0efee58fcff6f8f94510a0a554bbfa235449";
       };
     };
-    "debug-2.6.8" = {
+    "debug-3.0.1" = {
       name = "debug";
       packageName = "debug";
-      version = "2.6.8";
+      version = "3.0.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/debug/-/debug-2.6.8.tgz";
-        sha1 = "e731531ca2ede27d188222427da17821d68ff4fc";
+        url = "https://registry.npmjs.org/debug/-/debug-3.0.1.tgz";
+        sha512 = "3rnqa9m5ma6whhiailgppfhnm4gkv4brw9619yvxz59di3g306svl7na9qj6n9l887ra3fgr80b0xij0vjvfwpbk9zvpags5plmqxga";
       };
     };
     "doctrine-2.0.0" = {
@@ -76,13 +76,13 @@ let
         sha1 = "3d63c3edfda02e06e01a452ad88caacc7cdcb6e8";
       };
     };
-    "espree-3.5.0" = {
+    "espree-3.5.1" = {
       name = "espree";
       packageName = "espree";
-      version = "3.5.0";
+      version = "3.5.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/espree/-/espree-3.5.0.tgz";
-        sha1 = "98358625bdd055861ea27e2867ea729faf463d8d";
+        url = "https://registry.npmjs.org/espree/-/espree-3.5.1.tgz";
+        sha1 = "0c988b8ab46db53100a1954ae4ba995ddd27d87e";
       };
     };
     "esquery-1.0.0" = {
@@ -166,13 +166,13 @@ let
         sha1 = "9218b9b2b928a238b13dc4fb6b6d576f231453ea";
       };
     };
-    "inquirer-3.2.3" = {
+    "inquirer-3.3.0" = {
       name = "inquirer";
       packageName = "inquirer";
-      version = "3.2.3";
+      version = "3.3.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/inquirer/-/inquirer-3.2.3.tgz";
-        sha512 = "1dncd0lws3fdvpgxzhi7y4lcfijrnhphn9bzxlhdl3c2aifqff1v6c6i85niwg9fim26ja1x0d6rfgy5g1dgqyh86g363d955pcmk85";
+        url = "https://registry.npmjs.org/inquirer/-/inquirer-3.3.0.tgz";
+        sha512 = "1wsmzzva3rfjb4bfks7ba2nvha9ziwgq2kag6xxibc5cc6mz19xbgj4fm3a7ghvfbfx4am0x13ibc8j2s5m3sv12nph44rq56gnvv47";
       };
     };
     "is-resolvable-1.0.0" = {
@@ -265,13 +265,13 @@ let
         sha1 = "365417dede44430d1c11af61027facf074bdfc53";
       };
     };
-    "pluralize-4.0.0" = {
+    "pluralize-7.0.0" = {
       name = "pluralize";
       packageName = "pluralize";
-      version = "4.0.0";
+      version = "7.0.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/pluralize/-/pluralize-4.0.0.tgz";
-        sha1 = "59b708c1c0190a2f692f1c7618c446b052fd1762";
+        url = "https://registry.npmjs.org/pluralize/-/pluralize-7.0.0.tgz";
+        sha512 = "2ihaln20qjx82jx73wgzirbyp8mfmhxr75am1h0w8n5hy2gsbgvw9dricv7h57ycxzax84bma96wjscmdszs5mr2lsyxpfjvhwl2601";
       };
     };
     "progress-2.0.0" = {
@@ -868,13 +868,13 @@ let
         sha1 = "b5243d8f3ec1aa35f1364605bc0d1036e30ab69f";
       };
     };
-    "ansi-escapes-2.0.0" = {
+    "ansi-escapes-3.0.0" = {
       name = "ansi-escapes";
       packageName = "ansi-escapes";
-      version = "2.0.0";
+      version = "3.0.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/ansi-escapes/-/ansi-escapes-2.0.0.tgz";
-        sha1 = "5bae52be424878dd9783e8910e3fc2922e83c81b";
+        url = "https://registry.npmjs.org/ansi-escapes/-/ansi-escapes-3.0.0.tgz";
+        sha512 = "06szfav8g7xywvqsis16nnkjqs2snhv37r4m53l1ax8k2sahvqv9id2klam32jajqd08ylw8g9wbcjr971igx6vh8idan76drrjby9v";
       };
     };
     "cli-cursor-2.1.0" = {
@@ -895,13 +895,13 @@ let
         sha1 = "ff19ede8a9a5e579324147b0c11f0fbcbabed639";
       };
     };
-    "external-editor-2.0.4" = {
+    "external-editor-2.0.5" = {
       name = "external-editor";
       packageName = "external-editor";
-      version = "2.0.4";
+      version = "2.0.5";
       src = fetchurl {
-        url = "https://registry.npmjs.org/external-editor/-/external-editor-2.0.4.tgz";
-        sha1 = "1ed9199da9cbfe2ef2f7a31b2fde8b0d12368972";
+        url = "https://registry.npmjs.org/external-editor/-/external-editor-2.0.5.tgz";
+        sha512 = "3znpqavb7rxmw74p6hnq963agimzsm5r524jrpy9v6sbbhbbk77qhklgkr65jirq0a58lsz8jgvwy9q4wfmwl7ahj6nzrckhpmyij1j";
       };
     };
     "figures-2.0.0" = {
@@ -1021,13 +1021,13 @@ let
         sha512 = "3c44v9rz6j4z6i7gj2v3wmfcqv5i47psysgd1p4jcgz114vfk99fif1n1r08jbsdkp4g3smv1wx7x4ikwa7q9dp5i1bc77la17s2kdw";
       };
     };
-    "tmp-0.0.31" = {
+    "tmp-0.0.33" = {
       name = "tmp";
       packageName = "tmp";
-      version = "0.0.31";
+      version = "0.0.33";
       src = fetchurl {
-        url = "https://registry.npmjs.org/tmp/-/tmp-0.0.31.tgz";
-        sha1 = "8f38ab9438e17315e5dbd8b3657e8bfb277ae4a7";
+        url = "https://registry.npmjs.org/tmp/-/tmp-0.0.33.tgz";
+        sha512 = "0drg2bck1cj8677rgs1l98v7vqaxawcqh6ja87qilwnd719l5y0lzv5ssn3pcwa37fdbg4188y6x15a90vkllyvfpd9v7fai2b8j44d";
       };
     };
     "os-tmpdir-1.0.2" = {
@@ -1273,13 +1273,13 @@ let
         sha1 = "2797dfc3126182e3a95e3dfbb2e893ddd7456154";
       };
     };
-    "eslint-4.6.1" = {
+    "eslint-4.7.2" = {
       name = "eslint";
       packageName = "eslint";
-      version = "4.6.1";
+      version = "4.7.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/eslint/-/eslint-4.6.1.tgz";
-        sha1 = "ddc7fc7fd70bf93205b0b3449bb16a1e9e7d4950";
+        url = "https://registry.npmjs.org/eslint/-/eslint-4.7.2.tgz";
+        sha1 = "ff6f5f5193848a27ee9b627be3e73fb9cb5e662e";
       };
     };
     "function-bind-1.1.1" = {
@@ -1505,6 +1505,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/contains-path/-/contains-path-0.1.0.tgz";
         sha1 = "fe8cf184ff6670b6baef01a9d4861a5cbec4120a";
+      };
+    };
+    "debug-2.6.9" = {
+      name = "debug";
+      packageName = "debug";
+      version = "2.6.9";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/debug/-/debug-2.6.9.tgz";
+        sha512 = "0q0fsr8bk1m83z0am0h2xn09vyfcf18adscxms8hclznwks1aihsisd96h8npx0idq5wwnypnqrkyk25m5d9zh3dk7rjs29nybc8bkc";
       };
     };
     "doctrine-1.5.0" = {
@@ -1822,15 +1831,6 @@ let
         sha512 = "19w0r7ng153w5ylsbk6pbhmpm667xnz9626yf2wgv3i26rdqy016z4f6ba060q2cyyp42kidb2pfx784yh22r8805ykhrdxr6354xvr";
       };
     };
-    "debug-3.0.1" = {
-      name = "debug";
-      packageName = "debug";
-      version = "3.0.1";
-      src = fetchurl {
-        url = "https://registry.npmjs.org/debug/-/debug-3.0.1.tgz";
-        sha512 = "3rnqa9m5ma6whhiailgppfhnm4gkv4brw9619yvxz59di3g306svl7na9qj6n9l887ra3fgr80b0xij0vjvfwpbk9zvpags5plmqxga";
-      };
-    };
     "globals-10.1.0" = {
       name = "globals";
       packageName = "globals";
@@ -1882,10 +1882,10 @@ in
   eslint = nodeEnv.buildNodePackage {
     name = "eslint";
     packageName = "eslint";
-    version = "4.6.1";
+    version = "4.7.2";
     src = fetchurl {
-      url = "https://registry.npmjs.org/eslint/-/eslint-4.6.1.tgz";
-      sha1 = "ddc7fc7fd70bf93205b0b3449bb16a1e9e7d4950";
+      url = "https://registry.npmjs.org/eslint/-/eslint-4.7.2.tgz";
+      sha1 = "ff6f5f5193848a27ee9b627be3e73fb9cb5e662e";
     };
     dependencies = [
       (sources."ajv-5.2.2" // {
@@ -1972,7 +1972,7 @@ in
           })
         ];
       })
-      (sources."debug-2.6.8" // {
+      (sources."debug-3.0.1" // {
         dependencies = [
           sources."ms-2.0.0"
         ];
@@ -1991,7 +1991,7 @@ in
           })
         ];
       })
-      (sources."espree-3.5.0" // {
+      (sources."espree-3.5.1" // {
         dependencies = [
           sources."acorn-5.1.2"
           (sources."acorn-jsx-3.0.1" // {
@@ -2064,9 +2064,9 @@ in
       sources."globals-9.18.0"
       sources."ignore-3.3.5"
       sources."imurmurhash-0.1.4"
-      (sources."inquirer-3.2.3" // {
+      (sources."inquirer-3.3.0" // {
         dependencies = [
-          sources."ansi-escapes-2.0.0"
+          sources."ansi-escapes-3.0.0"
           (sources."cli-cursor-2.1.0" // {
             dependencies = [
               (sources."restore-cursor-2.0.0" // {
@@ -2082,11 +2082,11 @@ in
             ];
           })
           sources."cli-width-2.2.0"
-          (sources."external-editor-2.0.4" // {
+          (sources."external-editor-2.0.5" // {
             dependencies = [
               sources."iconv-lite-0.4.19"
               sources."jschardet-1.5.1"
-              (sources."tmp-0.0.31" // {
+              (sources."tmp-0.0.33" // {
                 dependencies = [
                   sources."os-tmpdir-1.0.2"
                 ];
@@ -2167,7 +2167,7 @@ in
         ];
       })
       sources."path-is-inside-1.0.2"
-      sources."pluralize-4.0.0"
+      sources."pluralize-7.0.0"
       sources."progress-2.0.0"
       (sources."require-uncached-1.0.3" // {
         dependencies = [
@@ -2313,7 +2313,7 @@ in
           })
         ];
       })
-      (sources."eslint-4.6.1" // {
+      (sources."eslint-4.7.2" // {
         dependencies = [
           (sources."ajv-5.2.2" // {
             dependencies = [
@@ -2399,7 +2399,7 @@ in
               })
             ];
           })
-          (sources."debug-2.6.8" // {
+          (sources."debug-3.0.1" // {
             dependencies = [
               sources."ms-2.0.0"
             ];
@@ -2413,7 +2413,7 @@ in
               })
             ];
           })
-          (sources."espree-3.5.0" // {
+          (sources."espree-3.5.1" // {
             dependencies = [
               sources."acorn-5.1.2"
               (sources."acorn-jsx-3.0.1" // {
@@ -2486,9 +2486,9 @@ in
           sources."globals-9.18.0"
           sources."ignore-3.3.5"
           sources."imurmurhash-0.1.4"
-          (sources."inquirer-3.2.3" // {
+          (sources."inquirer-3.3.0" // {
             dependencies = [
-              sources."ansi-escapes-2.0.0"
+              sources."ansi-escapes-3.0.0"
               (sources."cli-cursor-2.1.0" // {
                 dependencies = [
                   (sources."restore-cursor-2.0.0" // {
@@ -2504,11 +2504,11 @@ in
                 ];
               })
               sources."cli-width-2.2.0"
-              (sources."external-editor-2.0.4" // {
+              (sources."external-editor-2.0.5" // {
                 dependencies = [
                   sources."iconv-lite-0.4.19"
                   sources."jschardet-1.5.1"
-                  (sources."tmp-0.0.31" // {
+                  (sources."tmp-0.0.33" // {
                     dependencies = [
                       sources."os-tmpdir-1.0.2"
                     ];
@@ -2589,7 +2589,7 @@ in
             ];
           })
           sources."path-is-inside-1.0.2"
-          sources."pluralize-4.0.0"
+          sources."pluralize-7.0.0"
           sources."progress-2.0.0"
           (sources."require-uncached-1.0.3" // {
             dependencies = [
@@ -2662,7 +2662,7 @@ in
       sha1 = "79202a0e35757dd92780919b2336f1fa2fe53c1e";
     };
     dependencies = [
-      (sources."eslint-4.6.1" // {
+      (sources."eslint-4.7.2" // {
         dependencies = [
           (sources."ajv-5.2.2" // {
             dependencies = [
@@ -2748,7 +2748,7 @@ in
               })
             ];
           })
-          (sources."debug-2.6.8" // {
+          (sources."debug-3.0.1" // {
             dependencies = [
               sources."ms-2.0.0"
             ];
@@ -2767,7 +2767,7 @@ in
               })
             ];
           })
-          (sources."espree-3.5.0" // {
+          (sources."espree-3.5.1" // {
             dependencies = [
               sources."acorn-5.1.2"
               (sources."acorn-jsx-3.0.1" // {
@@ -2840,9 +2840,9 @@ in
           sources."globals-9.18.0"
           sources."ignore-3.3.5"
           sources."imurmurhash-0.1.4"
-          (sources."inquirer-3.2.3" // {
+          (sources."inquirer-3.3.0" // {
             dependencies = [
-              sources."ansi-escapes-2.0.0"
+              sources."ansi-escapes-3.0.0"
               (sources."cli-cursor-2.1.0" // {
                 dependencies = [
                   (sources."restore-cursor-2.0.0" // {
@@ -2858,11 +2858,11 @@ in
                 ];
               })
               sources."cli-width-2.2.0"
-              (sources."external-editor-2.0.4" // {
+              (sources."external-editor-2.0.5" // {
                 dependencies = [
                   sources."iconv-lite-0.4.19"
                   sources."jschardet-1.5.1"
-                  (sources."tmp-0.0.31" // {
+                  (sources."tmp-0.0.33" // {
                     dependencies = [
                       sources."os-tmpdir-1.0.2"
                     ];
@@ -2943,7 +2943,7 @@ in
             ];
           })
           sources."path-is-inside-1.0.2"
-          sources."pluralize-4.0.0"
+          sources."pluralize-7.0.0"
           sources."progress-2.0.0"
           (sources."require-uncached-1.0.3" // {
             dependencies = [
@@ -3018,7 +3018,7 @@ in
     dependencies = [
       sources."builtin-modules-1.1.1"
       sources."contains-path-0.1.0"
-      (sources."debug-2.6.8" // {
+      (sources."debug-2.6.9" // {
         dependencies = [
           sources."ms-2.0.0"
         ];
@@ -3132,7 +3132,7 @@ in
           })
         ];
       })
-      (sources."eslint-4.6.1" // {
+      (sources."eslint-4.7.2" // {
         dependencies = [
           (sources."ajv-5.2.2" // {
             dependencies = [
@@ -3218,6 +3218,11 @@ in
               })
             ];
           })
+          (sources."debug-3.0.1" // {
+            dependencies = [
+              sources."ms-2.0.0"
+            ];
+          })
           (sources."doctrine-2.0.0" // {
             dependencies = [
               sources."isarray-1.0.0"
@@ -3232,7 +3237,7 @@ in
               })
             ];
           })
-          (sources."espree-3.5.0" // {
+          (sources."espree-3.5.1" // {
             dependencies = [
               sources."acorn-5.1.2"
               (sources."acorn-jsx-3.0.1" // {
@@ -3305,9 +3310,9 @@ in
           sources."globals-9.18.0"
           sources."ignore-3.3.5"
           sources."imurmurhash-0.1.4"
-          (sources."inquirer-3.2.3" // {
+          (sources."inquirer-3.3.0" // {
             dependencies = [
-              sources."ansi-escapes-2.0.0"
+              sources."ansi-escapes-3.0.0"
               (sources."cli-cursor-2.1.0" // {
                 dependencies = [
                   (sources."restore-cursor-2.0.0" // {
@@ -3323,11 +3328,11 @@ in
                 ];
               })
               sources."cli-width-2.2.0"
-              (sources."external-editor-2.0.4" // {
+              (sources."external-editor-2.0.5" // {
                 dependencies = [
                   sources."iconv-lite-0.4.19"
                   sources."jschardet-1.5.1"
-                  (sources."tmp-0.0.31" // {
+                  (sources."tmp-0.0.33" // {
                     dependencies = [
                       sources."os-tmpdir-1.0.2"
                     ];
@@ -3398,7 +3403,7 @@ in
             ];
           })
           sources."path-is-inside-1.0.2"
-          sources."pluralize-4.0.0"
+          sources."pluralize-7.0.0"
           sources."progress-2.0.0"
           (sources."require-uncached-1.0.3" // {
             dependencies = [
@@ -3472,7 +3477,7 @@ in
     };
     dependencies = [
       sources."lodash-4.17.4"
-      (sources."eslint-4.6.1" // {
+      (sources."eslint-4.7.2" // {
         dependencies = [
           (sources."ajv-5.2.2" // {
             dependencies = [
@@ -3558,7 +3563,7 @@ in
               })
             ];
           })
-          (sources."debug-2.6.8" // {
+          (sources."debug-3.0.1" // {
             dependencies = [
               sources."ms-2.0.0"
             ];
@@ -3577,7 +3582,7 @@ in
               })
             ];
           })
-          (sources."espree-3.5.0" // {
+          (sources."espree-3.5.1" // {
             dependencies = [
               sources."acorn-5.1.2"
               (sources."acorn-jsx-3.0.1" // {
@@ -3650,9 +3655,9 @@ in
           sources."globals-9.18.0"
           sources."ignore-3.3.5"
           sources."imurmurhash-0.1.4"
-          (sources."inquirer-3.2.3" // {
+          (sources."inquirer-3.3.0" // {
             dependencies = [
-              sources."ansi-escapes-2.0.0"
+              sources."ansi-escapes-3.0.0"
               (sources."cli-cursor-2.1.0" // {
                 dependencies = [
                   (sources."restore-cursor-2.0.0" // {
@@ -3668,11 +3673,11 @@ in
                 ];
               })
               sources."cli-width-2.2.0"
-              (sources."external-editor-2.0.4" // {
+              (sources."external-editor-2.0.5" // {
                 dependencies = [
                   sources."iconv-lite-0.4.19"
                   sources."jschardet-1.5.1"
-                  (sources."tmp-0.0.31" // {
+                  (sources."tmp-0.0.33" // {
                     dependencies = [
                       sources."os-tmpdir-1.0.2"
                     ];
@@ -3752,7 +3757,7 @@ in
             ];
           })
           sources."path-is-inside-1.0.2"
-          sources."pluralize-4.0.0"
+          sources."pluralize-7.0.0"
           sources."progress-2.0.0"
           (sources."require-uncached-1.0.3" // {
             dependencies = [
