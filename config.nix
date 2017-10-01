@@ -149,6 +149,7 @@ let
     golint
     go2nix
     glide
+    dep
   ];
 
   python2-env = with python27Packages; pkg-set {
