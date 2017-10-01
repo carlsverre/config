@@ -4,5 +4,6 @@
     "eslint-plugin-babel",
     "eslint-plugin-import",
     "eslint-plugin-flowtype",
-    "babel-eslint"
+    "babel-eslint",
+    "prettier"
 ]

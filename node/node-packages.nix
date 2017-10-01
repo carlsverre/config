@@ -4,13 +4,13 @@
 
 let
   sources = {
-    "ajv-5.2.2" = {
+    "ajv-5.2.3" = {
       name = "ajv";
       packageName = "ajv";
-      version = "5.2.2";
+      version = "5.2.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/ajv/-/ajv-5.2.2.tgz";
-        sha1 = "47c68d69e86f5d953103b0074a9430dc63da5e39";
+        url = "https://registry.npmjs.org/ajv/-/ajv-5.2.3.tgz";
+        sha1 = "c06f598778c44c6b161abafe3466b81ad1814ed2";
       };
     };
     "babel-code-frame-6.26.0" = {
@@ -49,13 +49,13 @@ let
         sha1 = "e8bd0efee58fcff6f8f94510a0a554bbfa235449";
       };
     };
-    "debug-3.0.1" = {
+    "debug-3.1.0" = {
       name = "debug";
       packageName = "debug";
-      version = "3.0.1";
+      version = "3.1.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/debug/-/debug-3.0.1.tgz";
-        sha512 = "3rnqa9m5ma6whhiailgppfhnm4gkv4brw9619yvxz59di3g306svl7na9qj6n9l887ra3fgr80b0xij0vjvfwpbk9zvpags5plmqxga";
+        url = "https://registry.npmjs.org/debug/-/debug-3.1.0.tgz";
+        sha512 = "3g1hqsahr1ks2kpvdxrwzr57fj90nnr0hvwwrw8yyyzcv3i11sym8zwibxx67bl1mln0acddrzpkkdjjxnc6n2cm9fazmgzzsl1fzrr";
       };
     };
     "doctrine-2.0.0" = {
@@ -319,13 +319,13 @@ let
         sha1 = "3c531942e908c2697c0ec344858c286c7ca0a60a";
       };
     };
-    "table-4.0.1" = {
+    "table-4.0.2" = {
       name = "table";
       packageName = "table";
-      version = "4.0.1";
+      version = "4.0.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/table/-/table-4.0.1.tgz";
-        sha1 = "a8116c133fac2c61f4a420ab6cdf5c4d61f0e435";
+        url = "https://registry.npmjs.org/table/-/table-4.0.2.tgz";
+        sha512 = "2q47avrxblc0an2g5ij8sd7ss2bqhdxy2949dk774gyg9vmsivg7fwyn885v2va72sxiv5k59ifvi3hg4ra6z95lr8in6sjyw008jai";
       };
     };
     "text-table-0.2.0" = {
@@ -679,13 +679,13 @@ let
         sha1 = "45e37fb39e8da3f25baee3ff5369e2bb5f22017a";
       };
     };
-    "flat-cache-1.2.2" = {
+    "flat-cache-1.3.0" = {
       name = "flat-cache";
       packageName = "flat-cache";
-      version = "1.2.2";
+      version = "1.3.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/flat-cache/-/flat-cache-1.2.2.tgz";
-        sha1 = "fa86714e72c21db88601761ecf2f555d1abc6b96";
+        url = "https://registry.npmjs.org/flat-cache/-/flat-cache-1.3.0.tgz";
+        sha1 = "d3030b32b38154f4e3b7e9c709f490f7ef97c481";
       };
     };
     "circular-json-0.3.3" = {
@@ -1219,31 +1219,22 @@ let
         sha1 = "ed0317c322064f79466c02966bddb605ab37d998";
       };
     };
-    "ajv-4.11.8" = {
-      name = "ajv";
-      packageName = "ajv";
-      version = "4.11.8";
-      src = fetchurl {
-        url = "https://registry.npmjs.org/ajv/-/ajv-4.11.8.tgz";
-        sha1 = "82ffb02b29e662ae53bdc20af15947706739c536";
-      };
-    };
-    "ajv-keywords-1.5.1" = {
+    "ajv-keywords-2.1.0" = {
       name = "ajv-keywords";
       packageName = "ajv-keywords";
-      version = "1.5.1";
+      version = "2.1.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/ajv-keywords/-/ajv-keywords-1.5.1.tgz";
-        sha1 = "314dd0a4b3368fad3dfcdc54ede6171b886daf3c";
+        url = "https://registry.npmjs.org/ajv-keywords/-/ajv-keywords-2.1.0.tgz";
+        sha1 = "a296e17f7bfae7c1ce4f7e0de53d29cb32162df0";
       };
     };
-    "slice-ansi-0.0.4" = {
+    "slice-ansi-1.0.0" = {
       name = "slice-ansi";
       packageName = "slice-ansi";
-      version = "0.0.4";
+      version = "1.0.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/slice-ansi/-/slice-ansi-0.0.4.tgz";
-        sha1 = "edbf8903f66f7ce2f8eafd6ceed65e264c831b35";
+        url = "https://registry.npmjs.org/slice-ansi/-/slice-ansi-1.0.0.tgz";
+        sha512 = "1xd3zsk02nck4y601rn98n8cicrphaw5bdix278mk1yizmjv9s0wpa6akcqggd7d99c55s3byf4ylqdxkshyfsfnfx7lvwbmq2b3siw";
       };
     };
     "has-1.0.1" = {
@@ -1264,22 +1255,22 @@ let
         sha1 = "e801b1b39985e20fffc87b40e3748080e2dcac7f";
       };
     };
-    "prop-types-15.5.10" = {
+    "prop-types-15.6.0" = {
       name = "prop-types";
       packageName = "prop-types";
-      version = "15.5.10";
+      version = "15.6.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/prop-types/-/prop-types-15.5.10.tgz";
-        sha1 = "2797dfc3126182e3a95e3dfbb2e893ddd7456154";
+        url = "https://registry.npmjs.org/prop-types/-/prop-types-15.6.0.tgz";
+        sha1 = "ceaf083022fc46b4a35f69e13ef75aed0d639856";
       };
     };
-    "eslint-4.7.2" = {
+    "eslint-4.8.0" = {
       name = "eslint";
       packageName = "eslint";
-      version = "4.7.2";
+      version = "4.8.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/eslint/-/eslint-4.7.2.tgz";
-        sha1 = "ff6f5f5193848a27ee9b627be3e73fb9cb5e662e";
+        url = "https://registry.npmjs.org/eslint/-/eslint-4.8.0.tgz";
+        sha1 = "229ef0e354e0e61d837c7a80fdfba825e199815e";
       };
     };
     "function-bind-1.1.1" = {
@@ -1309,13 +1300,13 @@ let
         sha1 = "83a73f2fea569898fb737193c8f873caf6d45c94";
       };
     };
-    "es-abstract-1.8.2" = {
+    "es-abstract-1.9.0" = {
       name = "es-abstract";
       packageName = "es-abstract";
-      version = "1.8.2";
+      version = "1.9.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/es-abstract/-/es-abstract-1.8.2.tgz";
-        sha512 = "0cz5pzkb9xh1askig7mrv990raaa1pym6a8acyyjw405bnzdznck7q9qg2rcybwjq866i6226nq6mijn6kwg5n36r6hr3gjpla71y3n";
+        url = "https://registry.npmjs.org/es-abstract/-/es-abstract-1.9.0.tgz";
+        sha512 = "3frzxsmb5c319c73k3r0zn7djgqbzvnjch99hni35lram09a0q8jlh666m8mjaag9gjnlqjd9gl9xb769gkjd4pb3lhvv58h8kchkcj";
       };
     };
     "foreach-2.0.5" = {
@@ -1381,13 +1372,13 @@ let
         sha1 = "3cc59f00025194b6ab2e38dbae6689256b660572";
       };
     };
-    "fbjs-0.8.15" = {
+    "fbjs-0.8.16" = {
       name = "fbjs";
       packageName = "fbjs";
-      version = "0.8.15";
+      version = "0.8.16";
       src = fetchurl {
-        url = "https://registry.npmjs.org/fbjs/-/fbjs-0.8.15.tgz";
-        sha1 = "4f0695fdfcc16c37c0b07facec8cb4c4091685b9";
+        url = "https://registry.npmjs.org/fbjs/-/fbjs-0.8.16.tgz";
+        sha1 = "5e67432f550dc41b572bf55847b8aca64e5337db";
       };
     };
     "loose-envify-1.3.1" = {
@@ -1882,13 +1873,13 @@ in
   eslint = nodeEnv.buildNodePackage {
     name = "eslint";
     packageName = "eslint";
-    version = "4.7.2";
+    version = "4.8.0";
     src = fetchurl {
-      url = "https://registry.npmjs.org/eslint/-/eslint-4.7.2.tgz";
-      sha1 = "ff6f5f5193848a27ee9b627be3e73fb9cb5e662e";
+      url = "https://registry.npmjs.org/eslint/-/eslint-4.8.0.tgz";
+      sha1 = "229ef0e354e0e61d837c7a80fdfba825e199815e";
     };
     dependencies = [
-      (sources."ajv-5.2.2" // {
+      (sources."ajv-5.2.3" // {
         dependencies = [
           sources."co-4.6.0"
           sources."fast-deep-equal-1.0.0"
@@ -1972,7 +1963,7 @@ in
           })
         ];
       })
-      (sources."debug-3.0.1" // {
+      (sources."debug-3.1.0" // {
         dependencies = [
           sources."ms-2.0.0"
         ];
@@ -2006,7 +1997,7 @@ in
       sources."esutils-2.0.2"
       (sources."file-entry-cache-2.0.0" // {
         dependencies = [
-          (sources."flat-cache-1.2.2" // {
+          (sources."flat-cache-1.3.0" // {
             dependencies = [
               sources."circular-json-0.3.3"
               (sources."del-2.2.2" // {
@@ -2186,32 +2177,14 @@ in
         ];
       })
       sources."strip-json-comments-2.0.1"
-      (sources."table-4.0.1" // {
+      (sources."table-4.0.2" // {
         dependencies = [
-          (sources."ajv-4.11.8" // {
+          sources."ajv-keywords-2.1.0"
+          (sources."slice-ansi-1.0.0" // {
             dependencies = [
-              sources."co-4.6.0"
+              sources."is-fullwidth-code-point-2.0.0"
             ];
           })
-          sources."ajv-keywords-1.5.1"
-          (sources."chalk-1.1.3" // {
-            dependencies = [
-              sources."ansi-styles-2.2.1"
-              sources."escape-string-regexp-1.0.5"
-              (sources."has-ansi-2.0.0" // {
-                dependencies = [
-                  sources."ansi-regex-2.1.1"
-                ];
-              })
-              (sources."strip-ansi-3.0.1" // {
-                dependencies = [
-                  sources."ansi-regex-2.1.1"
-                ];
-              })
-              sources."supports-color-2.0.0"
-            ];
-          })
-          sources."slice-ansi-0.0.4"
           (sources."string-width-2.1.1" // {
             dependencies = [
               sources."is-fullwidth-code-point-2.0.0"
@@ -2224,7 +2197,7 @@ in
     buildInputs = globalBuildInputs;
     meta = {
       description = "An AST-based pattern checker for JavaScript.";
-      homepage = http://eslint.org/;
+      homepage = https://eslint.org/;
       license = "MIT";
     };
     production = true;
@@ -2232,10 +2205,10 @@ in
   eslint-plugin-react = nodeEnv.buildNodePackage {
     name = "eslint-plugin-react";
     packageName = "eslint-plugin-react";
-    version = "7.3.0";
+    version = "7.4.0";
     src = fetchurl {
-      url = "https://registry.npmjs.org/eslint-plugin-react/-/eslint-plugin-react-7.3.0.tgz";
-      sha512 = "103ihjs3q8ynfwvij5rjhbg14sjz1pndy35q8rv0wfbix0rpi0qaphq1z0i7ii2ikyyah4yl99n6qpc5pa57gl71rf7ivb6xh891gpc";
+      url = "https://registry.npmjs.org/eslint-plugin-react/-/eslint-plugin-react-7.4.0.tgz";
+      sha512 = "08dgbcvfhb6m47aywg8ryw013mqppvwz4xnq2nnpj8ra19j968mh59v82svnz9j79imn9mq73mbxnm6217rr62vpnv6banmxpvd9y5n";
     };
     dependencies = [
       (sources."doctrine-2.0.0" // {
@@ -2259,7 +2232,7 @@ in
                   sources."object-keys-1.0.11"
                 ];
               })
-              (sources."es-abstract-1.8.2" // {
+              (sources."es-abstract-1.9.0" // {
                 dependencies = [
                   (sources."es-to-primitive-1.1.1" // {
                     dependencies = [
@@ -2276,9 +2249,9 @@ in
           })
         ];
       })
-      (sources."prop-types-15.5.10" // {
+      (sources."prop-types-15.6.0" // {
         dependencies = [
-          (sources."fbjs-0.8.15" // {
+          (sources."fbjs-0.8.16" // {
             dependencies = [
               sources."core-js-1.2.7"
               (sources."isomorphic-fetch-2.2.1" // {
@@ -2296,7 +2269,6 @@ in
                   sources."whatwg-fetch-2.0.3"
                 ];
               })
-              sources."object-assign-4.1.1"
               (sources."promise-7.3.1" // {
                 dependencies = [
                   sources."asap-2.0.6"
@@ -2311,11 +2283,12 @@ in
               sources."js-tokens-3.0.2"
             ];
           })
+          sources."object-assign-4.1.1"
         ];
       })
-      (sources."eslint-4.7.2" // {
+      (sources."eslint-4.8.0" // {
         dependencies = [
-          (sources."ajv-5.2.2" // {
+          (sources."ajv-5.2.3" // {
             dependencies = [
               sources."co-4.6.0"
               sources."fast-deep-equal-1.0.0"
@@ -2399,7 +2372,7 @@ in
               })
             ];
           })
-          (sources."debug-3.0.1" // {
+          (sources."debug-3.1.0" // {
             dependencies = [
               sources."ms-2.0.0"
             ];
@@ -2428,7 +2401,7 @@ in
           sources."esutils-2.0.2"
           (sources."file-entry-cache-2.0.0" // {
             dependencies = [
-              (sources."flat-cache-1.2.2" // {
+              (sources."flat-cache-1.3.0" // {
                 dependencies = [
                   sources."circular-json-0.3.3"
                   (sources."del-2.2.2" // {
@@ -2608,32 +2581,14 @@ in
             ];
           })
           sources."strip-json-comments-2.0.1"
-          (sources."table-4.0.1" // {
+          (sources."table-4.0.2" // {
             dependencies = [
-              (sources."ajv-4.11.8" // {
+              sources."ajv-keywords-2.1.0"
+              (sources."slice-ansi-1.0.0" // {
                 dependencies = [
-                  sources."co-4.6.0"
+                  sources."is-fullwidth-code-point-2.0.0"
                 ];
               })
-              sources."ajv-keywords-1.5.1"
-              (sources."chalk-1.1.3" // {
-                dependencies = [
-                  sources."ansi-styles-2.2.1"
-                  sources."escape-string-regexp-1.0.5"
-                  (sources."has-ansi-2.0.0" // {
-                    dependencies = [
-                      sources."ansi-regex-2.1.1"
-                    ];
-                  })
-                  (sources."strip-ansi-3.0.1" // {
-                    dependencies = [
-                      sources."ansi-regex-2.1.1"
-                    ];
-                  })
-                  sources."supports-color-2.0.0"
-                ];
-              })
-              sources."slice-ansi-0.0.4"
               (sources."string-width-2.1.1" // {
                 dependencies = [
                   sources."is-fullwidth-code-point-2.0.0"
@@ -2662,9 +2617,9 @@ in
       sha1 = "79202a0e35757dd92780919b2336f1fa2fe53c1e";
     };
     dependencies = [
-      (sources."eslint-4.7.2" // {
+      (sources."eslint-4.8.0" // {
         dependencies = [
-          (sources."ajv-5.2.2" // {
+          (sources."ajv-5.2.3" // {
             dependencies = [
               sources."co-4.6.0"
               sources."fast-deep-equal-1.0.0"
@@ -2748,7 +2703,7 @@ in
               })
             ];
           })
-          (sources."debug-3.0.1" // {
+          (sources."debug-3.1.0" // {
             dependencies = [
               sources."ms-2.0.0"
             ];
@@ -2782,7 +2737,7 @@ in
           sources."esutils-2.0.2"
           (sources."file-entry-cache-2.0.0" // {
             dependencies = [
-              (sources."flat-cache-1.2.2" // {
+              (sources."flat-cache-1.3.0" // {
                 dependencies = [
                   sources."circular-json-0.3.3"
                   (sources."del-2.2.2" // {
@@ -2962,32 +2917,14 @@ in
             ];
           })
           sources."strip-json-comments-2.0.1"
-          (sources."table-4.0.1" // {
+          (sources."table-4.0.2" // {
             dependencies = [
-              (sources."ajv-4.11.8" // {
+              sources."ajv-keywords-2.1.0"
+              (sources."slice-ansi-1.0.0" // {
                 dependencies = [
-                  sources."co-4.6.0"
+                  sources."is-fullwidth-code-point-2.0.0"
                 ];
               })
-              sources."ajv-keywords-1.5.1"
-              (sources."chalk-1.1.3" // {
-                dependencies = [
-                  sources."ansi-styles-2.2.1"
-                  sources."escape-string-regexp-1.0.5"
-                  (sources."has-ansi-2.0.0" // {
-                    dependencies = [
-                      sources."ansi-regex-2.1.1"
-                    ];
-                  })
-                  (sources."strip-ansi-3.0.1" // {
-                    dependencies = [
-                      sources."ansi-regex-2.1.1"
-                    ];
-                  })
-                  sources."supports-color-2.0.0"
-                ];
-              })
-              sources."slice-ansi-0.0.4"
               (sources."string-width-2.1.1" // {
                 dependencies = [
                   sources."is-fullwidth-code-point-2.0.0"
@@ -3132,9 +3069,9 @@ in
           })
         ];
       })
-      (sources."eslint-4.7.2" // {
+      (sources."eslint-4.8.0" // {
         dependencies = [
-          (sources."ajv-5.2.2" // {
+          (sources."ajv-5.2.3" // {
             dependencies = [
               sources."co-4.6.0"
               sources."fast-deep-equal-1.0.0"
@@ -3218,7 +3155,7 @@ in
               })
             ];
           })
-          (sources."debug-3.0.1" // {
+          (sources."debug-3.1.0" // {
             dependencies = [
               sources."ms-2.0.0"
             ];
@@ -3252,7 +3189,7 @@ in
           sources."esutils-2.0.2"
           (sources."file-entry-cache-2.0.0" // {
             dependencies = [
-              (sources."flat-cache-1.2.2" // {
+              (sources."flat-cache-1.3.0" // {
                 dependencies = [
                   sources."circular-json-0.3.3"
                   (sources."del-2.2.2" // {
@@ -3422,32 +3359,14 @@ in
             ];
           })
           sources."strip-json-comments-2.0.1"
-          (sources."table-4.0.1" // {
+          (sources."table-4.0.2" // {
             dependencies = [
-              (sources."ajv-4.11.8" // {
+              sources."ajv-keywords-2.1.0"
+              (sources."slice-ansi-1.0.0" // {
                 dependencies = [
-                  sources."co-4.6.0"
+                  sources."is-fullwidth-code-point-2.0.0"
                 ];
               })
-              sources."ajv-keywords-1.5.1"
-              (sources."chalk-1.1.3" // {
-                dependencies = [
-                  sources."ansi-styles-2.2.1"
-                  sources."escape-string-regexp-1.0.5"
-                  (sources."has-ansi-2.0.0" // {
-                    dependencies = [
-                      sources."ansi-regex-2.1.1"
-                    ];
-                  })
-                  (sources."strip-ansi-3.0.1" // {
-                    dependencies = [
-                      sources."ansi-regex-2.1.1"
-                    ];
-                  })
-                  sources."supports-color-2.0.0"
-                ];
-              })
-              sources."slice-ansi-0.0.4"
               (sources."string-width-2.1.1" // {
                 dependencies = [
                   sources."is-fullwidth-code-point-2.0.0"
@@ -3470,16 +3389,16 @@ in
   eslint-plugin-flowtype = nodeEnv.buildNodePackage {
     name = "eslint-plugin-flowtype";
     packageName = "eslint-plugin-flowtype";
-    version = "2.35.1";
+    version = "2.37.0";
     src = fetchurl {
-      url = "https://registry.npmjs.org/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.35.1.tgz";
-      sha512 = "1gxnhpz1ap36clvqrp1fafc0mz8xdca05dwjs86h4gsir6br2wbi67b9mr30hw6zg73m7v4fcsr6mpcgl2p8qzjy0d7i2qfqdb9wc31";
+      url = "https://registry.npmjs.org/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.37.0.tgz";
+      sha512 = "003a6v3zv9la0ibn2axj5wxsh61wamrzh089a68gvwhpz5psh5k31vq0bgh85ppcjqnic1jnaa8p8v63rk6yls8p6j305qy96jv7w2b";
     };
     dependencies = [
       sources."lodash-4.17.4"
-      (sources."eslint-4.7.2" // {
+      (sources."eslint-4.8.0" // {
         dependencies = [
-          (sources."ajv-5.2.2" // {
+          (sources."ajv-5.2.3" // {
             dependencies = [
               sources."co-4.6.0"
               sources."fast-deep-equal-1.0.0"
@@ -3563,7 +3482,7 @@ in
               })
             ];
           })
-          (sources."debug-3.0.1" // {
+          (sources."debug-3.1.0" // {
             dependencies = [
               sources."ms-2.0.0"
             ];
@@ -3597,7 +3516,7 @@ in
           sources."esutils-2.0.2"
           (sources."file-entry-cache-2.0.0" // {
             dependencies = [
-              (sources."flat-cache-1.2.2" // {
+              (sources."flat-cache-1.3.0" // {
                 dependencies = [
                   sources."circular-json-0.3.3"
                   (sources."del-2.2.2" // {
@@ -3776,32 +3695,14 @@ in
             ];
           })
           sources."strip-json-comments-2.0.1"
-          (sources."table-4.0.1" // {
+          (sources."table-4.0.2" // {
             dependencies = [
-              (sources."ajv-4.11.8" // {
+              sources."ajv-keywords-2.1.0"
+              (sources."slice-ansi-1.0.0" // {
                 dependencies = [
-                  sources."co-4.6.0"
+                  sources."is-fullwidth-code-point-2.0.0"
                 ];
               })
-              sources."ajv-keywords-1.5.1"
-              (sources."chalk-1.1.3" // {
-                dependencies = [
-                  sources."ansi-styles-2.2.1"
-                  sources."escape-string-regexp-1.0.5"
-                  (sources."has-ansi-2.0.0" // {
-                    dependencies = [
-                      sources."ansi-regex-2.1.1"
-                    ];
-                  })
-                  (sources."strip-ansi-3.0.1" // {
-                    dependencies = [
-                      sources."ansi-regex-2.1.1"
-                    ];
-                  })
-                  sources."supports-color-2.0.0"
-                ];
-              })
-              sources."slice-ansi-0.0.4"
               (sources."string-width-2.1.1" // {
                 dependencies = [
                   sources."is-fullwidth-code-point-2.0.0"
@@ -3824,10 +3725,10 @@ in
   babel-eslint = nodeEnv.buildNodePackage {
     name = "babel-eslint";
     packageName = "babel-eslint";
-    version = "8.0.0";
+    version = "8.0.1";
     src = fetchurl {
-      url = "https://registry.npmjs.org/babel-eslint/-/babel-eslint-8.0.0.tgz";
-      sha512 = "1hf40sf3a19kwgcc67fy1fk29sxps2xglg7mypyf4ai4bj6pbablgqhbdkp1ym6ylkznjl1s9nq48pjfp31ls5zlqydrpjrlzfl3pdl";
+      url = "https://registry.npmjs.org/babel-eslint/-/babel-eslint-8.0.1.tgz";
+      sha512 = "0mdxh47yciaf6il5kcikq4aaccyv3xwb9nqhl9nhraw56xi798xh8akmx1h2mpy2f7vmvhhksyq353mn9pk1k28x4s02kf2lcbshyc7";
     };
     dependencies = [
       (sources."babel-code-frame-7.0.0-beta.0" // {
@@ -3864,7 +3765,7 @@ in
             ];
           })
           sources."babel-messages-7.0.0-beta.0"
-          (sources."debug-3.0.1" // {
+          (sources."debug-3.1.0" // {
             dependencies = [
               sources."ms-2.0.0"
             ];
@@ -3895,6 +3796,22 @@ in
     meta = {
       description = "Custom parser for ESLint";
       homepage = https://github.com/babel/babel-eslint;
+      license = "MIT";
+    };
+    production = true;
+  };
+  prettier = nodeEnv.buildNodePackage {
+    name = "prettier";
+    packageName = "prettier";
+    version = "1.7.3";
+    src = fetchurl {
+      url = "https://registry.npmjs.org/prettier/-/prettier-1.7.3.tgz";
+      sha1 = "8e6974725273914b1c47439959dd3d3ba53664b6";
+    };
+    buildInputs = globalBuildInputs;
+    meta = {
+      description = "Prettier is an opinionated code formatter";
+      homepage = https://prettier.io/;
       license = "MIT";
     };
     production = true;

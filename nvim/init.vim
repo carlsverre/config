@@ -348,6 +348,15 @@ autocmd! BufWritePost * Neomake
 
 nmap <Leader><Leader> :lopen<CR>
 
+"------  NeoFormat  ------"
+
+let g:neoformat_try_formatprg = 1
+
+augroup fmt
+  autocmd!
+  autocmd BufWritePre *.js undojoin | Neoformat
+augroup END
+
 "------  Vim-Javascript  ------"
 
 let g:javascript_plugin_flow = 1

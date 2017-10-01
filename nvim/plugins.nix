@@ -239,6 +239,17 @@ in {
 
   };
 
+  neoformat = buildVimPluginFrom2Nix { # created by nix#NixDerivation
+    name = "neoformat-2017-09-29";
+    src = fetchgit {
+      url = "https://github.com/sbdchd/neoformat";
+      rev = "1aa4e9cb5c5f5b79f3680473ad0c378370d4526b";
+      sha256 = "12j2x0wcvrd5xxkb0raq1h230nbdxls9g7igfmv7kqx77xzpz145";
+    };
+    dependencies = [];
+
+  };
+
   nerdtree = buildVimPluginFrom2Nix { # created by nix#NixDerivation
     name = "nerdtree-2017-08-19";
     src = fetchgit {

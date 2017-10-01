@@ -17,6 +17,7 @@ in
           { name = "vim-gitgutter"; }
           { name = "vim-multiple-cursors"; }
           { name = "neomake"; }
+          { name = "neoformat"; }
           { name = "ctrlp-vim"; }
           { name = "cpsm"; }
           { name = "vim-airline"; }

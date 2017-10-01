@@ -18,6 +18,7 @@ let
 
   nvim = pkgs.callPackage ./nvim {};
   eslint = pkgs.callPackage ./node/eslint.nix {};
+  prettier = pkgs.callPackage ./node/prettier.nix {};
 
   nix-tools = [
     nix-prefetch-scripts
@@ -135,6 +136,7 @@ let
     nodejs-8_x
     eslint
     flow
+    prettier
   ];
 
   ocaml-env = [
