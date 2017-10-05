@@ -52,7 +52,6 @@ let
   security-tools = pkg-set {
     linux = [
       keybase
-      keybase-gui
       kbfs
       openssl
       openvpn
@@ -69,6 +68,7 @@ let
       spotify
       qtcreator
       gcolor2
+      keybase-gui
       (google-chrome.override {
         channel = "stable";
         pulseSupport = true;
