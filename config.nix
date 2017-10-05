@@ -52,6 +52,7 @@ let
   security-tools = pkg-set {
     linux = [
       keybase
+      keybase-gui
       kbfs
       openssl
       openvpn
