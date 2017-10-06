@@ -354,7 +354,7 @@ let g:neoformat_try_formatprg = 1
 
 augroup fmt
   autocmd!
-  autocmd BufWritePre *.js undojoin | Neoformat
+  autocmd BufWritePre *.js Neoformat
 augroup END
 
 "------  Vim-Javascript  ------"
@@ -395,18 +395,12 @@ let g:undotree_SetFocusWhenToggle = 1
 
 "------  Multiple Cursors  ------"
 
-" Called once right before you start selecting multiple cursors
 function! Multiple_cursors_before()
-    if exists(':NeoCompleteLock')==2
-        exe 'NeoCompleteLock'
-    endif
+    let b:deoplete_disable_auto_complete = 1
 endfunction
 
-" Called once only when the multiple selection is canceled (default <Esc>)
 function! Multiple_cursors_after()
-    if exists(':NeoCompleteUnlock')==2
-        exe 'NeoCompleteUnlock'
-    endif
+    let b:deoplete_disable_auto_complete = 0
 endfunction
 
 "------  vimoutliner  ------"
