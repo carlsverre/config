@@ -100,6 +100,7 @@ let
       ncurses
       zip
       docker_compose
+      (lowPrio pt)
     ];
 
     linux = [
