@@ -59,8 +59,16 @@ let
     ];
   };
 
+  network-apps = pkg-set {
+    linux = [
+      insync
+      ipfs
+    ];
+  };
+
   desktop-apps = pkg-set {
     linux = [
+      calibre
       hexchat
       i3lock
       slack
@@ -200,6 +208,7 @@ in
           base-tools
           ++ security-tools
           ++ desktop-apps
+          ++ network-apps
           ++ x11-tools
           ++ go-env
           ++ node-env
