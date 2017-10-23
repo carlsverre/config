@@ -34,6 +34,7 @@ let
       lshw
       pciutils
       parted
+      usbutils
     ];
   };
 
@@ -74,6 +75,7 @@ let
       slack
       skype
       spotify
+      steam
       qtcreator
       gcolor2
       keybase-gui
@@ -108,6 +110,7 @@ let
       ncurses
       zip
       docker_compose
+      aria2
     ];
 
     linux = [
