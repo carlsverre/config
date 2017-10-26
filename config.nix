@@ -70,6 +70,7 @@ let
   desktop-apps = pkg-set {
     linux = [
       calibre
+      darktable
       hexchat
       i3lock
       slack
