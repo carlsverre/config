@@ -406,3 +406,6 @@ endfunction
 "------  vimoutliner  ------"
 
 autocmd FileType votl setlocal nolist
+
+"------  vim-rooter   ------"
+let g:rooter_patterns = ['.vim-rooter', '.git', '.git/']
