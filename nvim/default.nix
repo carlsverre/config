@@ -48,6 +48,7 @@ in
           # go
           { name = "deoplete-go"; }
           { name = "vim-go"; }
+          { name = "vim-delve"; }
 
           # reason
           { name = "vim-reason"; }
