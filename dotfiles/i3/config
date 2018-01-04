@@ -7,13 +7,13 @@ exec --no-startup-id feh --randomize --bg-fill ~/.wallpapers/*
 exec --no-startup-id xset r rate 200 50
 exec --no-startup-id compton --config ~/.compton.conf &
 
-# disable window titles and add simple border for i3-gaps
-for_window [class="^.*"] border pixel 1
+for_window [class=".*"] border pixel 2
 
 set $mod Mod4
 
 focus_follows_mouse no
 
+# font for window titles and errors
 font pango: DejaVu Sans Mono, FontAwesome, 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -145,6 +145,8 @@ set $emphasized     #93a1a1
 
 # accent colors
 
+set $black         #000000
+set $white         #ffffff
 set $yellow        #b58900
 set $orange        #cb4b16
 set $red           #dc322f
@@ -155,13 +157,13 @@ set $cyan          #2aa198
 set $green         #859900
 
 set $status_bg     #000000aa
+set $transparent   #00000000
 
-#                       BORDER      BACKGROUND  TEXT        INDICATOR   CHILD_BORDER
-#client.focused          $black      $black      $darkwhite  $darkblack  $darkblack
-#client.unfocused        $black      $black      $white      $darkblack  $darkblack
-#client.focused_inactive $black      $black      $white      $darkblack  $darkblack
-#client.urgent           $darkred    $darkred    $black      $darkred    $darkred
-#client.background       $transparent
+#                           BORDER          BACKGROUND      TEXT        INDICATOR
+client.focused              $transparent    $magenta        $white      $black
+client.focused_inactive     $transparent    $background     $secondary  $black
+client.unfocused            $transparent    $background     $secondary  $black
+client.urgent               $red            $red            $black      $red
 
 bar {
     status_command i3blocks
