@@ -96,6 +96,7 @@ let
     all = [
       git
       jq
+      bc
       (ctagsWrapped.ctagsWrapped.override { name = "ctags"; })
       fasd
       gnumake
