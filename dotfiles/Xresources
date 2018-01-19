@@ -28,9 +28,10 @@ URxvt*keysym.F3:            \033OR
 URxvt*keysym.F4:            \033OS
 
 ! Fonts
-URxvt.allowBold:            true
-URxvt*font:                 xft:Hack-Regular:size=10:antialias=true:hinting=slight
-URxvt*boldfont:             xft:Hack-Bold:size=10:antialias=true:hinting=slight
+URxvt*allowBold:            true
+URxvt*font:                 xft:Hack:style=Regular:size=9
+URxvt*boldFont:             xft:Hack:style=Bold:size=9
+URxvt*italicFont:           xft:Hack:style=Italic:size=9
 
 ! Note, equal is used rather than plus for increase
 ! since its easier to go up/down without pressing shift half the time
