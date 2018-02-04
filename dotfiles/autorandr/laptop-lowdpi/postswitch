@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+echo "Xft.dpi: 96" | xrdb -merge
+xrandr --dpi 96x96
+$HOME/.autorandr/reload-wm

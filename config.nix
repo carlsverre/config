@@ -80,6 +80,7 @@ let
       qtcreator
       gcolor2
       keybase-gui
+      typora
       (google-chrome.override {
         channel = "stable";
         pulseSupport = true;
