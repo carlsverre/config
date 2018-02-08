@@ -74,17 +74,6 @@ in {
 
   };
 
-  neomake = buildVimPluginFrom2Nix { # created by nix#NixDerivation
-    name = "neomake-2018-01-22";
-    src = fetchgit {
-      url = "https://github.com/benekastah/neomake";
-      rev = "928f33cf13dc2606a2a87c4babf9738e597ab13d";
-      sha256 = "1c2s9fp29dv1kcf61h4d7kmmdwwydrl98grs34q2mcmxjhlgf4g7";
-    };
-    dependencies = [];
-
-  };
-
   ctrlp-vim = buildVimPluginFrom2Nix { # created by nix#NixDerivation
     name = "ctrlp-vim-2018-01-15";
     src = fetchgit {
@@ -239,17 +228,6 @@ in {
 
   };
 
-  neoformat = buildVimPluginFrom2Nix { # created by nix#NixDerivation
-    name = "neoformat-2018-01-17";
-    src = fetchgit {
-      url = "https://github.com/sbdchd/neoformat";
-      rev = "05ec2650575ff38c30c843ea2cf351dd27c9a5ef";
-      sha256 = "17shf149zkajy8amjjmslz9yx5gahbjf33f8y59v80sn4agb0l8i";
-    };
-    dependencies = [];
-
-  };
-
   nerdtree = buildVimPluginFrom2Nix { # created by nix#NixDerivation
     name = "nerdtree-2018-01-07";
     src = fetchgit {
@@ -311,6 +289,17 @@ in {
       url = "https://github.com/vimoutliner/vimoutliner";
       rev = "c13141d604959d84225c3a53dc4b0ef5ae8b2bfe";
       sha256 = "1bg45cnpvnk2k7r6l2n3sz0cw2lhrglphak10yp11yqf4q1rxl7x";
+    };
+    dependencies = [];
+
+  };
+
+  ale = buildVimPluginFrom2Nix { # created by nix#NixDerivation
+    name = "ale-2018-02-06";
+    src = fetchgit {
+      url = "https://github.com/w0rp/ale";
+      rev = "a3329ef3fc44a04a2617941eb46deef6c184f4af";
+      sha256 = "0lyn35wbnx8rpfh5hlkmqisq1nk3b7gga9kyrnc9yyidcblsjajr";
     };
     dependencies = [];
 

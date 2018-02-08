@@ -331,31 +331,15 @@ nmap <leader>B :CtrlPTag<CR>
 "------  GitGutter  ------"
 highlight clear SignColumn
 
-"------  NeoMake  ------"
+"------  ALE  ------"
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\   'css': ['prettier'],
+\   'scss': ['prettier'],
+\}
 
-let g:neomake_serialize = 1
-let g:neomake_serialize_abort_on_error = 1
-
-let g:neomake_python_enabled_makers = ['flake8']
-let g:neomake_go_enabled_makers = ['go', 'golint', 'govet']
-let g:neomake_javascript_enabled_makers = ['flow', 'eslint']
-let g:neomake_reason_enabled_makers = ['merlin']
-
-" when switching/opening a JS buffer, set neomake's eslint path, and enable it as a maker
-au BufEnter *.js let b:neomake_javascript_eslint_exe = nrun#Which('eslint')
-
-autocmd! BufWritePost * Neomake
-
-nmap <Leader><Leader> :lopen<CR>
-
-"------  NeoFormat  ------"
-
-let g:neoformat_try_formatprg = 1
-
-augroup fmt
-  autocmd!
-  autocmd BufWritePre *.js Neoformat
-augroup END
+let g:ale_fix_on_save = 1
+let g:airline#extensions#ale#enabled = 1
 
 "------  Vim-Javascript  ------"
 
