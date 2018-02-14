@@ -340,11 +340,7 @@ let g:ale_fixers = {
 
 let g:ale_linters = {
 \    'go': [
-\        'gofmt',
-\        'goimports',
-\        'go vet',
-\        'golint',
-\        'gotype',
+\        'gometalinter',
 \        'go build',
 \    ],
 \}

@@ -47,6 +47,9 @@ let
       wget
       bind
       traceroute
+      pdsh
+      openssh_with_kerberos
+      heimdalFull
     ];
   };
 
@@ -114,6 +117,8 @@ let
       zip
       docker_compose
       aria2
+      terraform
+      packer
     ];
 
     linux = [
