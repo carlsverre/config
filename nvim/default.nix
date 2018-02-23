@@ -6,6 +6,7 @@ let
 in
   pkgs.neovim.override {
     vimAlias = true;
+    withRuby = false;
     configure = {
       customRC = vimrc;
       vam = {

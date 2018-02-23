@@ -27,3 +27,4 @@
 "github:jaawerth/nrun.vim"
 "github:reasonml-editor/vim-reason"
 "github:sebdah/vim-delve"
+"github:tpope/vim-fugitive"
