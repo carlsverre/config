@@ -339,15 +339,21 @@ let g:ale_fixers = {
 \}
 
 let g:ale_linters = {
-\    'go': [
-\        'gometalinter',
-\        'go build',
-\    ],
+\   'javascript': [
+\       'eslint',
+\       'flow',
+\   ],
+\   'go': [
+\       'gometalinter',
+\       'go build',
+\   ],
 \}
 
 let g:ale_fix_on_save = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_sign_column_always = 1
+let g:ale_javascript_flow_use_global = 1
+let g:ale_javascript_eslint_use_global = 1
 
 "------  Vim-Javascript  ------"
 
