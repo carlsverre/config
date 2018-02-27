@@ -16,6 +16,7 @@ in
           { name = "vim-colors-solarized"; }
           { name = "nerdtree"; }
           { name = "vim-gitgutter"; }
+          { name = "vim-fugitive"; }
           { name = "vim-multiple-cursors"; }
           { name = "ale"; }
           { name = "ctrlp-vim"; }
