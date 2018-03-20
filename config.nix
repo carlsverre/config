@@ -84,6 +84,7 @@ let
       gcolor2
       keybase-gui
       typora
+      firefox
       (google-chrome.override {
         channel = "stable";
         pulseSupport = true;
@@ -119,6 +120,8 @@ let
       aria2
       terraform
       packer
+      kubectl
+      pv
     ];
 
     linux = [
