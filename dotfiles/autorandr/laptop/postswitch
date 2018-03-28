@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 
-echo "Xft.dpi: 144" | xrdb -merge
-xrandr --dpi 144x144
 $HOME/.autorandr/reload-wm

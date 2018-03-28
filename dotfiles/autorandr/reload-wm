@@ -4,5 +4,9 @@
 sleep 0.5
 
 feh --randomize --bg-fill ~/.wallpapers/*
+
+echo "Xft.dpi: 96" | xrdb -merge
+xrandr --dpi 96x96
 xset r rate 200 50
+
 i3-msg restart

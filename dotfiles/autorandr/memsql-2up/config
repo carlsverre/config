@@ -8,10 +8,10 @@ output VIRTUAL1
 off
 output DP1
 mode 1600x1200
-pos 144x0
+pos 0x0
 rate 60.00
 output eDP1
-mode 1920x1080
+mode 1600x900
 pos 0x1200
 primary
-rate 60.02
+rate 60.00
