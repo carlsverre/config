@@ -3,19 +3,6 @@
 with pkgs;
 
 let
-  is-osx = builtins.currentSystem == "x86_64-darwin";
-  is-linux = builtins.currentSystem != "x86_64-darwin";
-
-  pkg-set = {
-    all ? [],
-    osx ? [],
-    linux ? []
-  }: (
-    all
-    ++ (if is-osx then osx else [])
-    ++ (if is-linux then linux else [])
-  );
-
   nvim = pkgs.callPackage ./nvim {};
   eslint = pkgs.callPackage ./node/eslint.nix {};
   prettier = pkgs.callPackage ./node/prettier.nix {};
@@ -27,133 +14,116 @@ let
     nox
   ];
 
-  linux-tools = pkg-set {
-    linux = [
-      patchelf
-      hwinfo
-      lshw
-      pciutils
-      parted
-      usbutils
-    ];
-  };
+  linux-tools = [
+    patchelf
+    hwinfo
+    lshw
+    pciutils
+    parted
+    usbutils
+    lsof
+  ];
 
-  network-tools = pkg-set {
-    linux = [
-      curl
-      ipcalc
-      nmap
-      tcpdump
-      wget
-      bind
-      traceroute
-      pdsh
-      openssh_with_kerberos
-      heimdalFull
-    ];
-  };
+  network-tools = [
+    curl
+    ipcalc
+    nmap
+    tcpdump
+    wget
+    bind
+    traceroute
+    pdsh
+    openssh_with_kerberos
+    heimdalFull
+  ];
 
-  security-tools = pkg-set {
-    linux = [
-      keybase
-      kbfs
-      openssl
-      openvpn
-      gnupg
-    ];
-  };
+  security-tools = [
+    keybase
+    kbfs
+    openssl
+    openvpn
+    gnupg
+  ];
 
-  network-apps = pkg-set {
-    linux = [
-      insync
-      ipfs
-    ];
-  };
+  network-apps = [
+    insync
+    ipfs
+  ];
 
-  desktop-apps = pkg-set {
-    linux = [
-      calibre
-      darktable
-      hexchat
-      i3lock
-      slack
-      skype
-      spotify
-      steam
-      qtcreator
-      gcolor2
-      keybase-gui
-      typora
-      firefox
-      (google-chrome.override {
+  desktop-apps = [
+    calibre
+    darktable
+    hexchat
+    i3lock
+    slack
+    skype
+    spotify
+    steam
+    gcolor2
+    keybase-gui
+    firefox
+    (google-chrome.override {
+      channel = "stable";
+      pulseSupport = true;
+      chromium = (chromium.override {
         channel = "stable";
+        enablePepperFlash = true;
         pulseSupport = true;
-        chromium = (chromium.override {
-          channel = "stable";
-          enablePepperFlash = true;
-          pulseSupport = true;
-        });
-      })
-    ];
-  };
+      });
+    })
+  ];
 
-  dev-tools = pkg-set {
-    all = [
-      git
-      jq
-      bc
-      (ctagsWrapped.ctagsWrapped.override { name = "ctags"; })
-      fasd
-      gnumake
-      direnv
-      unzip
-      p7zip
-      nvim
-      gcc
-      libstdcxx5
-      awscli
-      azure-cli
-      gdb
-      ncurses
-      zip
-      docker_compose
-      aria2
-      terraform
-      packer
-      kubectl
-      pv
-    ];
+  dev-tools = [
+    git
+    jq
+    bc
+    (ctagsWrapped.ctagsWrapped.override { name = "ctags"; })
+    fasd
+    gnumake
+    direnv
+    unzip
+    p7zip
+    nvim
+    gcc
+    libstdcxx5
+    awscli
+    azure-cli
+    gdb
+    ncurses
+    zip
+    docker_compose
+    aria2
+    terraform
+    packer
+    kubectl
+    pv
+    sift
+    fzf
+    mysql
+    rlwrap
+    imagemagick
+    sqlite
+    file
+    tree
+    apg
+    postgresql
+    rxvt_unicode.terminfo
+    lm_sensors
+  ];
 
-    linux = [
-      sift
-      fzf
-      mysql
-      rlwrap
-      imagemagick
-      sqlite
-      file
-      tree
-      apg
-      postgresql
-      rxvt_unicode.terminfo
-      lm_sensors
-    ];
-  };
-
-  x11-tools = pkg-set {
-    linux = [
-      arandr
-      autorandr
-      feh
-      imv
-      pavucontrol
-      rofi
-      xclip
-      xorg.xdpyinfo
-      xorg.xev
-      mplayer
-    ];
-  };
+  x11-tools = [
+    arandr
+    autorandr
+    feh
+    imv
+    pavucontrol
+    rofi
+    xclip
+    xorg.xdpyinfo
+    xorg.xev
+    mplayer
+    alsaUtils
+  ];
 
   node-env = [
     nodejs-8_x
@@ -177,22 +147,15 @@ let
     dep
   ];
 
-  python2-env = with python27Packages; pkg-set {
-    all = [
-      (python27Full.withPackages (ps: [
-        ps.setuptools
-      ]))
-      ipython
-      flake8
-      virtualenv
-      Fabric
-    ];
-    linux = [ pylint ];
-  };
-
-  scala-env = [
-    scala
-    sbt
+  python2-env = with python27Packages; [
+    (python27Full.withPackages (ps: [
+      ps.setuptools
+    ]))
+    ipython
+    flake8
+    virtualenv
+    Fabric
+    pylint
   ];
 
   base-tools =
@@ -201,8 +164,7 @@ let
     ++ network-tools
     ++ dev-tools;
 
-in
-  rec {
+  in rec {
     allowUnfree = true;
 
     firefox = {
@@ -227,8 +189,7 @@ in
           ++ go-env
           ++ node-env
           ++ ocaml-env
-          ++ python2-env
-          ++ scala-env;
+          ++ python2-env;
       };
     };
   }
