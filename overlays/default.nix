@@ -1,6 +1,14 @@
 self: super:
 
 let
+  nixpkgs-master-src = super.fetchFromGitHub {
+    owner = "nixos";
+    repo = "nixpkgs";
+    rev = "49d97c34958c1b31c509fe1cb52d97c998bd6184";
+    sha256 = "179j9kh9fdqsiyzgdh30sm4hbl98hrzw611v07qmpbi0mahf5jxk";
+  };
+  nixpkgs-master = import nixpkgs-master-src {};
+
   nvim = super.callPackage ../nvim {};
   eslint = super.callPackage ../node/eslint.nix {};
   prettier = super.callPackage ../node/prettier.nix {};
@@ -55,13 +63,7 @@ let
     super.i3lock
     super.slack
     super.skype
-    (super.spotify.overrideAttrs (old: rec {
-      version= "1.0.77.338.g758ebd78-41";
-      src = super.fetchurl {
-        url = "https://repository-origin.spotify.com/pool/non-free/s/spotify-client/spotify-client_${version}_amd64.deb";
-        sha256 = "1971jc0431pl8yixpl37ryl2l0pqdf0xjvkg59nqdwj3vbdx5606";
-      };
-    }))
+    nixpkgs-master.spotify
     super.steam
     super.gcolor2
     super.keybase-gui
