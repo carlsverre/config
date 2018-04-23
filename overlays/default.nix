@@ -186,5 +186,6 @@ in
         ++ node-env
         ++ ocaml-env
         ++ python2-env;
+      extraOutputsToInstall = [ "man" "doc" ];
     };
   }
