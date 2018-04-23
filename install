@@ -24,8 +24,8 @@ install_dotfile vimrc_basic
 install_dotfile zsh
 install_dotfile zshrc
 
-# link this repo into home as .nixpkgs
-safelink "$HOME/.nixpkgs" "$ROOTDIR"
+# link this repo into home as .config/nixpkgs
+safelink "$HOME/.config/nixpkgs" "$ROOTDIR"
 
 # add a link to bin
 safelink "$HOME/bin" "$ROOTDIR/bin"
