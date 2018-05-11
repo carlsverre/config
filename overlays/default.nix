@@ -48,7 +48,7 @@ let
     super.kbfs
     super.openssl
     super.openvpn
-    super.gnupg
+    super.gnupg1compat
   ];
 
   network-apps = [
