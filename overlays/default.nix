@@ -79,6 +79,10 @@ let
     })
   ];
 
+  productivity-tools = [
+    super.taskwarrior
+  ];
+
   dev-tools = [
     nvim
     super.git
@@ -180,6 +184,7 @@ in
       name = "dev-env";
       paths =
         base-tools
+        ++ productivity-tools
         ++ security-tools
         ++ desktop-apps
         ++ network-apps
