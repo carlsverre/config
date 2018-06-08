@@ -68,6 +68,7 @@ let
     super.gcolor2
     super.keybase-gui
     super.firefox
+    super.dragon-drop
     (super.google-chrome.override {
       channel = "stable";
       pulseSupport = true;
