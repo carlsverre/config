@@ -91,6 +91,7 @@ let
     super.bc
     (super.ctagsWrapped.ctagsWrapped.override { name = "ctags"; })
     super.fasd
+    super.dos2unix
     super.gnumake
     super.direnv
     super.unzip
