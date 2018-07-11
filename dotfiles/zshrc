@@ -7,7 +7,6 @@ source ~/.zsh/fasd
 source ~/.zsh/fzf
 source ~/.zsh/direnv
 source ~/.zsh/node
-source ~/.zsh/bw
 
 if [ -f ~/.localrc ]; then
     . ~/.localrc

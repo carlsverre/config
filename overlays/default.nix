@@ -12,7 +12,6 @@ let
   nvim = super.callPackage ../nvim {};
   eslint = super.callPackage ../node/eslint.nix {};
   prettier = super.callPackage ../node/prettier.nix {};
-  bitwardencli = super.callPackage ../node/bitwarden-cli.nix {};
 
   nix-tools = [
     super.nix-prefetch-scripts
@@ -58,6 +57,7 @@ let
   ];
 
   desktop-apps = [
+    super.bitwarden
     super.calibre
     super.darktable
     super.hexchat
@@ -141,9 +141,7 @@ let
  node-env = [
    super.nodejs-8_x
    super.flow
-   eslint
    prettier
-   bitwardencli
  ];
 
  ocaml-env = [
@@ -157,18 +155,16 @@ let
    super.gotools
    super.golint
    super.go2nix
-   super.glide
    super.dep
  ];
 
- python2-env = with super.python27Packages; [
-   (super.python27Full.withPackages (ps: [
+ python3-env = with super.python36Packages; [
+   (super.python36Full.withPackages (ps: [
      ps.setuptools
    ]))
    ipython
    flake8
    virtualenv
-   Fabric
    pylint
  ];
 
@@ -196,7 +192,7 @@ in
         ++ go-env
         ++ node-env
         ++ ocaml-env
-        ++ python2-env;
+        ++ python3-env;
       extraOutputsToInstall = [ "man" "doc" ];
     };
   }
