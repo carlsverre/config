@@ -12,6 +12,7 @@ let
   nvim = super.callPackage ../nvim {};
   eslint = super.callPackage ../node/eslint.nix {};
   prettier = super.callPackage ../node/prettier.nix {};
+  bitwardencli = super.callPackage ../node/bitwarden-cli.nix {};
 
   nix-tools = [
     super.nix-prefetch-scripts
@@ -142,6 +143,7 @@ let
    super.flow
    eslint
    prettier
+   bitwardencli
  ];
 
  ocaml-env = [
