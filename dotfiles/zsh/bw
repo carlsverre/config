@@ -1,0 +1,20 @@
+# vim:set ft=sh:
+
+bwunlock() {
+    if [[ -n "${BW_SESSION}" ]]; then
+        echo "Already unlocked" return 1
+    fi
+
+    echo -n "Password: "
+    read -s BW_PASS
+    echo
+
+    _session=$(bw unlock --raw "${BW_PASS}")
+    if [[ $? -eq 0 ]]; then
+        echo Success
+        export BW_SESSION="${_session}"
+    else
+        echo Fail
+        return 1
+    fi
+}
