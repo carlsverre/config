@@ -158,14 +158,15 @@ let
    super.dep
  ];
 
- python-env = with super.python36Packages; [
-   (super.python36Full.withPackages (ps: [
+ python-env = with super.python27Packages; [
+   (super.python27Full.withPackages (ps: [
      ps.setuptools
    ]))
    ipython
    flake8
    virtualenv
    pylint
+   Fabric
  ];
 
  base-tools =
