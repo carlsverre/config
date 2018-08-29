@@ -122,58 +122,64 @@ let
     super.postgresql
     super.rxvt_unicode.terminfo
     super.lm_sensors
- ];
+  ];
 
- x11-tools = [
-   super.arandr
-   super.autorandr
-   super.feh
-   super.imv
-   super.pavucontrol
-   super.rofi
-   super.xclip
-   super.xorg.xdpyinfo
-   super.xorg.xev
-   super.mplayer
-   super.alsaUtils
- ];
+  x11-tools = [
+    super.arandr
+    super.autorandr
+    super.feh
+    super.imv
+    super.pavucontrol
+    super.rofi
+    super.xclip
+    super.xorg.xdpyinfo
+    super.xorg.xev
+    super.mplayer
+    super.alsaUtils
+  ];
 
- node-env = [
-   super.nodejs-8_x
-   super.flow
-   prettier
- ];
+  node-env = [
+    super.nodejs-8_x
+    super.flow
+    prettier
+  ];
 
- ocaml-env = [
-   super.ocaml
-   super.ocamlPackages.merlin
-   super.ocamlPackages.reason
- ];
+  ocaml-env = [
+    super.ocaml
+    super.ocamlPackages.merlin
+    super.ocamlPackages.reason
+  ];
 
- go-env = [
-   super.go
-   super.gotools
-   super.golint
-   super.go2nix
-   super.dep
- ];
+  go-env = [
+    super.go
+    super.gotools
+    super.golint
+    super.go2nix
+    super.dep
+  ];
 
- python-env = with super.python27Packages; [
-   (super.python27Full.withPackages (ps: [
-     ps.setuptools
-   ]))
-   ipython
-   flake8
-   virtualenv
-   pylint
-   Fabric
- ];
+  python-env = with super.python27Packages; [
+    (super.python27Full.withPackages (ps: [
+      ps.setuptools
+    ]))
+    ipython
+    flake8
+    virtualenv
+    pylint
+    Fabric
+  ];
 
- base-tools =
-  nix-tools
-  ++ linux-tools
-  ++ network-tools
-  ++ dev-tools;
+  java-env = [
+    super.idea.idea-community
+    (super.spark.override { mesosSupport = false; })
+  ];
+
+  base-tools =
+    nix-tools
+    ++ linux-tools
+    ++ network-tools
+    ++ dev-tools;
+
 in
   {
     base-env = super.buildEnv {
@@ -193,6 +199,7 @@ in
         ++ go-env
         ++ node-env
         ++ ocaml-env
+        ++ java-env
         ++ python-env;
       extraOutputsToInstall = [ "man" "doc" ];
     };
