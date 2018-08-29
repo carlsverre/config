@@ -170,7 +170,16 @@ let
   ];
 
   java-env = [
-    super.idea.idea-community
+    super.sbt
+    super.openjdk
+    (super.idea.idea-community.overrideDerivation (oldAttrs: rec {
+      name = "idea-community-${version}";
+      version = "2018.2.2";
+      src = super.fetchurl {
+        url = "https://download.jetbrains.com/idea/ideaIC-${version}.tar.gz";
+        sha256 = "1495zkccss1bkh803p6065nypqj72zra9dbnlx3iz4kkbawr7j15";
+      };
+    }))
     (super.spark.override { mesosSupport = false; })
   ];
 
