@@ -28,3 +28,4 @@
 "github:reasonml-editor/vim-reason"
 "github:sebdah/vim-delve"
 "github:tpope/vim-fugitive"
+"github:jparise/vim-graphql"

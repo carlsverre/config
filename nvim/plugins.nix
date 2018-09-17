@@ -140,6 +140,17 @@ in {
 
   };
 
+  vim-graphql = buildVimPluginFrom2Nix { # created by nix#NixDerivation
+    name = "vim-graphql-2018-06-25";
+    src = fetchgit {
+      url = "https://github.com/jparise/vim-graphql";
+      rev = "4a46f86f0dbd6ff3bd22db8f48a692075d64f6c2";
+      sha256 = "08dxdicslxhmy6qqbwgriry8m8g22qpjbd0v2bz2c2lcig68qwfy";
+    };
+    dependencies = [];
+
+  };
+
   tagbar = buildVimPluginFrom2Nix { # created by nix#NixDerivation
     name = "tagbar-2017-12-17";
     src = fetchgit {

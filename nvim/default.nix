@@ -59,6 +59,9 @@ in
 
           # freemark/ftl
           { name = "vim-freemarker"; }
+
+          # graphql
+          { name = "vim-graphql"; }
         ];
       };
     };
