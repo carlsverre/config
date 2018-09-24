@@ -41,6 +41,7 @@ let
     super.pdsh
     super.openssh_with_kerberos
     super.heimdalFull
+    super.insomnia
   ];
 
   security-tools = [
