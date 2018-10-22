@@ -15,7 +15,6 @@ let
 
   nix-tools = [
     super.nix-prefetch-scripts
-    super.nix-repl
     super.nix-prefetch-git
     super.nox
   ];
@@ -70,6 +69,7 @@ let
     super.keybase-gui
     super.firefox
     super.dragon-drop
+    super.zoom-us
     (super.google-chrome.override {
       channel = "stable";
       pulseSupport = true;
@@ -158,15 +158,14 @@ let
     super.dep
   ];
 
-  python-env = with super.python27Packages; [
-    (super.python27Full.withPackages (ps: [
+  python-env = with super.python36Packages; [
+    (super.python36Full.withPackages (ps: [
       ps.setuptools
     ]))
     ipython
     flake8
     virtualenv
     pylint
-    Fabric
   ];
 
   java-env = [
@@ -174,10 +173,10 @@ let
     super.openjdk
     (super.idea.idea-community.overrideDerivation (oldAttrs: rec {
       name = "idea-community-${version}";
-      version = "2018.2.2";
+      version = "2018.2.5";
       src = super.fetchurl {
         url = "https://download.jetbrains.com/idea/ideaIC-${version}.tar.gz";
-        sha256 = "1495zkccss1bkh803p6065nypqj72zra9dbnlx3iz4kkbawr7j15";
+        sha256 = "0jnnmhn1gba670q2yprlh3ypa6k21pbg91pshz9aqkdhhmzk4759";
       };
     }))
     (super.spark.override { mesosSupport = false; })
