@@ -158,7 +158,14 @@ let
     super.dep
   ];
 
-  python-env = with super.python36Packages; [
+  python2-env = with super.python27Packages; [
+    (super.python27Full.withPackages (ps: [
+      ps.setuptools
+    ]))
+    Fabric
+  ];
+
+  python3-env = with super.python36Packages; [
     (super.python36Full.withPackages (ps: [
       ps.setuptools
     ]))
@@ -208,7 +215,9 @@ in
         ++ node-env
         ++ ocaml-env
         ++ java-env
-        ++ python-env;
+        ++ python2-env
+        ++ python3-env;
+
       extraOutputsToInstall = [ "man" "doc" ];
     };
   }
