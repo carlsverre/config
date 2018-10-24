@@ -1,9 +1,9 @@
 source ~/.zsh/aliases
+source ~/.zsh/autojump
 source ~/.zsh/completion
 source ~/.zsh/config
 source ~/.zsh/path
 source ~/.zsh/prompt
-source ~/.zsh/fasd
 source ~/.zsh/fzf
 source ~/.zsh/direnv
 source ~/.zsh/node

@@ -1,0 +1,4 @@
+# vim:set ft=sh:
+
+autoload -Uz autojump.zsh
+autojump.zsh
