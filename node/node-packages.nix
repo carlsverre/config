@@ -9,10 +9,10 @@ in
   prettier = nodeEnv.buildNodePackage {
     name = "prettier";
     packageName = "prettier";
-    version = "1.14.3";
+    version = "1.15.2";
     src = fetchurl {
-      url = "https://registry.npmjs.org/prettier/-/prettier-1.14.3.tgz";
-      sha512 = "qZDVnCrnpsRJJq5nSsiHCE3BYMED2OtsI+cmzIzF1QIfqm5ALf8tEJcO27zV1gKNKRPdhjO0dNWnrzssDQ1tFg==";
+      url = "https://registry.npmjs.org/prettier/-/prettier-1.15.2.tgz";
+      sha512 = "YgPLFFA0CdKL4Eg2IHtUSjzj/BWgszDHiNQAe0VAIBse34148whfdzLagRL+QiKS+YfK5ftB6X4v/MBw8yCoug==";
     };
     buildInputs = globalBuildInputs;
     meta = {
