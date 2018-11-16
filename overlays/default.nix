@@ -92,6 +92,7 @@ let
     super.bc
     (super.ctagsWrapped.ctagsWrapped.override { name = "ctags"; })
     super.fasd
+    super.autojump
     super.dos2unix
     super.gnumake
     super.direnv
