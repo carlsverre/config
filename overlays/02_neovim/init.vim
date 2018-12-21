@@ -202,7 +202,11 @@ set completeopt+=longest
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
+
 let g:deoplete#sources#jedi#python_path = g:python3_host_prog
+
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 
 let deoplete#tag#cache_limit_size = 5000000
 
@@ -255,69 +259,10 @@ noremap <leader>a :NERDTreeFind<C-M>
 " quit vim if NERDTree is last buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-"------  TagBar Options  ------"
-"
-noremap <leader>A :TagbarToggle<CR>
-
-let g:tagbar_type_go = {
-    \ 'ctagstype' : 'go',
-    \ 'kinds'     : [
-        \ 'p:package',
-        \ 'i:imports:1',
-        \ 'c:constants',
-        \ 'v:variables',
-        \ 't:types',
-        \ 'n:interfaces',
-        \ 'w:fields',
-        \ 'e:embedded',
-        \ 'm:methods',
-        \ 'r:constructor',
-        \ 'f:functions'
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-        \ 't' : 'ctype',
-        \ 'n' : 'ntype'
-    \ },
-    \ 'scope2kind' : {
-        \ 'ctype' : 't',
-        \ 'ntype' : 'n'
-    \ },
-    \ 'ctagsbin'  : 'gotags',
-    \ 'ctagsargs' : '-sort -silent'
-\ }
-
-let g:tagbar_type_markdown = {
-    \ 'ctagstype' : 'markdown',
-    \ 'kinds' : [
-        \ 'h:headings',
-        \ 'l:links',
-        \ 'i:images'
-    \ ],
-    \ "sort" : 0
-\ }
-
-"------  EasyTags Options  ------"
-set cpoptions+=d
-set tags=./.tags
-let g:easytags_dynamic_files = 2
-let g:easytags_resolve_links = 1
-let g:easytags_suppress_ctags_warning = 1
-let g:easytags_suppress_report = 1
-let g:easytags_async = 1
-
-let g:easytags_languages = {
-\   'go': {
-\     'cmd': 'gotags',
-\     'args': ['-sort -silent']
-\   }
-\}
-
 "------  Ctrl-p  ------"
 let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_extensions = ["tag"]
 let g:ctrlp_mruf_relative = 1
 let g:ctrlp_mruf_case_sensitive = 0
 let g:ctrlp_use_caching = 0
@@ -326,7 +271,6 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 let g:ctrlp_match_func = {'match' : 'cpsm#CtrlPMatch' }
 
 nmap <leader>b :CtrlPBuffer<CR>
-nmap <leader>B :CtrlPTag<CR>
 
 "------  GitGutter  ------"
 highlight clear SignColumn

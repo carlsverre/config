@@ -9,7 +9,6 @@ let
   };
   nixpkgs-master = import nixpkgs-master-src {};
 
-  nvim = super.callPackage ../nvim {};
   eslint = super.callPackage ../node/eslint.nix {};
   prettier = super.callPackage ../node/prettier.nix {};
 
@@ -86,7 +85,7 @@ let
   ];
 
   dev-tools = [
-    nvim
+    super.neovim
     super.git
     super.jq
     super.bc
