@@ -4,8 +4,8 @@ let
   nixpkgs-master-src = super.fetchFromGitHub {
     owner = "nixos";
     repo = "nixpkgs";
-    rev = "49d97c34958c1b31c509fe1cb52d97c998bd6184";
-    sha256 = "179j9kh9fdqsiyzgdh30sm4hbl98hrzw611v07qmpbi0mahf5jxk";
+    rev = "907e88c1d18fba18f6b044cbce7405d6606151df";
+    sha256 = "0d4qd31lapdpx56ih3hkydzdc40qxy4d6vs2x15va18sg9qjpc92";
   };
   nixpkgs-master = import nixpkgs-master-src {};
 
@@ -15,7 +15,6 @@ let
   nix-tools = [
     super.nix-prefetch-scripts
     super.nix-prefetch-git
-    super.nox
   ];
 
   linux-tools = [
@@ -63,7 +62,7 @@ let
     super.slack
     super.skype
     nixpkgs-master.spotify
-    super.steam
+    nixpkgs-master.steam
     super.gcolor2
     super.keybase-gui
     super.firefox
