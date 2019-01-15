@@ -141,6 +141,7 @@ let
   node-env = [
     super.nodejs-8_x
     super.flow
+    super.yarn
     prettier
   ];
 
@@ -148,6 +149,7 @@ let
     super.ocaml
     super.ocamlPackages.merlin
     super.ocamlPackages.reason
+    super.reason
   ];
 
   go-env = [
