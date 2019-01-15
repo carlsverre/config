@@ -9,8 +9,10 @@ let
   };
   nixpkgs-master = import nixpkgs-master-src {};
 
-  eslint = super.callPackage ../node/eslint.nix {};
-  prettier = super.callPackage ../node/prettier.nix {};
+  node-modules = import ../node/default.nix {
+    pkgs = super;
+    nodejs = super.nodejs-8_x;
+  };
 
   nix-tools = [
     super.nix-prefetch-scripts
@@ -142,14 +144,7 @@ let
     super.nodejs-8_x
     super.flow
     super.yarn
-    prettier
-  ];
-
-  ocaml-env = [
-    super.ocaml
-    super.ocamlPackages.merlin
-    super.ocamlPackages.reason
-    super.reason
+    node-modules.prettier
   ];
 
   go-env = [
@@ -177,20 +172,6 @@ let
     pylint
   ];
 
-  java-env = [
-    super.sbt
-    super.openjdk
-    (super.idea.idea-community.overrideDerivation (oldAttrs: rec {
-      name = "idea-community-${version}";
-      version = "2018.2.5";
-      src = super.fetchurl {
-        url = "https://download.jetbrains.com/idea/ideaIC-${version}.tar.gz";
-        sha256 = "0jnnmhn1gba670q2yprlh3ypa6k21pbg91pshz9aqkdhhmzk4759";
-      };
-    }))
-    (super.spark.override { mesosSupport = false; })
-  ];
-
   base-tools =
     nix-tools
     ++ linux-tools
@@ -215,8 +196,6 @@ in
         ++ x11-tools
         ++ go-env
         ++ node-env
-        ++ ocaml-env
-        ++ java-env
         ++ python2-env
         ++ python3-env;
 
