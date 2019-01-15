@@ -1,3 +1,4 @@
 [
-    "prettier"
+    "prettier",
+    "javascript-typescript-langserver"
 ]

@@ -1,5 +1,5 @@
 node-packages.nix: node_modules/.bin/node2nix node-packages.json
-	node_modules/.bin/node2nix -i node-packages.json \
+	node_modules/.bin/node2nix --nodejs-10 -i node-packages.json \
 		--include-peer-dependencies
 
 node_modules/.bin/node2nix:

@@ -11,7 +11,7 @@ let
 
   node-modules = import ../node/default.nix {
     pkgs = super;
-    nodejs = super.nodejs-8_x;
+    nodejs = super.nodejs-10_x;
   };
 
   nix-tools = [
@@ -141,10 +141,11 @@ let
   ];
 
   node-env = [
-    super.nodejs-8_x
+    super.nodejs-10_x
     super.flow
     super.yarn
     node-modules.prettier
+    node-modules.javascript-typescript-langserver
   ];
 
   go-env = [

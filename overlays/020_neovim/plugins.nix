@@ -1,5 +1,6 @@
 { pkgs, fetchFromGitHub, fetchgit,
-  python3, stdenv, cmake, boost, icu, readline, ncurses
+  python3, stdenv, cmake, boost, icu, readline, ncurses,
+  fetchurl
 }:
 
 let
@@ -22,6 +23,7 @@ in {
     { name = "vim-rooter"; }
     { name = "vim-misc"; }
     { name = "vimoutliner"; }
+    { name = "languageclient-neovim"; }
 
     # nix
     { name = "vim2nix"; }
@@ -30,7 +32,7 @@ in {
     # javascript
     { name = "vim-javascript"; }
     { name = "vim-jsx"; }
-    { name = "nrun-vim"; }
+    { name = "yats-vim"; }
 
     # python
     { name = "deoplete-jedi"; }
@@ -42,14 +44,8 @@ in {
     { name = "vim-go"; }
     { name = "vim-delve"; }
 
-    # reason
-    { name = "vim-reason"; }
-
     # terraform
     { name = "vim-terraform"; }
-
-    # freemark/ftl
-    { name = "vim-freemarker"; }
 
     # graphql
     { name = "vim-graphql"; }
@@ -58,6 +54,17 @@ in {
   knownPlugins = {
     vim-addon-manager = pkgs.vimPlugins.vim-addon-manager;
     vim2nix = pkgs.vimPlugins.vim2nix;
+
+    yats-vim = buildVimPluginFrom2Nix { # created by nix#NixDerivation
+      name = "yats-vim-2019-01-15";
+      src = fetchgit {
+        url = "https://github.com/HerringtonDarkholme/yats.vim";
+        rev = "c743a40069420366b9896fb62347519d8443f94d";
+        sha256 = "04k017dy5kp1lwgbzjmqymnpifbj1lhsw67rffycw59ya2p5gsf2";
+      };
+      dependencies = [];
+
+    };
 
     vim-nix = buildVimPluginFrom2Nix { # created by nix#NixDerivation
       name = "vim-nix-2018-08-27";
@@ -114,15 +121,24 @@ in {
 
     };
 
-    vim-freemarker = buildVimPluginFrom2Nix { # created by nix#NixDerivation
-      name = "vim-freemarker-2017-07-08";
+    languageclient-neovim = buildVimPluginFrom2Nix rec { # created by nix#NixDerivation
+      name = "languageclient-neovim-2019-01-14";
       src = fetchgit {
-        url = "https://github.com/andreshazard/vim-freemarker";
-        rev = "993bda23e72e4c074659970c1e777cb19d8cf93e";
-        sha256 = "1dixs9dbsn6k96x315dysrkmd8d6v0g9nn8nmvsf3i7as6xag0c3";
+        url = "https://github.com/autozimu/LanguageClient-neovim";
+        rev = "486e626b823b63e9e0f67c35c718079b95db5b94";
+        sha256 = "0qib23cn3n16syhclqy8ch2g8srd2b2q7p5p78s6amrhm712b360";
       };
-      dependencies = [];
 
+      lc-bin = fetchurl {
+        url = "https://github.com/autozimu/LanguageClient-neovim/releases/download/0.1.133/languageclient-0.1.133-x86_64-unknown-linux-musl";
+        sha256 = "0fzhwnq14fk0v9wsx2nm4j9zl11fh6p0dydsd80if1cm328b7qn7";
+      };
+
+      dependencies = [];
+      buildPhase = ''
+        cp ${lc-bin} bin/languageclient
+        chmod a+x bin/languageclient
+      '';
     };
 
     ctrlp-vim = buildVimPluginFrom2Nix { # created by nix#NixDerivation
@@ -175,17 +191,6 @@ in {
         url = "https://github.com/hdima/python-syntax";
         rev = "69760cb3accce488cc072772ca918ac2cbf384ba";
         sha256 = "1ix7li8sjcn3i3g9jm2jng1gkjqh8r11qccfdblkjv7wxxzwpg01";
-      };
-      dependencies = [];
-
-    };
-
-    nrun-vim = buildVimPluginFrom2Nix { # created by nix#NixDerivation
-      name = "nrun-vim-2017-10-19";
-      src = fetchgit {
-        url = "https://github.com/jaawerth/nrun.vim";
-        rev = "847dd4887eded123314896caf50b1c9a8502e599";
-        sha256 = "1cqpkd2czj9llx27psnn5zi9q874lv1bdsmq14f4rmrhi2kwmmqh";
       };
       dependencies = [];
 
@@ -264,17 +269,6 @@ in {
         url = "https://github.com/pangloss/vim-javascript";
         rev = "7201a3b27caa491e697ec9c1bdb63b10623beae1";
         sha256 = "068qkc4kbkwcd6vg97ig33hh3i4yys5w1g69b0mm9ba34krzr687";
-      };
-      dependencies = [];
-
-    };
-
-    vim-reason = buildVimPluginFrom2Nix { # created by nix#NixDerivation
-      name = "vim-reason-2017-11-06";
-      src = fetchgit {
-        url = "https://github.com/reasonml-editor/vim-reason";
-        rev = "d8f0885979d7b1053e57bb36bb5311c9177d9f5c";
-        sha256 = "0qqz03167hxff69favp9vwf05mn0kfqxps2qzkfdkjpq6ffkavia";
       };
       dependencies = [];
 
