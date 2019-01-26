@@ -156,6 +156,11 @@ let
     super.dep
   ];
 
+  rust-env = [
+    super.latest.rustChannels.nightly.rust
+    super.rustracer
+  ];
+
   python2-env = with super.python27Packages; [
     (super.python27Full.withPackages (ps: [
       ps.setuptools
@@ -196,6 +201,7 @@ in
         ++ network-apps
         ++ x11-tools
         ++ go-env
+        ++ rust-env
         ++ node-env
         ++ python2-env
         ++ python3-env;

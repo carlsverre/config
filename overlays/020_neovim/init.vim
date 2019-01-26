@@ -332,6 +332,13 @@ au FileType go nmap gb <Plug>(go-doc-browser)
 au FileType go nmap gi <Plug>(go-info)
 au FileType go nmap <Leader>d <Plug>(go-def)
 
+"------ Rust ------"
+let g:rustfmt_autosave = 1
+let g:racer_experimental_completer = 1
+
+au FileType rust nmap <Leader>d <Plug>(rust-def)
+au FileType rust nmap K <Plug>(rust-doc)
+
 "------  Undo Tree  ------"
 
 nnoremap <silent> <leader>u :UndotreeToggle<CR>
