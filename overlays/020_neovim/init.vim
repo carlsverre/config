@@ -334,7 +334,6 @@ au FileType go nmap <Leader>d <Plug>(go-def)
 
 "------ Rust ------"
 let g:rustfmt_autosave = 1
-let g:racer_experimental_completer = 1
 
 au FileType rust nmap <Leader>d <Plug>(rust-def)
 au FileType rust nmap K <Plug>(rust-doc)
