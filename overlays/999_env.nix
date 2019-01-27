@@ -9,16 +9,6 @@ let
   };
   nixpkgs-master = import nixpkgs-master-src {};
 
-  moz-overlay = (import (builtins.fetchTarball {
-    url = https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz;
-    sha256 = "17p1krbs6x6rnz59g46rja56b38gcigri3h3x9ikd34cxw77wgs9";
-  }) self super);
-
-  rustpkgs = (moz-overlay.rustChannelOf {
-    date = "2019-01-17";
-    channel = "stable";
-  });
-
   node-modules = import ../node/default.nix {
     pkgs = super;
     nodejs = super.nodejs-10_x;
@@ -167,10 +157,7 @@ let
   ];
 
   rust-env = [
-    (rustpkgs.rust.override {
-      extensions = [ "rust-src" ];
-    })
-    super.rustracer
+    super.rustup
   ];
 
   python2-env = with super.python27Packages; [
