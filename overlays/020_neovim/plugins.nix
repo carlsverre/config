@@ -52,7 +52,6 @@ in {
 
     # rust
     { name = "rust-vim"; }
-    { name = "vim-racer"; }
   ];
 
   knownPlugins = {
@@ -273,17 +272,6 @@ in {
         url = "https://github.com/pangloss/vim-javascript";
         rev = "7201a3b27caa491e697ec9c1bdb63b10623beae1";
         sha256 = "068qkc4kbkwcd6vg97ig33hh3i4yys5w1g69b0mm9ba34krzr687";
-      };
-      dependencies = [];
-
-    };
-
-    vim-racer = buildVimPluginFrom2Nix { # created by nix#NixDerivation
-      name = "vim-racer-2018-08-26";
-      src = fetchgit {
-        url = "https://github.com/racer-rust/vim-racer";
-        rev = "9c0a05e8b97700ee5d3e742fab889cf40e9e7b88";
-        sha256 = "1gywh4xqbc7z15nvqr0v3h0n51fpaik8z1is0pxvpmj0fwzds0b3";
       };
       dependencies = [];
 

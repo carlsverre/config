@@ -26,5 +26,4 @@
 "github:jparise/vim-graphql"
 "github:autozimu/LanguageClient-neovim"
 "github:HerringtonDarkholme/yats.vim"
-"github:racer-rust/vim-racer"
 "github:rust-lang/rust.vim"

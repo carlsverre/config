@@ -335,9 +335,6 @@ au FileType go nmap <Leader>d <Plug>(go-def)
 "------ Rust ------"
 let g:rustfmt_autosave = 1
 
-au FileType rust nmap <Leader>d <Plug>(rust-def)
-au FileType rust nmap K <Plug>(rust-doc)
-
 "------  Undo Tree  ------"
 
 nnoremap <silent> <leader>u :UndotreeToggle<CR>
@@ -364,7 +361,8 @@ let g:rooter_patterns = ['.vim-rooter', '.git', '.git/']
 "------  langaugeclient   ------"
 let g:LanguageClient_serverCommands = {
     \ 'typescript.tsx': ['javascript-typescript-stdio'],
+    \ 'rust': ['rls'],
     \ }
 
-au FileType typescript.tsx nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-au FileType typescript.tsx nnoremap <silent> <Leader>d :call LanguageClient#textDocument_definition()<CR>
+au FileType typescript.tsx,rust nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+au FileType typescript.tsx,rust nnoremap <silent> <Leader>d :call LanguageClient#textDocument_definition()<CR>
