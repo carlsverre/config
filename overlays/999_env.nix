@@ -107,7 +107,7 @@ let
     super.zip
     super.docker_compose
     super.aria2
-    super.terraform
+    nixpkgs-master.terraform
     super.packer
     super.kubectl
     super.pv
