@@ -157,7 +157,7 @@ let
   ];
 
   rust-env = [
-    super.rustup
+    nixpkgs-master.rustup
   ];
 
   python2-env = with super.python27Packages; [
