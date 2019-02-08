@@ -123,7 +123,6 @@ let
     super.postgresql
     super.rxvt_unicode.terminfo
     super.lm_sensors
-    super.minikube
   ];
 
   x11-tools = [
