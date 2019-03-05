@@ -4,8 +4,8 @@ let
   nixpkgs-master-src = super.fetchFromGitHub {
     owner = "nixos";
     repo = "nixpkgs";
-    rev = "907e88c1d18fba18f6b044cbce7405d6606151df";
-    sha256 = "0d4qd31lapdpx56ih3hkydzdc40qxy4d6vs2x15va18sg9qjpc92";
+    rev = "d3ff902e946aa7eed206332c14b7caad06ee233d";
+    sha256 = "1gpsfszww6m5qg0pf6g37h28aqi1acy6khihxzilc00iwr5ysnxz";
   };
   nixpkgs-master = import nixpkgs-master-src {};
 
@@ -62,7 +62,7 @@ let
     super.hexchat
     super.i3lock
     super.slack
-    super.discord
+    nixpkgs-master.discord
     super.skype
     nixpkgs-master.spotify
     nixpkgs-master.steam
