@@ -62,6 +62,7 @@ let
     super.hexchat
     super.i3lock
     super.slack
+    super.discord
     super.skype
     nixpkgs-master.spotify
     nixpkgs-master.steam
