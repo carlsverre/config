@@ -14,7 +14,7 @@
 "github:nixprime/cpsm"
 "github:pangloss/vim-javascript"
 "github:scrooloose/nerdtree"
-"github:terryma/vim-multiple-cursors"
+"github:mg979/vim-visual-multi"
 "github:vim-airline/vim-airline"
 "github:vim-airline/vim-airline-themes"
 "github:zchee/deoplete-go"

@@ -11,7 +11,7 @@ in {
     { name = "nerdtree"; }
     { name = "vim-gitgutter"; }
     { name = "vim-fugitive"; }
-    { name = "vim-multiple-cursors"; }
+    { name = "vim-visual-multi"; }
     { name = "ale"; }
     { name = "ctrlp-vim"; }
     { name = "cpsm"; }
@@ -230,6 +230,17 @@ in {
 
     };
 
+    vim-visual-multi = buildVimPluginFrom2Nix { # created by nix#NixDerivation
+      name = "vim-visual-multi-2019-02-06";
+      src = fetchgit {
+        url = "https://github.com/mg979/vim-visual-multi";
+        rev = "3becd178d3f4965220824725a78bbae256894935";
+        sha256 = "0nyymyrsbn3wyqrdkn9vk20mjfs12mnvba12dq0p7z6fgyp7z8zr";
+      };
+      dependencies = [];
+
+    };
+
     vim-grepper = buildVimPluginFrom2Nix { # created by nix#NixDerivation
       name = "vim-grepper-2019-01-22";
       src = fetchgit {
@@ -314,17 +325,6 @@ in {
         url = "https://github.com/sebdah/vim-delve";
         rev = "ad30cab549ab8b6014308fe7c095325c08dec211";
         sha256 = "10qkmdy2i9nikn82sdfvsa712lclc2y35jg4lvj98rfnxwks0bvc";
-      };
-      dependencies = [];
-
-    };
-
-    vim-multiple-cursors = buildVimPluginFrom2Nix { # created by nix#NixDerivation
-      name = "vim-multiple-cursors-2019-02-21";
-      src = fetchgit {
-        url = "https://github.com/terryma/vim-multiple-cursors";
-        rev = "9d40797a352b4e9e4ca36026ccb92fc379f0cffa";
-        sha256 = "0pvmij11b5vdxl2dxpsf4qfyl3fify36npbphwl4jq664dz5akdz";
       };
       dependencies = [];
 

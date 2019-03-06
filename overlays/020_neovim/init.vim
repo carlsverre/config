@@ -342,15 +342,9 @@ nnoremap <silent> <leader>u :UndotreeToggle<CR>
 
 let g:undotree_SetFocusWhenToggle = 1
 
-"------  Multiple Cursors  ------"
+"------  vim-visual-multi  ------"
 
-function! Multiple_cursors_before()
-    let b:deoplete_disable_auto_complete = 1
-endfunction
-
-function! Multiple_cursors_after()
-    let b:deoplete_disable_auto_complete = 0
-endfunction
+let g:VM_manual_infoline = 0
 
 "------  vimoutliner  ------"
 
