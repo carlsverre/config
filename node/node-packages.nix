@@ -247,13 +247,13 @@ let
         sha512 = "25rVYmj/dDvTR6zOa9jY1Ihd6USLa0J508Ub2iy7Aga+xu9JMbjDds2Uh03ReDGbva/YN3s3Ybi+Do0nOX6wAg==";
       };
     };
-    "jaeger-client-3.13.0" = {
+    "jaeger-client-3.14.4" = {
       name = "jaeger-client";
       packageName = "jaeger-client";
-      version = "3.13.0";
+      version = "3.14.4";
       src = fetchurl {
-        url = "https://registry.npmjs.org/jaeger-client/-/jaeger-client-3.13.0.tgz";
-        sha512 = "ykrXLxcmSHSdDXqK6/DY+IObekfj4kbONC3QPu/ln7sbY5bsA+Yu4LYVlW9/vLm0lxLlsz52mSyC+sjiqM8xCw==";
+        url = "https://registry.npmjs.org/jaeger-client/-/jaeger-client-3.14.4.tgz";
+        sha512 = "+AEI0z3ppLkqOKxUvN6n+qmjDj7O8R+Qr3lO9AXRtuEKxX4p0bfMwqcFiTQPr80twVVdF3wCrZVkcpJysZUL5w==";
       };
     };
     "lodash-4.17.11" = {
@@ -550,10 +550,10 @@ in
   prettier = nodeEnv.buildNodePackage {
     name = "prettier";
     packageName = "prettier";
-    version = "1.15.3";
+    version = "1.16.4";
     src = fetchurl {
-      url = "https://registry.npmjs.org/prettier/-/prettier-1.15.3.tgz";
-      sha512 = "gAU9AGAPMaKb3NNSUUuhhFAS7SCO4ALTN4nRIn6PJ075Qd28Yn2Ig2ahEJWdJwJmlEBTUfC7mMUSFy8MwsOCfg==";
+      url = "https://registry.npmjs.org/prettier/-/prettier-1.16.4.tgz";
+      sha512 = "ZzWuos7TI5CKUeQAtFd6Zhm2s6EpAD/ZLApIhsF9pRvRtM1RFo61dM/4MSRUA0SuLugA/zgrZD8m0BaY46Og7g==";
     };
     buildInputs = globalBuildInputs;
     meta = {
@@ -600,7 +600,7 @@ in
       sources."inflight-1.0.6"
       sources."inherits-2.0.3"
       sources."iterare-1.1.2"
-      (sources."jaeger-client-3.13.0" // {
+      (sources."jaeger-client-3.14.4" // {
         dependencies = [
           sources."opentracing-0.13.0"
         ];

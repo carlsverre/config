@@ -24,6 +24,5 @@
 "github:sebdah/vim-delve"
 "github:tpope/vim-fugitive"
 "github:jparise/vim-graphql"
-"github:autozimu/LanguageClient-neovim"
 "github:HerringtonDarkholme/yats.vim"
 "github:rust-lang/rust.vim"
