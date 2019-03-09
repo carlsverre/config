@@ -88,6 +88,8 @@ let
 
   dev-tools = [
     super.neovim
+    super.urbit
+    super.urbit-bridge
     super.git
     super.jq
     super.bc
