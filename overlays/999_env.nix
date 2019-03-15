@@ -112,7 +112,7 @@ let
     super.aria2
     nixpkgs-master.terraform
     super.packer
-    super.kubectl
+    nixpkgs-master.kubectl
     super.pv
     super.sift
     super.fzf
