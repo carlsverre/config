@@ -353,11 +353,15 @@ autocmd FileType votl setlocal nolist
 "------  vim-rooter   ------"
 let g:rooter_patterns = ['.vim-rooter', '.git', '.git/']
 
-"------  langaugeclient   ------"
+"------  LanguageClient   ------"
 let g:LanguageClient_serverCommands = {
-    \ 'typescript.tsx': ['javascript-typescript-stdio'],
     \ 'rust': ['rls'],
     \ }
 
-au FileType typescript.tsx,rust nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-au FileType typescript.tsx,rust nnoremap <silent> <Leader>d :call LanguageClient#textDocument_definition()<CR>
+au FileType rust nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+au FileType rust nnoremap <silent> <Leader>d :call LanguageClient#textDocument_definition()<CR>
+
+"------  typescript   ------"
+au FileType typescript.tsx nnoremap <silent> K :TSDoc<CR>
+au FileType typescript.tsx nnoremap <silent> <Leader>d :TSDef<CR>
+au FileType typescript.tsx setlocal signcolumn=yes

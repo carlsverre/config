@@ -1,6 +1,6 @@
 { pkgs, fetchFromGitHub, fetchgit,
   python3, stdenv, cmake, boost, icu, readline, ncurses,
-  fetchurl
+  fetchurl, nodejs-10_x
 }:
 
 let
@@ -32,6 +32,7 @@ in {
     { name = "vim-javascript"; }
     { name = "vim-jsx"; }
     { name = "yats-vim"; }
+    { name = "nvim-typescript"; }
 
     # python
     { name = "deoplete-jedi"; }
@@ -41,7 +42,6 @@ in {
     # go
     { name = "deoplete-go"; }
     { name = "vim-go"; }
-    { name = "vim-delve"; }
 
     # terraform
     { name = "vim-terraform"; }
@@ -58,7 +58,7 @@ in {
     vim2nix = pkgs.vimPlugins.vim2nix;
 
     # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    # Update LanguageClient-neovim manually, don't use update-plugins
+    # Update the following packages manually, don't use update-plugins
     # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     LanguageClient-neovim = buildVimPluginFrom2Nix rec {
@@ -80,6 +80,32 @@ in {
       buildPhase = ''
         cp ${lc-bin} bin/languageclient
         chmod a+x bin/languageclient
+      '';
+    };
+
+    nvim-typescript = buildVimPluginFrom2Nix {
+      name = "nvim-typescript-2019-02-17";
+      src = fetchgit {
+        url = "https://github.com/mhartington/nvim-typescript";
+        rev = "eca2bb92d45f09fc500317ededace5bc849063c1";
+        sha256 = "10lh0yn7r4dfw8nkhrl676aasidwdiiln7gs9ac27yw77xz8p5zp";
+      };
+      dependencies = [];
+      buildInputs = [
+        nodejs-10_x
+        pkgs.nodePackages.typescript
+      ];
+
+      buildPhase = ''
+        pushd rplugin/node/nvim_typescript
+        mkdir -p node_modules node_modules/@types
+        ln -sfv ${pkgs.nodePackages."@types/tmp"}/lib/node_modules/@types/tmp node_modules/@types
+        ln -sfv ${pkgs.nodePackages."@types/node"}/lib/node_modules/@types/node node_modules/@types
+        ln -sfv ${pkgs.nodePackages.tmp}/lib/node_modules/tmp node_modules
+        ln -sfv ${pkgs.nodePackages.neovim}/lib/node_modules/neovim node_modules
+        ln -sfv ${pkgs.nodePackages.typescript}/lib/node_modules/typescript node_modules
+        npm run build
+        popd
       '';
     };
 
@@ -314,17 +340,6 @@ in {
         url = "https://github.com/scrooloose/nerdtree";
         rev = "e1916d6fe71f5ff84b74dbca881a598fcda877c4";
         sha256 = "14azwy8phps3sy5rb9w9z2xrjvlpspwwp8npd6qzwggqmr0w5336";
-      };
-      dependencies = [];
-
-    };
-
-    vim-delve = buildVimPluginFrom2Nix { # created by nix#NixDerivation
-      name = "vim-delve-2018-12-10";
-      src = fetchgit {
-        url = "https://github.com/sebdah/vim-delve";
-        rev = "ad30cab549ab8b6014308fe7c095325c08dec211";
-        sha256 = "10qkmdy2i9nikn82sdfvsa712lclc2y35jg4lvj98rfnxwks0bvc";
       };
       dependencies = [];
 

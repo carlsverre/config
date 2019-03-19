@@ -9,11 +9,6 @@ let
   };
   nixpkgs-master = import nixpkgs-master-src {};
 
-  node-modules = import ../node/default.nix {
-    pkgs = super;
-    nodejs = super.nodejs-10_x;
-  };
-
   nix-tools = [
     super.nix-prefetch-scripts
     super.nix-prefetch-git
@@ -87,7 +82,7 @@ let
   ];
 
   dev-tools = [
-    super.neovim
+    super.custom-neovim
     super.urbit
     super.urbit-bridge
     super.git
@@ -146,8 +141,8 @@ let
     super.nodejs-10_x
     super.flow
     super.yarn
-    node-modules.prettier
-    node-modules.javascript-typescript-langserver
+    super.nodePackages.prettier
+    super.nodePackages.typescript
   ];
 
   go-env = [
