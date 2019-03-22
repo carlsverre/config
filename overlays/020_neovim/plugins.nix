@@ -51,6 +51,9 @@ in {
 
     # rust
     { name = "rust-vim"; }
+
+    # hoon
+    { name = "hoon-vim"; }
   ];
 
   knownPlugins = {
@@ -351,6 +354,17 @@ in {
         url = "https://github.com/tpope/vim-fugitive";
         rev = "bd0b87d36ad80e8acd94f22028d15ebb441b1c28";
         sha256 = "1q4k6iwzjn9xxy57mvr39y87hdv07jw7pls3kb3cac8hm5b9gaba";
+      };
+      dependencies = [];
+
+    };
+
+    hoon-vim = buildVimPluginFrom2Nix { # created by nix#NixDerivation
+      name = "hoon-vim-2019-02-19";
+      src = fetchgit {
+        url = "https://github.com/urbit/hoon.vim";
+        rev = "848ac79bca5b679fb7670be40acfa05c6da64848";
+        sha256 = "1igirvd7zv3ky4ni2gg1nslqsflxx2vky37cbfn4kg91j4wwcmzh";
       };
       dependencies = [];
 
