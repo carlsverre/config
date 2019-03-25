@@ -121,6 +121,7 @@ let
     super.postgresql
     super.rxvt_unicode.terminfo
     super.lm_sensors
+    super.google-cloud-sdk
   ];
 
   x11-tools = [
