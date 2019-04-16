@@ -28,6 +28,7 @@ let
     super.curl
     super.ipcalc
     super.nmap
+    super.units
     super.tcpdump
     super.wget
     super.bind
