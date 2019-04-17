@@ -58,6 +58,7 @@ let
     super.hexchat
     super.i3lock
     super.slack
+    super.uhk-agent
     nixpkgs-master.discord
     super.skype
     nixpkgs-master.spotify
