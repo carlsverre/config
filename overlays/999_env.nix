@@ -57,7 +57,6 @@ let
     super.darktable
     super.hexchat
     super.i3lock
-    super.slack
     super.uhk-agent
     nixpkgs-master.discord
     super.skype
