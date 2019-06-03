@@ -4,5 +4,6 @@
     "typescript",
     "@types/node",
     "@types/tmp",
-    "tmp"
+    "tmp",
+    "lodash"
 ]

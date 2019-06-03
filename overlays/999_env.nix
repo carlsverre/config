@@ -84,8 +84,6 @@ let
 
   dev-tools = [
     super.custom-neovim
-    super.urbit
-    super.urbit-bridge
     super.git
     super.jq
     super.bc
@@ -166,8 +164,8 @@ let
     Fabric
   ];
 
-  python3-env = with super.python36Packages; [
-    (super.python36Full.withPackages (ps: [
+  python3-env = with super.python37Packages; [
+    (super.python37Full.withPackages (ps: [
       ps.setuptools
     ]))
     ipython

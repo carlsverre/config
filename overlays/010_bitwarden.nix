@@ -38,10 +38,10 @@ in
   {
     bitwarden = super.stdenv.mkDerivation rec {
       name = "bitwarden-${version}";
-      version = "1.3.0";
+      version = "1.14.0";
       src = super.fetchurl {
         url = "https://github.com/bitwarden/desktop/releases/download/v${version}/Bitwarden-${version}-amd64.deb";
-        sha256 = "04bp9h3dbgwzr57646jxbgqy9ihllayv439xaxxdnav7my4llqpp";
+        sha256 = "0r3ldzhhn3i2jz8x9y1nb3mv2r18xkgsdk0j7kxhb79x0m15hr7a";
       };
       phases = ["unpackPhase" "installPhase" "fixupPhase"];
       unpackPhase = ''
