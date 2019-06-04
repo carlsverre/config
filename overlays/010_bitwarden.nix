@@ -4,6 +4,7 @@ let
   libPath = with super; stdenv.lib.makeLibraryPath [
     alsaLib
     atk
+    at-spi2-atk
     cairo
     cups
     dbus
