@@ -4,8 +4,8 @@ let
   nixpkgs-master-src = super.fetchFromGitHub {
     owner = "nixos";
     repo = "nixpkgs";
-    rev = "d3ff902e946aa7eed206332c14b7caad06ee233d";
-    sha256 = "1gpsfszww6m5qg0pf6g37h28aqi1acy6khihxzilc00iwr5ysnxz";
+    rev = "f29b88df44e70c17c6367ef898e1abd977f535d1";
+    sha256 = "04vrwfkhhli2ylyv8j4zw3dy32ij7h4ypdn9fz090f1jf6bqa6bj";
   };
   nixpkgs-master = import nixpkgs-master-src {};
 
