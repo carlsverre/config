@@ -1,3 +1,7 @@
+if [ -f ~/.localrc.before ]; then
+    . ~/.localrc.before
+fi
+
 source ~/.zsh/aliases
 source ~/.zsh/autojump
 source ~/.zsh/completion

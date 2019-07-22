@@ -1,7 +1,6 @@
 [user]
     name = Carl Sverre
     useConfigOnly = true
-    signingkey = A940F6CA929F7E265E89C2E1E5B3FAD5BEF7CFC6
 [color]
     diff = auto
     status = auto
@@ -20,5 +19,5 @@
     default = simple
 [pull]
     default = simple
-[gpg]
-    program = gpg2
+[include]
+    path = .gitconfig.local

@@ -204,4 +204,34 @@ in
 
       extraOutputsToInstall = [ "man" "doc" ];
     };
+
+    hex-env = super.buildEnv {
+      name = "hex-env";
+      paths =
+        nix-tools
+        ++ linux-tools
+        ++ dev-tools
+        ++ productivity-tools
+        ++ go-env
+        ++ rust-env
+        ++ node-env
+        ++ python2-env
+        ++ python3-env
+        ++ [
+          # selection from network-tools
+          super.ipcalc
+
+          # selection from desktop-apps
+          super.bitwarden
+          super.gcolor2
+
+          # selection from x11-tools
+          super.arandr
+          super.autorandr
+          super.feh
+          super.rofi
+        ];
+
+      extraOutputsToInstall = [ "man" "doc" ];
+    };
   }

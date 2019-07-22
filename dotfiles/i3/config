@@ -41,7 +41,7 @@ bindsym XF86MonBrightnessDown exec light -U 5
 bindsym $mod+F7 exec autorandr -c
 
 # start rofi (a program launcher)
-bindsym $mod+space exec "LC_ALL=C rofi -show run"
+bindsym $mod+space exec "LC_ALL=C PATH=$HOME/bin:$PATH rofi -show run"
 
 # change focus
 bindsym $mod+h focus left

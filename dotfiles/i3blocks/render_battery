@@ -29,8 +29,13 @@ $acpi = <ACPI>;
 close(ACPI);
 
 # fail on unexpected output
+if (! defined $acpi) {
+	# No battery instance found, exit empty
+    exit 0
+}
+
 if ($acpi !~ /: (\w+), (\d+)%/) {
-	die "$acpi\n";
+	die "Unexpected output: $acpi\n";
 }
 
 $status = $1;

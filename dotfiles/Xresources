@@ -1,10 +1,3 @@
-Xft.dpi:                    96
-Xft.antialias:              false
-Xft.rgba:                   rgb
-Xft.hinting:                true
-Xft.hintstyle:              hintslight
-Xft.lcdfilter:              lcddefault
-
 ! Rofi configuration
 
 rofi.kb-row-up:             Up,Control-k,Control-p,Shift+Tab
@@ -29,9 +22,9 @@ URxvt*keysym.F4:            \033OS
 
 ! Fonts
 URxvt*allowBold:            true
-URxvt*font:                 xft:Hack:style=Regular:size=11
-URxvt*boldFont:             xft:Hack:style=Bold:size=11
-URxvt*italicFont:           xft:Hack:style=Italic:size=11
+URxvt*font:                 xft:Hack:style=Regular:size=11:antialias=true
+URxvt*boldFont:             xft:Hack:style=Bold:size=11:antialias=true
+URxvt*italicFont:           xft:Hack:style=Italic:size=11:antialias=true
 
 ! Note, equal is used rather than plus for increase
 ! since its easier to go up/down without pressing shift half the time
