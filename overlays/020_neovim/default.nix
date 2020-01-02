@@ -9,7 +9,6 @@ let
   };
   nixpkgs-unstable = import nixpkgs-unstable-src {};
 
-  vimrc   = builtins.readFile ./init.vim;
   plugins = super.callPackage ./plugins.nix {};
 in
 {
@@ -19,7 +18,6 @@ in
     withNodeJs = true;
 
     configure = {
-      customRC = vimrc;
       vam = plugins;
     };
   };

@@ -1,3 +1,8 @@
+let s:uname = system("uname")
+if s:uname == "Darwin\n"
+    source ~/.config/nvim/init-osx.vim
+endif
+
 "------  Visual Options  ------"
 
 syntax enable                       " enable syntax highlighting
@@ -203,7 +208,9 @@ set completeopt+=longest
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 
-let g:deoplete#sources#jedi#python_path = g:python3_host_prog
+if exists("g:python3_host_prog")
+    let g:deoplete#sources#jedi#python_path = g:python3_host_prog
+endif
 
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
