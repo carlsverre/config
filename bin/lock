@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-exec i3lock -e -c 000000
+exec i3lock -e -c 002b36

@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-shutdown -h now
+/sbin/shutdown -h now

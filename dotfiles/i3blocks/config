@@ -38,7 +38,7 @@ border=#458588
 
 [time]
 label=   
-command=echo "`date +'%d %b'` <b>`date +'%I:%M %p'`</b> "
+command=echo "`date +'%d %b'` <b>`date +'%H:%M %Z'`</b> "
 interval=10
 markup=pango
 border=#928374

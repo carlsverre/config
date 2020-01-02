@@ -209,15 +209,18 @@ in
       name = "hex-env";
       paths =
         nix-tools
-        ++ linux-tools
-        ++ dev-tools
-        ++ productivity-tools
         ++ go-env
-        ++ rust-env
-        ++ node-env
-        ++ python2-env
-        ++ python3-env
         ++ [
+          # selection from dev-tools
+          super.custom-neovim
+          super.jq
+          super.fasd
+          super.autojump
+          super.direnv
+          super.sift
+          super.fzf
+          super.rlwrap
+
           # selection from network-tools
           super.ipcalc
 

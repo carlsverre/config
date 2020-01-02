@@ -51,6 +51,9 @@ in {
 
     # rust
     { name = "rust-vim"; }
+
+    # reason
+    { name = "vim-reason-plus"; }
   ];
 
   knownPlugins = {
@@ -319,6 +322,17 @@ in {
         url = "https://github.com/pangloss/vim-javascript";
         rev = "ee445807a71ee6933cd6cbcd74940bc288815793";
         sha256 = "0x4cscpfll8m7f9hvx4fjxff5vscz4kzvs14ai1sdg75b6dngxl0";
+      };
+      dependencies = [];
+
+    };
+
+    vim-reason-plus = buildVimPluginFrom2Nix { # created by nix#NixDerivation
+      name = "vim-reason-plus-2019-05-11";
+      src = fetchgit {
+        url = "https://github.com/reasonml-editor/vim-reason-plus";
+        rev = "6f3c92a4dfc18ffd497eec2d1c2c0ea7c0056eb5";
+        sha256 = "0al370a6sj2lz3m8x96byixd4f236f1vq95j3d7n6b7a3sa0n3j6";
       };
       dependencies = [];
 

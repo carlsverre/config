@@ -281,6 +281,8 @@ let g:ale_fixers = {
 \   'typescript': ['prettier'],
 \   'css': ['prettier'],
 \   'scss': ['prettier'],
+\   'python': ['black'],
+\   'reason': ['refmt'],
 \}
 
 let g:ale_linters = {
@@ -305,6 +307,7 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_sign_column_always = 1
 let g:ale_javascript_flow_use_global = 1
 let g:ale_javascript_eslint_use_global = 1
+let g:ale_reasonml_refmt_executable = 'bsrefmt'
 
 "------  Vim-Javascript  ------"
 
@@ -359,10 +362,14 @@ let g:rooter_patterns = ['.vim-rooter', '.git', '.git/']
 "------  LanguageClient   ------"
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rls'],
+    \ 'reason': ['reason-language-server'],
     \ }
 
 au FileType rust nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 au FileType rust nnoremap <silent> <Leader>d :call LanguageClient#textDocument_definition()<CR>
+
+au FileType reason nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+au FileType reason nnoremap <silent> <Leader>d :call LanguageClient#textDocument_definition()<CR>
 
 "------  typescript   ------"
 au FileType typescript.tsx nnoremap <silent> K :TSDoc<CR>

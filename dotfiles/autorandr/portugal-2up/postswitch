@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
 
-# give XServer a bit to synchronize
-sleep 0.5
-
 feh --randomize --bg-fill ~/.wallpapers/*
-
-i3-msg restart
+xset r rate 200 50

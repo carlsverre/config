@@ -25,3 +25,4 @@
 "github:jparise/vim-graphql"
 "github:HerringtonDarkholme/yats.vim"
 "github:rust-lang/rust.vim"
+"github:reasonml-editor/vim-reason-plus"
