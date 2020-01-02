@@ -18,6 +18,9 @@ in
     withNodeJs = true;
 
     configure = {
+      customRC = ''
+        source ~/.config/nvim/init.vim
+      '';
       vam = plugins;
     };
   };
