@@ -3,6 +3,20 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
 
+# python
+brew "python3"
+
+# rust
+brew "rustup"
+
+# node
+brew "node"
+brew "yarn"
+
+# libraries
+brew "boost"
+
+# cli tools
 brew "jq"
 brew "wget"
 brew "fasd"
@@ -16,11 +30,12 @@ brew "htop"
 brew "iftop"
 brew "git"
 brew "openssl"
-brew "python3"
 brew "neovim"
-
-cask "iterm2"
+cask "cmake"
 cask "docker"
+
+# gui
+cask "iterm2"
 cask "bitwarden"
 cask "signal"
 
