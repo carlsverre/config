@@ -1,0 +1,2 @@
+#!/bin/sh
+CCACHE_PREFIX="distcc" ccache c++ -gdwarf-3 "$@"

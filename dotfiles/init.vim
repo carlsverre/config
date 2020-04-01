@@ -124,8 +124,6 @@ endif
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
-autocmd FileType cpp nmap <buffer> <silent> <Leader>d <C-]>
-
 au BufWritePost *.re silent! ReasonPrettyPrint
 
 "------  Python Stuff  ------"
@@ -382,3 +380,31 @@ au FileType reason nnoremap <silent> <Leader>d :call LanguageClient#textDocument
 au FileType typescript.tsx nnoremap <silent> K :TSDoc<CR>
 au FileType typescript.tsx nnoremap <silent> <Leader>d :TSDef<CR>
 au FileType typescript.tsx setlocal signcolumn=yes
+
+"------  rtags  ------"
+
+let g:rtagsUseDefaultMappings = 0
+let g:rtagsUseLocationList = 0
+
+augroup RtagsMappings
+    au!
+    " SymbolInfo is broken in rtags :(
+    " au FileType cpp noremap K :call rtags#SymbolInfo()<CR>
+    au FileType cpp noremap <Leader>d :call rtags#JumpTo(g:SAME_WINDOW)<CR>
+    au FileType cpp noremap <Leader>D :call rtags#JumpTo(g:SAME_WINDOW, { '--declaration-only' : '' })<CR>
+
+    au FileType cpp noremap <Leader>rp :call rtags#JumpToParent()<CR>
+    au FileType cpp noremap <Leader>rf :call rtags#FindRefs()<CR>
+    au FileType cpp noremap <Leader>rF :call rtags#FindRefsCallTree()<CR>
+    au FileType cpp noremap <Leader>rn :call rtags#FindRefsByName(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
+    au FileType cpp noremap <Leader>rs :call rtags#FindSymbols(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
+    au FileType cpp noremap <Leader>rr :call rtags#ReindexFile()<CR>
+    au FileType cpp noremap <Leader>rl :call rtags#ProjectList()<CR>
+    au FileType cpp noremap <Leader>rw :call rtags#RenameSymbolUnderCursor()<CR>
+    au FileType cpp noremap <Leader>rv :call rtags#FindVirtuals()<CR>
+    au FileType cpp noremap <Leader>rb :call rtags#JumpBack()<CR>
+    au FileType cpp noremap <Leader>rh :call rtags#ShowHierarchy()<CR>
+    au FileType cpp noremap <Leader>rC :call rtags#FindSuperClasses()<CR>
+    au FileType cpp noremap <Leader>rc :call rtags#FindSubClasses()<CR>
+    au FileType cpp noremap <Leader>rd :call rtags#Diagnostics()<CR>
+augroup END

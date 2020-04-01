@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+SINK=$(pactl info | grep 'Default Sink' | awk '{ print $3 }' | sed -e 's/\.[^.]\+$//')
+SOURCE=$(echo ${SINK} | sed -e 's/_sink/_source/')
+CARD=$(echo ${SINK} | sed -e 's/_sink/_card/')
+
+if [[ ! "${SINK}" =~ ^bluez.*$ ]]; then
+    echo "not attached to bluetooth sink"
+    echo "found: '${SINK}'"
+    exit 1
+fi
+
+PROFILE="${1}"
+if [[ "${PROFILE}" != "music" && "${PROFILE}" != "headset" ]]; then
+    echo "Usage: ${0} music|headset"
+    exit 1
+fi
+
+if [[ "${PROFILE}" == "headset" ]]; then
+    pactl set-card-profile "${CARD}" headset_head_unit
+
+    SINK="${SINK}.headset_head_unit"
+    SOURCE="${SOURCE}.headset_head_unit"
+
+    pactl set-default-sink "${SINK}"
+    pactl set-default-source "${SOURCE}"
+
+    for connection in $(pacmd list-source-outputs | grep flags -B2 | tac | sed '/DONT_MOVE/I,+2 d' | grep index | awk '{ print $2}'); do
+        pactl move-source-output ${connection} ${SOURCE}
+    done
+else
+    pactl set-card-profile "${CARD}" a2dp_sink
+
+    SOURCE="${SOURCE}.a2dp_sink"
+    SINK="${SINK}.a2dp_sink"
+
+    pactl set-default-sink "${SINK}"
+fi
+
+for connection in $(pacmd list-sink-inputs | grep index | awk '{ print $2}'); do
+    pactl move-sink-input ${connection} ${SINK}
+done

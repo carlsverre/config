@@ -18,6 +18,10 @@ font pango: DejaVu Sans Mono, FontAwesome, 10
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Make certain applications always float
+for_window [class="Blueman-manager" instance="blueman-manager"] floating enable
+for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
+
 # gaps
 smart_gaps on
 smart_borders on

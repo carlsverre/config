@@ -19,5 +19,5 @@ primary
 rate 60.00
 output eDP1
 mode 1600x900
-pos 1920x367
+pos 1920x465
 rate 60.00

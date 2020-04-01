@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Left click
+if [[ "${BLOCK_BUTTON}" -eq 1 ]]; then
+  blueman-manager >/dev/null &
+fi
+
+STATUS=$(bluetooth | grep -wo 'on')
+
+if [[ "${STATUS}" = "on" ]]; then
+  echo "on "
+  echo "on "
+  echo ""
+fi

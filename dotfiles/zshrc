@@ -15,3 +15,6 @@ source ~/.zsh/node
 if [ -f ~/.localrc ]; then
     . ~/.localrc
 fi
+
+# added by travis gem
+[ -f /home/carl/.travis/travis.sh ] && source /home/carl/.travis/travis.sh

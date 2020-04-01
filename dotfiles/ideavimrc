@@ -36,3 +36,4 @@ nnoremap ,t :action GotoFile<CR>
 nnoremap ,g :action GotoSymbol<CR>
 nnoremap ,d :action GotoDeclaration<CR>
 nnoremap ,a :action SelectInProjectView<CR>
+nnoremap <C-o> :action Back<CR>

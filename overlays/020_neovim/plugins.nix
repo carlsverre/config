@@ -23,6 +23,8 @@ in {
     { name = "vim-rooter"; }
     { name = "vimoutliner"; }
     { name = "LanguageClient-neovim"; }
+    { name = "vim-rtags"; }
+    { name = "deoplete-rtags"; }
 
     # nix
     { name = "vim2nix"; }
@@ -249,6 +251,17 @@ in {
 
     };
 
+    vim-rtags = buildVimPluginFrom2Nix { # created by nix#NixDerivation
+      name = "vim-rtags-2018-07-22";
+      src = fetchgit {
+        url = "https://github.com/lyuts/vim-rtags";
+        rev = "3ef48de532c2e875f0fc3c33b34befed2bf37016";
+        sha256 = "03mrs1ggpszppvga8bbrjgay82f4p69n0a7harzdcvfmdawzp69i";
+      };
+      dependencies = [];
+
+    };
+
     undotree = buildVimPluginFrom2Nix { # created by nix#NixDerivation
       name = "undotree-2019-03-13";
       src = fetchgit {
@@ -344,6 +357,17 @@ in {
         url = "https://github.com/rust-lang/rust.vim";
         rev = "53f40ec6c628099e353f25cabd54e5047c28d81d";
         sha256 = "162aa8l4wkssxdw5k3nvbzmqacjkdiy882hhi6mr5596a8wg58js";
+      };
+      dependencies = [];
+
+    };
+
+    deoplete-rtags = buildVimPluginFrom2Nix { # created by nix#NixDerivation
+      name = "deoplete-rtags-2020-02-29";
+      src = fetchgit {
+        url = "https://github.com/carlsverre/deoplete-rtags";
+        rev = "bc531ca704349912350982ca5e788a3b73f56bf9";
+        sha256 = "0k0p7k32m5xhdkckvcs6y2ngshjvs54jzjw1aq5yh02cacxbnj0n";
       };
       dependencies = [];
 

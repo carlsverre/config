@@ -6,35 +6,47 @@ border_right=0
 border_bottom=0
 
 [volume]
-command=~/.config/i3blocks/render_volume
+command=~/.config/i3blocks/blocks/volume
 interval=10
 signal=1
 border=#cc241d
 markup=pango
 
+[bluetooth]
+label=   
+interval=10
+command=~/.config/i3blocks/blocks/bluetooth
+border=#15AABF
+
 [wireless]
-label=   
+label=    
 command=[[ -z "$(iwgetid -r)" ]] || echo "$(iwgetid -r) "
 interval=2
 border=#98971a
 
 [iface]
 label=
-command=~/.config/i3blocks/render_iface
+command=~/.config/i3blocks/blocks/network
 interval=2
 border=#98971a
 
 [battery]
-command=~/.config/i3blocks/render_battery
+command=~/.config/i3blocks/blocks/battery
 instance=0
 interval=10
 border=#458588
 
 [battery]
-command=~/.config/i3blocks/render_battery
+command=~/.config/i3blocks/blocks/battery
 instance=1
 interval=10
 border=#458588
+
+[cpu-temperature]
+command=~/.config/i3blocks/blocks/temperature
+instance=Core
+interval=10
+border=#cc241d
 
 [time]
 label=   
