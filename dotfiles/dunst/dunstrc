@@ -49,11 +49,11 @@
     # the window expands to the longest message displayed.
     # A positive x is measured from the left, a negative from the
     # right side of the screen.  Y is measured from the top and down respectevly.
-    geometry = "0x5-10+10"
+    geometry = "400x5-10+10"
 
     # The transparency of the window. range: [0; 100]
     # This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
-    transparency = 50
+    transparency = 25
 
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -94,10 +94,10 @@
     separator_color = frame
 
     padding = 8
-    horizontal_padding = 8
+    horizontal_padding = 10
 
 [frame]
-    width = 3
+    width = 2
     color = "#888888"
 
 [urgency_low]
@@ -105,16 +105,16 @@
     # Otherwise the '#' and following  would be interpreted as a comment.
     background = "#171717"
     foreground = "#FFFFFF"
-    timeout = 5
+    timeout = 3
 
 [urgency_normal]
     background = "#202020"
     foreground = "#DDDDDD"
-    timeout = 10
+    timeout = 3
 
 [urgency_critical]
     background = "#A90000"
     foreground = "#000000"
-    timeout = 30
+    timeout = 20
 
 # vim: ft=sh
