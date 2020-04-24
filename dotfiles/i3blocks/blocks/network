@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Copyright (C) 2014 Julien Bonjean <julien@bonjean.info>
 # Copyright (C) 2014 Alexander Keller <github@nycroth.com>
+# Modified by Carl Sverre
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,6 +17,14 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #------------------------------------------------------------------------
+
+if [[ -n "$BLOCK_BUTTON" ]]; then
+    if [[ "$BLOCK_BUTTON" == "1" ]]; then
+        # mouse 1 pressed
+        nmcli c show --active | grep -q memsql-sf && nmcli c down memsql-sf >/dev/null || nmcli c up memsql-sf >/dev/null
+        echo ""
+    fi
+fi
 
 # Use the provided interface, otherwise the device used for the default route.
 if [[ -n $BLOCK_INSTANCE ]]; then
