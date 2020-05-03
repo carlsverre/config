@@ -2,7 +2,7 @@
 "github:Shougo/deoplete.nvim"
 "github:airblade/vim-gitgutter"
 "github:airblade/vim-rooter"
-"github:altercation/vim-colors-solarized"
+"github:lifepillar/vim-solarized8"
 "github:w0rp/ale"
 "github:ctrlpvim/ctrlp.vim"
 "github:davidhalter/jedi-vim"

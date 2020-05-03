@@ -7,7 +7,7 @@ let
   buildVimPluginFrom2Nix = pkgs.vimUtils.buildVimPluginFrom2Nix;
 in {
   pluginDictionaries = [
-    { name = "vim-colors-solarized"; }
+    { name = "vim-solarized8"; }
     { name = "nerdtree"; }
     { name = "vim-gitgutter"; }
     { name = "vim-fugitive"; }
@@ -174,17 +174,6 @@ in {
 
     };
 
-    vim-colors-solarized = buildVimPluginFrom2Nix { # created by nix#NixDerivation
-      name = "vim-colors-solarized-2011-05-09";
-      src = fetchgit {
-        url = "https://github.com/altercation/vim-colors-solarized";
-        rev = "528a59f26d12278698bb946f8fb82a63711eec21";
-        sha256 = "05d3lmd1shyagvr3jygqghxd3k8a4vp32723fvxdm57fdrlyzcm1";
-      };
-      dependencies = [];
-
-    };
-
     ctrlp-vim = buildVimPluginFrom2Nix { # created by nix#NixDerivation
       name = "ctrlp-vim-2019-02-09";
       src = fetchgit {
@@ -246,6 +235,17 @@ in {
         url = "https://github.com/jparise/vim-graphql";
         rev = "792c7bcb138c1e787a7527f16ce63e8cf53df6ba";
         sha256 = "1hncf7kjn6acji67x263xraqlvdg4kszwhlzcggym81mcxmpmzl6";
+      };
+      dependencies = [];
+
+    };
+
+    vim-solarized8 = buildVimPluginFrom2Nix { # created by nix#NixDerivation
+      name = "vim-solarized8-2019-12-11";
+      src = fetchgit {
+        url = "https://github.com/lifepillar/vim-solarized8";
+        rev = "5df7666374ead07a482605b53a0f36c27dc17e8d";
+        sha256 = "1nvlb00lajzbhfsbsjw6f7hi37xrnyfhf0a7cgjvf3jp2piwjs2d";
       };
       dependencies = [];
 

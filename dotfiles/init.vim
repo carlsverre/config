@@ -99,8 +99,9 @@ nmap Q <Nop>
 
 "------  Set custom colorscheme stuff  ------"
 
+set termguicolors
 set background=dark
-colorscheme solarized
+colorscheme solarized8
 
 "------  Vim Config Stuff  ------"
 
@@ -397,7 +398,8 @@ augroup RtagsMappings
     au FileType cpp noremap <Leader>rf :call rtags#FindRefs()<CR>
     au FileType cpp noremap <Leader>rF :call rtags#FindRefsCallTree()<CR>
     au FileType cpp noremap <Leader>rn :call rtags#FindRefsByName(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
-    au FileType cpp noremap <Leader>rs :call rtags#FindSymbols(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
+    au FileType cpp noremap <Leader>rs :call rtags#FindSymbolsOfWordUnderCursor()<CR>
+    au FileType cpp noremap <Leader>rS :call rtags#FindSymbols(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
     au FileType cpp noremap <Leader>rr :call rtags#ReindexFile()<CR>
     au FileType cpp noremap <Leader>rl :call rtags#ProjectList()<CR>
     au FileType cpp noremap <Leader>rw :call rtags#RenameSymbolUnderCursor()<CR>
