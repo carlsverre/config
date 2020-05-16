@@ -1,7 +1,35 @@
-let s:uname = system("uname")
-if s:uname == "Darwin\n"
-    source ~/.config/nvim/init-osx.vim
-endif
+call plug#begin(stdpath('data') . '/plugged')
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'LnL7/vim-nix'
+Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-rooter'
+Plug 'lifepillar/vim-solarized8'
+Plug 'w0rp/ale'
+Plug 'davidhalter/jedi-vim'
+Plug 'fatih/vim-go'
+Plug 'hdima/python-syntax'
+Plug 'mbbill/undotree'
+Plug 'mhinz/vim-grepper'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'scrooloose/nerdtree'
+Plug 'mg979/vim-visual-multi'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vimoutliner/vimoutliner'
+Plug 'hashivim/vim-terraform'
+Plug 'tpope/vim-fugitive'
+Plug 'jparise/vim-graphql'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'rust-lang/rust.vim'
+Plug 'reasonml-editor/vim-reason-plus'
+Plug 'lyuts/vim-rtags'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+
+" Initialize plugin system
+call plug#end()
 
 "------  Visual Options  ------"
 
@@ -194,44 +222,83 @@ nnoremap <leader>Z :vsplit \| terminal <CR>
 "======  PLUGINS CONFIGURATION ======="
 "====================================="
 
-"------  Deoplete ------"
+"------  COC  ------"
+set shortmess+=c
 
-set completeopt-=preview
-set completeopt+=noinsert
-set completeopt+=noselect
-set completeopt+=menuone
-set completeopt+=longest
-
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option({
-\ 'enable_smart_case': v:true,
-\ })
-
-if exists("g:python3_host_prog")
-    let g:deoplete#sources#jedi#python_path = g:python3_host_prog
-endif
-
-let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
-let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
-
-let deoplete#tag#cache_limit_size = 5000000
-
-imap <silent><expr><Tab> pumvisible() ? "\<C-n>"
-    \ : (<SID>is_whitespace() ? "\<Tab>"
-    \ : deoplete#mappings#manual_complete())
-
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-function! s:is_whitespace()
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~? '\s'
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return deoplete#close_popup() . "\<CR>"
+inoremap <silent><expr> <c-space> coc#refresh()
+
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
 endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+"------  Deoplete ------"
+
+" set completeopt-=preview
+" set completeopt+=noinsert
+" set completeopt+=noselect
+" set completeopt+=menuone
+" set completeopt+=longest
+" 
+" let g:deoplete#enable_at_startup = 1
+" call deoplete#custom#option({
+" \ 'enable_smart_case': v:true,
+" \ })
+" 
+" if exists("g:python3_host_prog")
+"     let g:deoplete#sources#jedi#python_path = g:python3_host_prog
+" endif
+" 
+" let deoplete#tag#cache_limit_size = 5000000
+" 
+" imap <silent><expr><Tab> pumvisible() ? "\<C-n>"
+"     \ : (<SID>is_whitespace() ? "\<Tab>"
+"     \ : deoplete#mappings#manual_complete())
+" 
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" 
+" function! s:is_whitespace()
+"     let col = col('.') - 1
+"     return !col || getline('.')[col - 1]  =~? '\s'
+" endfunction
+" 
+" " <CR>: close popup and save indent.
+" inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+" function! s:my_cr_function()
+"   return deoplete#close_popup() . "\<CR>"
+" endfunction
 
 "------  Jedi ------"
 
@@ -363,14 +430,6 @@ au FileType rust nnoremap <silent> <Leader>d :call LanguageClient#textDocument_d
 
 au FileType reason nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 au FileType reason nnoremap <silent> <Leader>d :call LanguageClient#textDocument_definition()<CR>
-
-"------  typescript   ------"
-au FileType typescript.tsx nnoremap <silent> K :TSDoc<CR>
-au FileType typescript.tsx nnoremap <silent> <Leader>d :TSDef<CR>
-au FileType typescript.tsx setlocal signcolumn=yes
-au FileType typescriptreact nnoremap <silent> K :TSDoc<CR>
-au FileType typescriptreact nnoremap <silent> <Leader>d :TSDef<CR>
-au FileType typescriptreact setlocal signcolumn=yes
 
 "------  rtags  ------"
 

@@ -1,14 +1,6 @@
 self: super:
 
 let
-  nixpkgs-master-src = super.fetchFromGitHub {
-    owner = "nixos";
-    repo = "nixpkgs";
-    rev = "f29b88df44e70c17c6367ef898e1abd977f535d1";
-    sha256 = "04vrwfkhhli2ylyv8j4zw3dy32ij7h4ypdn9fz090f1jf6bqa6bj";
-  };
-  nixpkgs-master = import nixpkgs-master-src {};
-
   nix-tools = [
     super.nix-prefetch-scripts
     super.nix-prefetch-git
@@ -38,52 +30,12 @@ let
     super.heimdalFull
   ];
 
-  security-tools = [
-    super.keybase
-    super.kbfs
-    super.openssl
-    super.openvpn
-    super.gnupg1compat
-  ];
-
-  network-apps = [
-    super.insync
-    super.ipfs
-  ];
-
-  desktop-apps = [
-    super.bitwarden
-    super.calibre
-    super.darktable
-    super.hexchat
-    super.i3lock
-    super.uhk-agent
-    nixpkgs-master.discord
-    super.skype
-    nixpkgs-master.spotify
-    nixpkgs-master.steam
-    super.gcolor2
-    super.keybase-gui
-    super.firefox
-    super.dragon-drop
-    super.zoom-us
-    (super.google-chrome.override {
-      channel = "stable";
-      pulseSupport = true;
-      chromium = (super.chromium.override {
-        channel = "stable";
-        enablePepperFlash = true;
-        pulseSupport = true;
-      });
-    })
-  ];
-
-  productivity-tools = [
-    super.taskwarrior
-  ];
-
   dev-tools = [
-    super.custom-neovim
+    (super.neovim.override {
+      vimAlias = true;
+      withRuby = false;
+      withNodeJs = true;
+    })
     super.git
     super.jq
     super.bc
@@ -104,9 +56,9 @@ let
     super.zip
     super.docker_compose
     super.aria2
-    nixpkgs-master.terraform
+    super.terraform
     super.packer
-    nixpkgs-master.kubectl
+    super.kubectl
     super.pv
     super.sift
     super.ripgrep
@@ -124,28 +76,6 @@ let
     super.google-cloud-sdk
   ];
 
-  x11-tools = [
-    super.arandr
-    super.autorandr
-    super.feh
-    super.imv
-    super.pavucontrol
-    super.rofi
-    super.xclip
-    super.xorg.xdpyinfo
-    super.xorg.xev
-    super.mplayer
-    super.alsaUtils
-  ];
-
-  node-env = [
-    super.nodejs-10_x
-    super.flow
-    super.yarn
-    super.nodePackages.prettier
-    super.nodePackages.typescript
-  ];
-
   go-env = [
     super.go
     super.gotools
@@ -154,56 +84,15 @@ let
     super.dep
   ];
 
-  rust-env = [
-    nixpkgs-master.rustup
-  ];
-
-  python2-env = with super.python27Packages; [
-    (super.python27Full.withPackages (ps: [
-      ps.setuptools
-    ]))
-    Fabric
-  ];
-
-  python3-env = with super.python37Packages; [
-    (super.python37Full.withPackages (ps: [
-      ps.setuptools
-    ]))
-    ipython
-    flake8
-    virtualenv
-    pylint
-  ];
-
-  base-tools =
-    nix-tools
-    ++ linux-tools
-    ++ network-tools
-    ++ dev-tools;
-
 in
   {
     base-env = super.buildEnv {
       name = "base-env";
-      paths = base-tools;
-    };
-
-    dev-env = super.buildEnv {
-      name = "dev-env";
       paths =
-        base-tools
-        ++ productivity-tools
-        ++ security-tools
-        ++ desktop-apps
-        ++ network-apps
-        ++ x11-tools
-        ++ go-env
-        ++ rust-env
-        ++ node-env
-        ++ python2-env
-        ++ python3-env;
-
-      extraOutputsToInstall = [ "man" "doc" ];
+        nix-tools
+        ++ linux-tools
+        ++ network-tools
+        ++ dev-tools;
     };
 
     hex-env = super.buildEnv {
@@ -212,8 +101,13 @@ in
         nix-tools
         ++ go-env
         ++ [
-          # selection from dev-tools
-          super.custom-neovim
+          (super.neovim.override {
+            vimAlias = true;
+            withRuby = false;
+            withNodeJs = true;
+          })
+
+          # dev-tools
           super.jq
           super.fasd
           super.autojump
@@ -222,18 +116,20 @@ in
           super.ripgrep
           super.fzf
           super.rlwrap
+          super.patchelf
+          super.sqlite
 
-          # selection from network-tools
+          # network-tools
           super.ipcalc
 
-          # selection from desktop-apps
-          super.bitwarden
+          # desktop-apps
           super.gcolor2
 
-          # selection from x11-tools
+          # x11-tools
           super.arandr
           super.autorandr
           super.feh
+          super.peek
         ];
 
       extraOutputsToInstall = [ "man" "doc" ];

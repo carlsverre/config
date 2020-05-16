@@ -21,7 +21,6 @@ install_dotfile zsh
 install_dotfile zshrc
 mkdir -p .config/nvim/swp
 install_dotfile init.vim .config/nvim/init.vim
-install_dotfile init-osx.vim .config/nvim/init-osx.vim
 
 # install linux specific dotfiles
 if [[ "${OS}" != "Darwin" ]] ; then
