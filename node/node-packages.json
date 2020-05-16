@@ -1,9 +1,16 @@
 [
     "prettier",
     "neovim",
-    "typescript",
+    "@types/lodash-es",
     "@types/node",
     "@types/tmp",
+    "rollup",
+    "rollup-plugin-terser",
+    "rollup-plugin-node-resolve",
+    "rollup-plugin-typescript",
+    "typescript",
+    "tslib",
     "tmp",
-    "lodash"
+    "lodash",
+    "lodash-es"
 ]

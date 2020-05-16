@@ -109,6 +109,7 @@ let
     nixpkgs-master.kubectl
     super.pv
     super.sift
+    super.ripgrep
     super.fzf
     super.mysql
     super.rlwrap
@@ -218,6 +219,7 @@ in
           super.autojump
           super.direnv
           super.sift
+          super.ripgrep
           super.fzf
           super.rlwrap
 
@@ -232,7 +234,6 @@ in
           super.arandr
           super.autorandr
           super.feh
-          super.rofi
         ];
 
       extraOutputsToInstall = [ "man" "doc" ];

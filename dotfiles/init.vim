@@ -91,8 +91,8 @@ map <Leader>T :%s/\s\+$//<CR>
 noremap <Leader>r :redraw!<CR>
 
 " I make the mistake of typing W and Q instead of w and q
-nmap :W :w
-nmap :Q :q
+command Q q
+command W w
 
 " Kill the evil EX mode
 nmap Q <Nop>
@@ -180,9 +180,7 @@ nnoremap <silent> tt :tabedit %<CR>
 "------  Terminal Mode  ------"
 let g:terminal_scrollback_buffer_size = 100000
 
-autocmd WinEnter term://* startinsert
-
-tnoremap <Esc><Esc> <C-\><C-n>
+autocmd TermOpen * startinsert
 
 tnoremap <C-J> <C-\><C-n><C-W>j
 tnoremap <C-K> <C-\><C-n><C-W>k
@@ -205,7 +203,9 @@ set completeopt+=menuone
 set completeopt+=longest
 
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
+call deoplete#custom#option({
+\ 'enable_smart_case': v:true,
+\ })
 
 if exists("g:python3_host_prog")
     let g:deoplete#sources#jedi#python_path = g:python3_host_prog
@@ -264,19 +264,6 @@ noremap <leader>a :NERDTreeFind<C-M>
 
 " quit vim if NERDTree is last buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-"------  Ctrl-p  ------"
-let g:ctrlp_map = '<Leader>t'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_mruf_relative = 1
-let g:ctrlp_mruf_case_sensitive = 0
-let g:ctrlp_use_caching = 0
-
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-let g:ctrlp_match_func = {'match' : 'cpsm#CtrlPMatch' }
-
-nmap <leader>b :CtrlPBuffer<CR>
 
 "------  GitGutter  ------"
 highlight clear SignColumn
@@ -381,6 +368,9 @@ au FileType reason nnoremap <silent> <Leader>d :call LanguageClient#textDocument
 au FileType typescript.tsx nnoremap <silent> K :TSDoc<CR>
 au FileType typescript.tsx nnoremap <silent> <Leader>d :TSDef<CR>
 au FileType typescript.tsx setlocal signcolumn=yes
+au FileType typescriptreact nnoremap <silent> K :TSDoc<CR>
+au FileType typescriptreact nnoremap <silent> <Leader>d :TSDef<CR>
+au FileType typescriptreact setlocal signcolumn=yes
 
 "------  rtags  ------"
 
@@ -410,3 +400,44 @@ augroup RtagsMappings
     au FileType cpp noremap <Leader>rc :call rtags#FindSubClasses()<CR>
     au FileType cpp noremap <Leader>rd :call rtags#Diagnostics()<CR>
 augroup END
+
+"------  fzf w/ ripgrep support  ------"
+
+map <expr> <leader>t fugitive#head() != '' ? ':GFiles --cached --others --exclude-standard<CR>' : ':Files<CR>'
+nmap <leader>b :Buffers<CR>
+
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+let g:fzf_preview_window = ''
+
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case --no-config -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case --no-config -- '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
+
+nnoremap <leader>g :Rg<space>
+nnoremap <expr> <leader>G ':RG '.expand('<cword>').'<CR>'
+xnoremap <expr> <leader>G ':RG '.expand('<cword>').'<CR>'

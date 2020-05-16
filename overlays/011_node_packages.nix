@@ -3,7 +3,7 @@ self: super:
 let
   nodePackages = import ../node/default.nix {
     pkgs = super;
-    nodejs = super.nodejs-10_x;
+    nodejs = super.nodejs-12_x;
   };
 in
 {

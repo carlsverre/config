@@ -16,8 +16,8 @@ alias gid='git diff -C --date=local'
 alias giw='git show -C --date=local --decorate'
 alias gic='git checkout'
 
-# sift
-alias s='sift'
+# rg
+alias s='rg'
 
 # docker
 alias docker-ip="docker inspect -f '{{ .NetworkSettings.IPAddress }}'"

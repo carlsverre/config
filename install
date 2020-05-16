@@ -14,10 +14,12 @@ install_dotfile gitconfig
 install_dotfile gitignore
 install_dotfile ideavimrc
 install_dotfile npmrc
-install_dotfile sift.conf
+install_dotfile ripgreprc
+install_dotfile taskrc
 install_dotfile vimrc_basic
 install_dotfile zsh
 install_dotfile zshrc
+mkdir -p .config/nvim/swp
 install_dotfile init.vim .config/nvim/init.vim
 install_dotfile init-osx.vim .config/nvim/init-osx.vim
 
