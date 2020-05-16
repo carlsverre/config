@@ -10,20 +10,13 @@ Plug 'davidhalter/jedi-vim'
 Plug 'fatih/vim-go'
 Plug 'hdima/python-syntax'
 Plug 'mbbill/undotree'
-Plug 'mhinz/vim-grepper'
-Plug 'mxw/vim-jsx'
-Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdtree'
 Plug 'mg979/vim-visual-multi'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vimoutliner/vimoutliner'
-Plug 'hashivim/vim-terraform'
 Plug 'tpope/vim-fugitive'
 Plug 'jparise/vim-graphql'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'rust-lang/rust.vim'
-Plug 'reasonml-editor/vim-reason-plus'
 Plug 'lyuts/vim-rtags'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -245,10 +238,7 @@ else
 endif
 
 " GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> <leader>d <Plug>(coc-definition)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -263,42 +253,6 @@ endfunction
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
-
-"------  Deoplete ------"
-
-" set completeopt-=preview
-" set completeopt+=noinsert
-" set completeopt+=noselect
-" set completeopt+=menuone
-" set completeopt+=longest
-" 
-" let g:deoplete#enable_at_startup = 1
-" call deoplete#custom#option({
-" \ 'enable_smart_case': v:true,
-" \ })
-" 
-" if exists("g:python3_host_prog")
-"     let g:deoplete#sources#jedi#python_path = g:python3_host_prog
-" endif
-" 
-" let deoplete#tag#cache_limit_size = 5000000
-" 
-" imap <silent><expr><Tab> pumvisible() ? "\<C-n>"
-"     \ : (<SID>is_whitespace() ? "\<Tab>"
-"     \ : deoplete#mappings#manual_complete())
-" 
-" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-" 
-" function! s:is_whitespace()
-"     let col = col('.') - 1
-"     return !col || getline('.')[col - 1]  =~? '\s'
-" endfunction
-" 
-" " <CR>: close popup and save indent.
-" inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-" function! s:my_cr_function()
-"   return deoplete#close_popup() . "\<CR>"
-" endfunction
 
 "------  Jedi ------"
 
@@ -369,23 +323,6 @@ let g:ale_javascript_flow_use_global = 1
 let g:ale_javascript_eslint_use_global = 1
 let g:ale_reasonml_refmt_executable = 'bsrefmt'
 
-"------  Vim-Javascript  ------"
-
-let g:javascript_plugin_flow = 1
-
-"------  Grepper  ------"
-let g:grepper               = {}
-let g:grepper.tools         = ['git', 'sift']
-let g:grepper.jump          = 1
-let g:grepper.next_tool     = '<leader>g'
-let g:grepper.simple_prompt = 1
-
-nmap <leader>g :Grepper -tool git -nojump -open -switch<CR>
-nmap <leader>G :Grepper -tool git -nojump -open -switch -cword -noprompt<CR>
-
-"------  JSX  ------"
-let g:jsx_ext_required = 0
-
 "------ Go ------"
 let g:go_highlight_types = 1
 let g:go_highlight_functions = 1
@@ -394,13 +331,6 @@ let g:go_highlight_structs = 1
 let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-
-au FileType go nmap gb <Plug>(go-doc-browser)
-au FileType go nmap gi <Plug>(go-info)
-au FileType go nmap <Leader>d <Plug>(go-def)
-
-"------ Rust ------"
-let g:rustfmt_autosave = 1
 
 "------  Undo Tree  ------"
 
@@ -412,24 +342,8 @@ let g:undotree_SetFocusWhenToggle = 1
 
 let g:VM_manual_infoline = 0
 
-"------  vimoutliner  ------"
-
-autocmd FileType votl setlocal nolist
-
 "------  vim-rooter   ------"
 let g:rooter_patterns = ['.vim-rooter', '.git', '.git/']
-
-"------  LanguageClient   ------"
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rls'],
-    \ 'reason': ['reason-language-server'],
-    \ }
-
-au FileType rust nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-au FileType rust nnoremap <silent> <Leader>d :call LanguageClient#textDocument_definition()<CR>
-
-au FileType reason nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-au FileType reason nnoremap <silent> <Leader>d :call LanguageClient#textDocument_definition()<CR>
 
 "------  rtags  ------"
 
