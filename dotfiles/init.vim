@@ -20,6 +20,7 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'lyuts/vim-rtags'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'rust-lang/rust.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -414,3 +415,6 @@ command! -bang -nargs=* Rg
 nnoremap <leader>g :Rg<space>
 nnoremap <expr> <leader>G ':RG '.expand('<cword>').'<CR>'
 xnoremap <expr> <leader>G ':RG '.expand('<cword>').'<CR>'
+
+"------  rust  ------"
+let g:rustfmt_autosave = 1
