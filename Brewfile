@@ -33,11 +33,14 @@ brew "openssl"
 brew "neovim"
 cask "cmake"
 cask "docker"
+brew "mariadb"
 
 # gui
 cask "iterm2"
 cask "bitwarden"
 cask "signal"
+cask "visual-studio-code"
+cask "dash"
 
 # window management
 tap "koekeishiya/formulae"
