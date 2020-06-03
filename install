@@ -13,7 +13,6 @@ install_dotfile ctags
 install_dotfile gitconfig
 install_dotfile gitignore
 install_dotfile ideavimrc
-install_dotfile npmrc
 install_dotfile ripgreprc
 install_dotfile taskrc
 install_dotfile vimrc_basic
@@ -25,6 +24,7 @@ install_dotfile coc-settings.json .config/nvim/coc-settings.json
 
 # install linux specific dotfiles
 if [[ "${OS}" != "Darwin" ]] ; then
+    install_dotfile npmrc
     install_dotfile Xresources
     install_dotfile autorandr
     install_dotfile compton.conf

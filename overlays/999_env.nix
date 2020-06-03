@@ -108,15 +108,15 @@ in
           })
 
           # dev-tools
-          super.jq
-          super.fasd
           super.autojump
           super.direnv
-          super.sift
-          super.ripgrep
+          super.fasd
           super.fzf
-          super.rlwrap
+          super.jq
           super.patchelf
+          super.ripgrep
+          super.rlwrap
+          super.sift
           super.sqlite
 
           # network-tools
