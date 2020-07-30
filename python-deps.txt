@@ -1,0 +1,5 @@
+greenlet==0.4.16
+msgpack==1.0.0
+neovim-remote==2.4.0
+psutil==5.7.2
+pynvim==0.4.1

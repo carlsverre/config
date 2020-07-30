@@ -29,3 +29,10 @@ include /usr/share/taskwarrior/solarized-dark-256.theme
 #include /usr/share/taskwarrior/solarized-light-256.theme
 #include /usr/share/taskwarrior/no-color.theme
 
+uda.reviewed.type=date
+uda.reviewed.label=Reviewed
+report._reviewed.description=Tasksh review report.  Adjust the filter to your needs.
+report._reviewed.columns=uuid
+report._reviewed.sort=reviewed+,modified+
+report._reviewed.filter=( reviewed.none: or reviewed.before:now-6days ) and ( +PENDING or +WAITING )
+urgency.annotations.coefficient=0.5

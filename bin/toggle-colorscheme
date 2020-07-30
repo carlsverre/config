@@ -1,0 +1,20 @@
+#!/bin/bash
+
+CONFIG="$HOME/.config/alacritty/alacritty.yml"
+CURRENT=$(awk '/colors: \*/ {gsub(/\*/,"",$2); print $2}' "${CONFIG}")
+
+if [[ "${CURRENT}" == 'light' ]]; then
+    sed -i 's/colors: \*light/colors: \*dark/' "${CONFIG}"
+    CURRENT=dark
+else
+    sed -i 's/colors: \*dark/colors: \*light/' "${CONFIG}"
+    CURRENT=light
+fi
+
+echo "set background=${CURRENT}" > "$HOME/.nvim-background"
+
+for SERVER in $(nvr --serverlist); do
+    nvr -c "set background=${CURRENT}" --servername ${SERVER} --nostart
+done
+
+pkill -RTMIN+2 i3blocks

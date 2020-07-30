@@ -57,7 +57,15 @@ esac
 # if no interface is found, use the first device with a global scope
 IPADDR=$(ip addr show $IF | perl -n -e "/$AF ([^\/]+).* scope global/ && print \$1 and exit")
 
+# active vpn link?
+ACTIVE_VPN=$(nmcli c s --active | awk '$3 ~ /vpn/{print $1}')
+
 #------------------------------------------------------------------------
 
-echo " $IPADDR " # full text
-echo " $IPADDR " # short text
+if [[ -n "${ACTIVE_VPN}" ]]; then
+    echo " $IPADDR (${ACTIVE_VPN}) " # full text
+    echo " $IPADDR (${ACTIVE_VPN}) " # short text
+else
+    echo " $IPADDR " # full text
+    echo " $IPADDR " # short text
+fi

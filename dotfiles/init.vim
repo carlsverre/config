@@ -21,6 +21,7 @@ Plug 'lyuts/vim-rtags'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'rust-lang/rust.vim'
+Plug 'alaviss/nim.nvim'
 
 " Initialize plugin system
 call plug#end()
@@ -110,11 +111,12 @@ set whichwrap=h,l,~,[,]
 map <Leader>T :%s/\s\+$//<CR>
 
 " Sometimes you just need to teach vim whose boss
-noremap <Leader>r :redraw!<CR>
+noremap <leader>r :redraw!<CR>
+noremap <leader>sc :source $MYVIMRC<CR>
 
 " I make the mistake of typing W and Q instead of w and q
-command Q q
-command W w
+command! Q q
+command! W w
 
 " Kill the evil EX mode
 nmap Q <Nop>
@@ -124,6 +126,10 @@ nmap Q <Nop>
 set termguicolors
 set background=dark
 colorscheme solarized8
+
+if filereadable(expand("~/.nvim-background"))
+    exe 'source' expand("~/.nvim-background")
+endif
 
 "------  Vim Config Stuff  ------"
 

@@ -5,6 +5,13 @@ border_left=0
 border_right=0
 border_bottom=0
 
+[colorscheme]
+command=~/.config/i3blocks/blocks/colorscheme
+interval=10
+signal=2
+border=#928374
+markup=pango
+
 [volume]
 command=~/.config/i3blocks/blocks/volume
 interval=10
