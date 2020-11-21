@@ -34,7 +34,7 @@ brew "ripgrep"
 brew "rlwrap"
 brew "sift"
 brew "wget"
-cask "cmake"
+brew "cmake"
 cask "docker"
 
 # gui
@@ -43,11 +43,6 @@ cask "bitwarden"
 cask "signal"
 cask "visual-studio-code"
 cask "dash"
-
-# window management
-tap "koekeishiya/formulae"
-brew "koekeishiya/formulae/skhd", restart_service: :changed
-brew "koekeishiya/formulae/yabai", restart_service: :changed
 
 # fonts
 tap "homebrew/cask-fonts"
