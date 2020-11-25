@@ -21,7 +21,6 @@ Plug 'lyuts/vim-rtags'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'rust-lang/rust.vim'
-Plug 'alaviss/nim.nvim'
 
 " Initialize plugin system
 call plug#end()
@@ -320,6 +319,9 @@ let g:ale_linters = {
 \       'gometalinter',
 \       'go build',
 \   ],
+\   'rust': [
+\       'analyzer',
+\   ],
 \}
 
 let g:ale_linters_explicit = 1
@@ -401,6 +403,7 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
+let g:fzf_layout = { 'down': '40%' }
 let g:fzf_preview_window = ''
 
 function! RipgrepFzf(query, fullscreen)

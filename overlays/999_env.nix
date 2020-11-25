@@ -1,6 +1,9 @@
 self: super:
 
 let
+  # nixpkgs-unstable Nov 24 2020
+  pkgs-66252 = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/6625284c397b44bc9518a5a1567c1b5aae455c08.tar.gz") {};
+
   nix-tools = [
     super.nix-prefetch-scripts
     super.nix-prefetch-git
@@ -62,7 +65,7 @@ let
     super.pv
     super.sift
     super.ripgrep
-    super.fzf
+    pkgs-66252.fzf
     super.mysql
     super.rlwrap
     super.imagemagick
@@ -111,7 +114,7 @@ in
           super.autojump
           super.direnv
           super.fasd
-          super.fzf
+          pkgs-66252.fzf
           super.jq
           super.patchelf
           super.ripgrep
@@ -124,6 +127,10 @@ in
 
           # desktop-apps
           super.gcolor2
+
+          # window-manager
+          super.i3-gaps
+          super.i3blocks
 
           # x11-tools
           super.arandr
