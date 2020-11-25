@@ -8,7 +8,7 @@ exec --no-startup-id compton --config ~/.compton.conf &
 
 for_window [class=".*"] border pixel 2
 
-set $mod Mod4
+set $mod Mod1
 
 focus_follows_mouse no
 
@@ -47,6 +47,9 @@ bindsym $mod+F7 exec autorandr -c
 # start rofi (a program launcher)
 bindsym $mod+space exec "PATH=/snap/bin:$HOME/bin:$HOME/localbin:$PATH rofi -show run"
 
+# layout manager
+bindsym $mod+c exec "/home/carl/localbin/layout_manager.sh"
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -75,7 +78,7 @@ bindsym $mod+d split h; exec i3-sensible-terminal
 bindsym $mod+f fullscreen toggle
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space floating toggle, resize set 1600 1410, move position 900 00
 
 # switch to workspace
 bindsym $mod+1 workspace 1

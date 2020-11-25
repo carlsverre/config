@@ -24,3 +24,6 @@ alias docker-ip="docker inspect -f '{{ .NetworkSettings.IPAddress }}'"
 
 # todo
 alias todo="~/journal/edit"
+
+# feh
+alias feh="feh --scale-down --auto-zoom --draw-filename --draw-tinted"

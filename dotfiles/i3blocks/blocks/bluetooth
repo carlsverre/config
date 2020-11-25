@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if ! command -v bluetooth &> /dev/null; then
+    exit
+fi
+
 # Left click
 if [[ "${BLOCK_BUTTON}" -eq 1 ]]; then
   blueman-manager >/dev/null &

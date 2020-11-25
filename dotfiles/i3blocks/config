@@ -16,7 +16,7 @@ markup=pango
 command=~/.config/i3blocks/blocks/volume
 interval=10
 signal=1
-border=#cc241d
+border=#CC241D
 markup=pango
 
 [bluetooth]
@@ -27,7 +27,7 @@ border=#15AABF
 
 [wireless]
 label=    
-command=[[ -z "$(iwgetid -r)" ]] || echo "$(iwgetid -r) "
+command=[ -z "$(iwgetid -r)" ] || echo "$(iwgetid -r) "
 interval=2
 border=#98971a
 
