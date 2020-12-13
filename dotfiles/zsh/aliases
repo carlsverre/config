@@ -1,12 +1,19 @@
-# vim:set ft=sh:
+# vim:set ft=bash:
 
 # unix
-alias ls='ls --color -Ghv'
-alias ll='ls --color -l'
-alias l.='ls --color -Ad .*'
-alias la='ls --color -A'
-alias grep='grep --color -s'
-alias df='df -h'
+if [[ "$(uname)" = "Darwin" ]] ; then
+    alias ls='ls -Ghv'
+    alias ll='ls -l'
+    alias la='ls -A'
+    alias grep='grep --color -s'
+    alias df='df -h'
+else
+    alias ls='ls --color -hv'
+    alias ll='ls --color -l'
+    alias la='ls --color -A'
+    alias grep='grep --color -s'
+    alias df='df -h'
+fi
 
 # clipboard
 alias copy="xclip -selection clipboard -in"

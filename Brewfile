@@ -1,7 +1,5 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
-tap "homebrew/core"
-tap "homebrew/services"
 
 # python
 brew "python3"
@@ -15,9 +13,6 @@ brew "yarn"
 
 # go
 brew "go"
-
-# libraries
-brew "boost"
 
 # cli tools
 brew "autojump"
@@ -37,7 +32,8 @@ brew "ripgrep"
 brew "rlwrap"
 brew "sift"
 brew "wget"
-brew "cmake"
+brew "aria2"
+brew "task"
 cask "docker"
 
 # gui
