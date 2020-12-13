@@ -17,6 +17,7 @@ machines. Periodically I even get this working on OSX. :)
 * [alacritty](https://github.com/alacritty/alacritty)
 * [Nix package manager](https://nixos.org/download.html)
 * [maim](https://github.com/naelstrof/maim)
+* [colorpicker](git@github.com:ym1234/colorpicker.git)
 
 ## Install
 

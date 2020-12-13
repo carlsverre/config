@@ -44,7 +44,6 @@ in
         pkgs-stable.ipcalc
 
         # x11-tools
-        pkgs-stable.colorpicker
         pkgs-stable.arandr
         pkgs-stable.autorandr
         pkgs-stable.feh

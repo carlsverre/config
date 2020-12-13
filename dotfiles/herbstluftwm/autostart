@@ -8,6 +8,7 @@ hc emit_hook reload
 
 # startup scripts
 xsetroot -solid '#262626'
+feh --randomize --bg-fill ~/.wallpapers/*
 autorandr -c
 
 # remove all existing keybindings
@@ -68,7 +69,7 @@ hc keybind $Mod-comma  use_index -1 --skip-visible
 
 # layouting
 hc keybind $Mod-z spawn select-layout
-hc keybind $Mod-r remove
+hc keybind $Mod-x remove
 hc keybind $Mod-s floating toggle
 hc keybind $Mod-f fullscreen toggle
 hc keybind $Mod-Shift-space set_attr clients.focus.floating toggle
@@ -91,7 +92,7 @@ hc attr theme.floating.reset 1
 hc set frame_border_active_color '#222222'
 hc set frame_border_normal_color '#101010'
 hc set frame_bg_normal_color '#565656'
-hc set frame_bg_active_color '#345F0C'
+hc set frame_bg_active_color '#585987'
 hc set frame_border_width 1
 hc set frame_bg_transparent on
 hc set frame_transparent_width 4
