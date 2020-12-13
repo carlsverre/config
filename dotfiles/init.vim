@@ -75,7 +75,7 @@ set smartcase                       " lowercase = case insensitive, any uppercas
 set hlsearch                        " highlight all search results
 
 " following line clears the search highlights when pressing <Leader>s
-nnoremap <Leader>s :nohlsearch<CR>
+nnoremap <silent> <Leader>s :nohlsearch<CR>
 
 set grepprg=grep\ -nH\ $*           " set grep to always display a file name
 

@@ -26,8 +26,12 @@ machines. Periodically I even get this working on OSX. :)
 
 ## Post Install Tooling
 
-* rustup
-* nvm
+* [rustup](https://rustup.rs/)
+* [nvm](https://github.com/nvm-sh/nvm)
+
+## Other things I like to have
+
+* [keybase](https://keybase.io/)
 
 # Helpful Snippets
 

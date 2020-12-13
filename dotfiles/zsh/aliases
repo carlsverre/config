@@ -1,10 +1,10 @@
 # vim:set ft=sh:
 
 # unix
-alias ls='ls -Ghv'
-alias ll='ls -l'
-alias l.='ls -Ad .*'
-alias la='ls -A'
+alias ls='ls --color -Ghv'
+alias ll='ls --color -l'
+alias l.='ls --color -Ad .*'
+alias la='ls --color -A'
 alias grep='grep --color -s'
 alias df='df -h'
 
