@@ -1,0 +1,10 @@
+rofi.theme: solarized_alternate
+
+rofi.width: 30
+rofi.columns: 1
+rofi.font: Hack 12
+
+rofi.kb-row-up:             Up,Control-k,Control-p,Shift+Tab
+rofi.kb-row-down:           Down,Control-j,Control-n
+rofi.kb-remove-to-eol:      Control-Shift-k
+rofi.kb-accept-entry:       Control+m,Return,KP_Enter

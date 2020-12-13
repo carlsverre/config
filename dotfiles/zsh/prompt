@@ -1,7 +1,8 @@
-# vim:set ft=sh:
+# vim:set ft=bash:
 
 # load version control support
 autoload -Uz vcs_info
+
 zstyle ':vcs_info:*' unstagedstr "%{$fg[red]%}*"
 zstyle ':vcs_info:*' stagedstr "%{$fg[red]%}+"
 zstyle ':vcs_info:*' formats "$bright_cyan%b%u%c"
@@ -32,6 +33,6 @@ PROMPT+='%F{white}${SHORT_PWD}%f '          # truncated pwd
 PROMPT+='%F{green}$ '                       # end of prompt
 PROMPT+='%f%b'                              # reset colors
 
-RPROMPT='%(?..%F{red}%f%b%? )'              # exit status
+RPROMPT='%(?..%F{red}%? )'                  # exit status
 RPROMPT+='%F{green}${vcs_info_msg_0_}'      # version control status
 RPROMPT+='%f%b'                             # reset colors

@@ -1,0 +1,65 @@
+[colors]
+foreground = #93a1a1
+background = #262626
+accent_1 = #D4A989
+warning = #FD7D70
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+[bar/bottom]
+override-redirect = false
+width = 100%
+height = 30
+bottom = true
+offset-x = 0
+offset-y = 0
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = Hack:size=11
+font-1 = FontAwesome:size=11
+
+modules-left = volume temperature
+modules-center = workspace-selector
+modules-right = date
+
+tray-position = right
+tray-padding = 10
+tray-detached = false
+tray-maxsize = 20
+
+padding-left = 2
+padding-right = 1
+module-margin-left = 0
+module-margin-right = 3
+
+[module/volume]
+type = internal/pulseaudio
+use-ui-max = true
+
+format-volume = " <label-volume>"
+
+label-muted = "    "
+label-muted-foreground = ${colors.warning}
+
+click-right = pavucontrol
+
+[module/date]
+type = internal/date
+interval = 60
+date = "%d %b"
+time = "%H:%M %Z"
+format = " <label>"
+label = "%date% %time%"
+
+[module/temperature]
+type = internal/temperature
+
+[module/workspace-selector]
+type = custom/script
+exec = ~/.config/polybar/workspaces.sh
+format-foreground = ${colors.accent_1}
+tail = true

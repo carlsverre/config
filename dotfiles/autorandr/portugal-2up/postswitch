@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-feh --randomize --bg-fill ~/.wallpapers/*
-xset r rate 200 50

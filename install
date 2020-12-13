@@ -9,7 +9,6 @@ ROOTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source $ROOTDIR/lib.sh
 
 # install common dotfiles
-install_dotfile ctags
 install_dotfile gitconfig
 install_dotfile gitignore
 install_dotfile ideavimrc
@@ -18,6 +17,7 @@ install_dotfile taskrc
 install_dotfile vimrc_basic
 install_dotfile zsh
 install_dotfile zshrc
+install_dotfile xsessionrc
 mkdir -p .config/nvim/swp
 install_dotfile init.vim .config/nvim/init.vim
 install_dotfile coc-settings.json .config/nvim/coc-settings.json
@@ -27,11 +27,11 @@ if [[ "${OS}" != "Darwin" ]] ; then
     install_dotfile npmrc
     install_dotfile Xresources
     install_dotfile autorandr
-    install_dotfile compton.conf
     install_dotfile dunst .config/dunst
-    install_dotfile i3 .config/i3
-    install_dotfile i3blocks .config/i3blocks
     install_dotfile alacritty .config/alacritty
+    install_dotfile herbstluftwm .config/herbstluftwm
+    install_dotfile polybar .config/polybar
+    install_dotfile rofi .config/rofi
 fi
 
 # link this repo into home as .config/nixpkgs

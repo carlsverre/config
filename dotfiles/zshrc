@@ -1,20 +1,28 @@
+PROFILE_ZSH=0
+if [[ ${PROFILE_ZSH} -eq 1 ]]; then zmodload zsh/zprof; fi
+
 if [ -f ~/.localrc.before ]; then
     . ~/.localrc.before
 fi
 
+# load colors
+autoload -U colors && colors
+
+source ~/.zsh/dircolors
+source ~/.zsh/nix
 source ~/.zsh/aliases
 source ~/.zsh/autojump
 source ~/.zsh/completion
 source ~/.zsh/config
+source ~/.zsh/direnv
+source ~/.zsh/fzf
+source ~/.zsh/go
+source ~/.zsh/node
 source ~/.zsh/path
 source ~/.zsh/prompt
-source ~/.zsh/fzf
-source ~/.zsh/direnv
-source ~/.zsh/node
 
 if [ -f ~/.localrc ]; then
     . ~/.localrc
 fi
 
-# added by travis gem
-[ -f /home/carl/.travis/travis.sh ] && source /home/carl/.travis/travis.sh
+if [[ ${PROFILE_ZSH} -eq 1 ]]; then zprof; fi

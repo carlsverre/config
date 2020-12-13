@@ -16,5 +16,3 @@ echo "set background=${CURRENT}" > "$HOME/.nvim-background"
 for SERVER in $(nvr --serverlist); do
     nvr -c "set background=${CURRENT}" --servername ${SERVER} --nostart
 done
-
-pkill -RTMIN+2 i3blocks

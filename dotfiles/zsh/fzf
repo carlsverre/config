@@ -15,15 +15,3 @@ fj() {
   target=$(fasd -dl "$1" | fzf --select-1)
   [ -n "$target" ] && cd "$target"
 }
-
-fnix() {
-  nix-env -qa \* -P --no-name | fzf --query="$1"
-}
-
-xnix-install () {
-  xargs nix-env -iA "$@"
-}
-
-fnix-uninstall() {
-  nix-env -q | fzf --query="$1" -m | xargs nix-env -e
-}

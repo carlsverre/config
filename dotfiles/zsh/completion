@@ -10,5 +10,7 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zshcache
 zstyle :compinstall filename "$HOME/.zshrc"
 
+fpath+=${HOME}/.zsh/functions
+
 # MOSH completion
 compdef mosh=ssh

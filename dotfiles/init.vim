@@ -21,6 +21,8 @@ Plug 'lyuts/vim-rtags'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'rust-lang/rust.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 " Initialize plugin system
 call plug#end()
@@ -222,6 +224,12 @@ nnoremap <leader>Z :vsplit \| terminal <CR>
 "====================================="
 
 "------  COC  ------"
+let g:coc_global_extensions = [
+    \ 'coc-rust-analyzer',
+    \ 'coc-tsserver',
+    \ 'coc-prettier'
+\]
+
 set shortmess+=c
 
 inoremap <silent><expr> <TAB>

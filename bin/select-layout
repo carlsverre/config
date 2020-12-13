@@ -1,0 +1,10 @@
+#!/bin/bash
+
+LAYOUT_ROOT="$HOME/.config/herbstluftwm/layout"
+SELECTED=$(find "${LAYOUT_ROOT}" -type f -printf '%P\n' | rofi -dmenu)
+SELECTED_PATH="${LAYOUT_ROOT}/${SELECTED}"
+
+if [[ -f "${SELECTED_PATH}" ]];
+then
+    herbstclient load "$(cat "${SELECTED_PATH}")"
+fi
