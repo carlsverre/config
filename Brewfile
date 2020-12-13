@@ -13,6 +13,9 @@ brew "rustup"
 brew "node"
 brew "yarn"
 
+# go
+brew "go"
+
 # libraries
 brew "boost"
 
