@@ -30,13 +30,6 @@ precmd () {
     fi
 }
 
-bubble () {
-    fgcolor="${1}"
-    bgcolor="${2}"
-    contents="${3}"
-    return "%{$fg[$fgcolor]%}%f%{$bg[$bgcolor]%}"
-}
-
 BSTART="%{$fg[black]%}%f%{$bg[black]%}"
 BEND="%{$reset_color%}%{$fg[black]%}%{$reset_color%}"
 
