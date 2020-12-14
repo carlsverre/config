@@ -1,15 +1,22 @@
 #!/usr/bin/env python3
 
-import os, sys
 from subprocess import Popen, PIPE, DEVNULL
 
 FORMAT = "{{ uc(status) }}|{{ title }} - {{ artist }}"
 
-playerctl = Popen(["playerctl", "-F", "--format", FORMAT, "metadata"], stdout=PIPE, stderr=DEVNULL)
+def process_output(proc):
+    print("Not Playing", flush=True)
+    for line in proc.stdout:
+        line = line.decode().strip()
+        if line == "":
+            continue
 
-for line in playerctl.stdout:
-    status, info = line.decode().split("|", 2)
-    if status == "PLAYING":
-        print(info.strip(), flush=True)
-    else:
-        print("Not Playing", flush=True)
+        status, info = line.split("|", 2)
+        if status == "PLAYING":
+            print(info, flush=True)
+        else:
+            print("Not Playing", flush=True)
+
+playerctl = Popen(["playerctl", "-F", "--format", FORMAT, "metadata"], stdout=PIPE, stderr=DEVNULL)
+process_output(playerctl)
+
