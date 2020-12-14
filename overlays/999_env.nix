@@ -39,14 +39,20 @@ in
         pkgs-stable.rlwrap
         pkgs-stable.sift
         pkgs-stable.sqlite
+        pkgs-stable.watchman
 
         # network-tools
         pkgs-stable.ipcalc
+
+        # lifestyle
+        pkgs-stable.playerctl
 
         # x11-tools
         pkgs-stable.arandr
         pkgs-stable.autorandr
         pkgs-stable.feh
+        pkgs-stable.neofetch
+        pkgs-stable.zathura
       ];
 
       extraOutputsToInstall = [ "man" "doc" ];

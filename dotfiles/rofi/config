@@ -2,7 +2,7 @@ rofi.theme: solarized_alternate
 
 rofi.width: 30
 rofi.columns: 1
-rofi.font: Hack 12
+rofi.font: Hack NF 12
 
 rofi.kb-row-up:             Up,Control-k,Control-p,Shift+Tab
 rofi.kb-row-down:           Down,Control-j,Control-n

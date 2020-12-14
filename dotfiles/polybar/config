@@ -14,15 +14,16 @@ width = 100%
 height = 30
 bottom = true
 offset-x = 0
-offset-y = -1
+offset-y = 0
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-font-0 = Hack:size=11
-font-1 = FontAwesome:size=11
+font-0 = Hack NF:size=11;2
+font-1 = Hack NF:size=11
+font-2 = Hack NF:size=16;2
 
-modules-left = volume temperature
+modules-left = volume temperature spotify
 modules-center = workspace-selector
 modules-right = date
 
@@ -57,9 +58,18 @@ label = "%date% %time%"
 
 [module/temperature]
 type = internal/temperature
+interval = 5
 
 [module/workspace-selector]
 type = custom/script
-exec = ~/.config/polybar/workspaces.sh
-format-foreground = ${colors.accent_1}
+exec = ~/.config/polybar/script/workspaces.sh
 tail = true
+format-foreground = ${colors.accent_1}
+format-font = 2
+
+[module/spotify]
+type = custom/script
+exec = ~/.config/polybar/script/spotify.py
+tail = true
+format-prefix = " "
+format-prefix-font = 3

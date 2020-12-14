@@ -19,6 +19,22 @@ machines. Periodically I even get this working on OSX. :)
 * [maim](https://github.com/naelstrof/maim)
 * [colorpicker](git@github.com:ym1234/colorpicker.git)
 
+## Fonts
+
+* [Lato](https://fonts.google.com/specimen/Lato)
+    * `sudo apt install fonts-lato`
+* [Hack Nerd Font](https://www.nerdfonts.com/font-downloads)
+    * On linux:
+    ```
+    mkdir -p ~/.local/share/fonts
+    wget -O/tmp/hack.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
+    pushd ~/.local/share/fonts
+    unzip /tmp/hack.zip
+    popd
+    fc-cache -f -v
+    fc-list | grep Hack
+    ```
+
 ## Install
 
 * Run `./install` to sync dotfiles into the homedir

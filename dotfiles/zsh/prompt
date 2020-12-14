@@ -1,38 +1,72 @@
 # vim:set ft=bash:
 
+setopt prompt_subst
+
 # load version control support
 autoload -Uz vcs_info
 
 zstyle ':vcs_info:*' unstagedstr "%{$fg[red]%}*"
 zstyle ':vcs_info:*' stagedstr "%{$fg[red]%}+"
-zstyle ':vcs_info:*' formats "$bright_cyan%b%u%c"
-zstyle ':vcs_info:*' actionformats "$bright_cyan%b%u%c|%a"
+zstyle ':vcs_info:*' formats "%{$fg[cyan]%}%b%u%c"
+zstyle ':vcs_info:*' actionformats "%{$fg[cyan]%}%%b%u%c|%a"
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b:%r'
 zstyle ':vcs_info:bzr:*' use-simple true
 zstyle ':vcs_info:*' enable git hg bzr svn cvs
 
-# cache hostname if logged in remotely
-rem_hostname=`[[ -n $SSH_CLIENT ]] && hostname | tr -d '\n' && echo -n " "`
-
 precmd () {
-    # update version control info
     vcs_info
 
     # get truncated pwd (4 blocks)
     SHORT_PWD=`print -Pn "%4~"`
-    [[ "${SHORT_PWD:0:1}" =~ "[^/~]" ]] && SHORT_PWD=".../$SHORT_PWD"
+    [[ "${SHORT_PWD:0:1}" =~ "[^/~]" ]] && SHORT_PWD=".../${SHORT_PWD}"
 
-    #set title
-    print -Pn "\e]0;%3~\a"
+    # Print a newline before the prompt, unless it's the
+    # first prompt in the process.
+    if [ -z "${NEW_LINE_BEFORE_PROMPT}" ]; then
+        NEW_LINE_BEFORE_PROMPT=1
+    elif [ "${NEW_LINE_BEFORE_PROMPT}" -eq 1 ]; then
+        print ""
+    fi
 }
 
-# main prompt
-PROMPT='%F{yellow}${rem_hostname}%f'        # show hostname if remote
-PROMPT+='%F{white}${SHORT_PWD}%f '          # truncated pwd
-PROMPT+='%F{green}$ '                       # end of prompt
-PROMPT+='%f%b'                              # reset colors
+bubble () {
+    fgcolor="${1}"
+    bgcolor="${2}"
+    contents="${3}"
+    return "%{$fg[$fgcolor]%}%f%{$bg[$bgcolor]%}"
+}
 
-RPROMPT='%(?..%F{red}%? )'                  # exit status
-RPROMPT+='%F{green}${vcs_info_msg_0_}'      # version control status
-RPROMPT+='%f%b'                             # reset colors
+BSTART="%{$fg[black]%}%f%{$bg[black]%}"
+BEND="%{$reset_color%}%{$fg[black]%}%{$reset_color%}"
+
+# main prompt
+#
+PROMPT=""
+
+# show hostname if remote
+# note: this gets cached directly into the prompt
+REMOTE_HOSTNAME=`[[ -n $SSH_CLIENT ]] && hostname | tr -d '\n' && echo -n " "`
+if [[ -n "${REMOTE_HOSTNAME}" ]]; then
+    PROMPT+="${BSTART}${REMOTE_HOSTNAME}${BEND} "
+fi
+
+# add path
+PROMPT+="${BSTART}\${SHORT_PWD}${BEND} "
+PROMPT+="${BSTART}%(?,%{$fg[cyan]%},%{$fg[red]%})${BEND} "
+
+
+render_vcs_info() {
+    if [[ -n "${vcs_info_msg_0_}" ]]; then
+        echo "${BSTART}${vcs_info_msg_0_}${BEND}"
+    fi
+}
+
+# right prompt
+#
+RPROMPT=""
+
+# exit status
+RPROMPT+="%(?..${BSTART}%F{red}%?${BEND} )"
+# vcs info
+RPROMPT+='$(render_vcs_info)'
