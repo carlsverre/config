@@ -23,6 +23,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'plasticboy/vim-markdown'
 
 " Initialize plugin system
 call plug#end()
@@ -34,6 +35,7 @@ set number                          " enable line numbers
 set nowrap                          " disable word wrap
 set vb                              " visual bell
 set showmatch                       " show matching bracket
+set conceallevel=2                  " support concealing
 
 set laststatus=2                    " always use a status line
 
@@ -435,3 +437,9 @@ xnoremap <expr> <leader>G ':RG '.expand('<cword>').'<CR>'
 
 "------  rust  ------"
 let g:rustfmt_autosave = 1
+
+"------  markdown  ------"
+let g:vim_markdown_emphasis_multiline = 0
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_strikethrough = 1
