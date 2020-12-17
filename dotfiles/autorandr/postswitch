@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+herbstclient detect_monitors
+polybar-msg cmd restart

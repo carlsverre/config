@@ -9,6 +9,7 @@ margin-top = 0
 margin-bottom = 0
 
 [bar/bottom]
+enable-ipc = true
 override-redirect = false
 width = 100%
 height = 30
