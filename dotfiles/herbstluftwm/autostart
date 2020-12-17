@@ -7,7 +7,6 @@ hc() {
 hc emit_hook reload
 
 # startup scripts
-sleep 2 # sleep needed for xrandr
 xsetroot -solid '#262626'
 feh --randomize --bg-fill ~/.wallpapers/*
 autorandr -c
