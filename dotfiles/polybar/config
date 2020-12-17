@@ -20,13 +20,12 @@ offset-y = 0
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-font-0 = Hack NF:size=11;2
-font-1 = Hack NF:size=11
-font-2 = Hack NF:size=16;2
+font-0 = Hack Nerd Font:size=11;2
+font-1 = Hack Nerd Font:size=13;2
 
 modules-left = volume temperature spotify
 modules-center = workspace-selector
-modules-right = date
+modules-right = battery date
 
 tray-position = right
 tray-padding = 10
@@ -42,24 +41,35 @@ module-margin-right = 3
 type = internal/pulseaudio
 use-ui-max = true
 
-format-volume = " <label-volume>"
+format-volume = "<ramp-volume>  <label-volume>"
 
-label-muted = "    "
+ramp-volume-font = 2
+ramp-volume-0 = 奄
+ramp-volume-1 = 奔
+ramp-volume-2 = 墳
+
+label-muted = "ﱝ   "
+label-muted-font = 2
 label-muted-foreground = ${colors.warning}
 
-click-right = pavucontrol
+click-middle = pavucontrol
 
 [module/date]
 type = internal/date
 interval = 60
 date = "%d %b"
 time = "%H:%M %Z"
-format = " <label>"
+format = "<label>"
+format-prefix = ""
+format-prefix-padding-right = 2
+format-prefix-font = 2
 label = "%date% %time%"
 
 [module/temperature]
 type = internal/temperature
 interval = 5
+format-prefix = ""
+format-prefix-padding-right = 2
 
 [module/workspace-selector]
 type = custom/script
@@ -72,5 +82,28 @@ format-font = 2
 type = custom/script
 exec = ~/.config/polybar/script/spotify.py
 tail = true
-format-prefix = " "
-format-prefix-font = 3
+format-prefix = ""
+format-prefix-padding-right = 2
+format-prefix-font = 2
+
+[module/battery]
+type = internal/battery
+full-at = 99
+time-format = %H:%M
+
+format-charging = <ramp-capacity> <label-charging>
+label-charging = %percentage%% (%time%)
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%% (%time%)
+
+ramp-capacity-font = 2
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
