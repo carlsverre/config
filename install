@@ -44,3 +44,6 @@ if [[ "${OS}" != "Darwin" ]] ; then
     # add a link to bin
     safelink "$HOME/bin" "$ROOTDIR/bin"
 fi
+
+# install wallpapers
+safelink "$HOME/.wallpapers" "$ROOTDIR/wallpapers"
