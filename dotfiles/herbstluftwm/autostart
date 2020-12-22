@@ -8,7 +8,6 @@ hc emit_hook reload
 
 # startup scripts
 xsetroot -solid '#262626'
-feh --randomize --bg-fill ~/.wallpapers/*
 autorandr -c
 
 # remove all existing keybindings
@@ -63,9 +62,7 @@ for i in "${!tag_names[@]}" ; do
     fi
 done
 
-# cycle through tags
-hc keybind $Mod-period use_index +1 --skip-visible
-hc keybind $Mod-comma  use_index -1 --skip-visible
+hc set swap_monitors_to_get_tag 0
 
 # layouting
 hc keybind $Mod-z spawn select-layout

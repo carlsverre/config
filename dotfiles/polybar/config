@@ -9,6 +9,7 @@ margin-top = 0
 margin-bottom = 0
 
 [bar/bottom]
+monitor = ${env:MONITOR:eDP1}
 enable-ipc = true
 override-redirect = false
 width = 100%
@@ -27,7 +28,7 @@ modules-left = volume temperature spotify
 modules-center = workspace-selector
 modules-right = battery date
 
-tray-position = right
+tray-position = ${env:TRAY_POS:right}
 tray-padding = 10
 tray-detached = false
 tray-maxsize = 20
