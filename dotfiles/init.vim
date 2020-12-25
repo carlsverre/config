@@ -24,6 +24,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'plasticboy/vim-markdown'
+Plug 'cheap-glitch/vim-v'
 
 " Initialize plugin system
 call plug#end()
@@ -153,8 +154,10 @@ if $VIM_CRONTAB == "true"
 endif
 
 "------  Filetype tweaks  ------"
-autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab nolist
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType vlang setlocal ts=4 sts=4 sw=4 noexpandtab nolist
+autocmd FileType go setlocal ts=4 sts=4 sw=4 noexpandtab nolist
 
 au BufWritePost *.re silent! ReasonPrettyPrint
 
@@ -168,8 +171,6 @@ set list
 
 " But only interesting whitespace
 set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
-
-au Filetype go setlocal nolist
 
 "------  Visual Mode related  ------"
 
@@ -306,6 +307,16 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 highlight clear SignColumn
 
 "------  ALE  ------"
+
+function! VfmtFix(buffer)
+    return {
+    \   'command': 'v fmt -w %t',
+    \   'read_temporary_file': 1,
+    \}
+endfunction
+
+call ale#fix#registry#Add("vfmt", "VfmtFix", ["vlang"], "vlang")
+
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'typescript': ['prettier'],
@@ -313,6 +324,7 @@ let g:ale_fixers = {
 \   'scss': ['prettier'],
 \   'python': ['black'],
 \   'reason': ['refmt'],
+\   'vlang': ['vfmt'],
 \}
 
 let g:ale_linters = {
@@ -334,6 +346,7 @@ let g:ale_linters = {
 \   ],
 \}
 
+let g:ale_disable_lsp = 1
 let g:ale_linters_explicit = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
