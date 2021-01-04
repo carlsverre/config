@@ -21,6 +21,16 @@ hc keybind $Mod-Shift-r reload
 hc keybind $Mod-space spawn rofi -show run
 hc keybind $Mod-Return spawn alacritty
 
+# audio
+hc keybind XF86AudioRaiseVolume spawn amixer -q sset Master 5%+ unmute
+hc keybind XF86AudioLowerVolume spawn amixer -q sset Master 5%- unmute
+hc keybind XF86AudioMute spawn amixer -q sset Master toggle
+
+# display
+hc keybind $Mod-F7 spawn autorandr -cf
+hc keybind XF86MonBrightnessUp spawn xbacklight +15
+hc keybind XF86MonBrightnessDown spawn xbacklight -15
+
 # basic movement in tiling and floating mode
 # focusing clients
 hc keybind $Mod-h     focus left
