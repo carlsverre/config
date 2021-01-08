@@ -24,7 +24,7 @@ foreground = ${colors.foreground}
 font-0 = Hack Nerd Font:size=11;2
 font-1 = Hack Nerd Font:size=13;2
 
-modules-left = volume temperature spotify
+modules-left = volume temperature playerctl
 modules-center = workspace-selector
 modules-right = battery date
 
@@ -79,13 +79,10 @@ tail = true
 format-foreground = ${colors.accent_1}
 format-font = 2
 
-[module/spotify]
+[module/playerctl]
 type = custom/script
-exec = ~/.config/polybar/script/spotify.py
+exec = ~/.config/polybar/script/playerctl.py
 tail = true
-format-prefix = ""
-format-prefix-padding-right = 2
-format-prefix-font = 2
 
 [module/battery]
 type = internal/battery

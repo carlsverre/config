@@ -28,7 +28,7 @@ alias giw='git show -C --date=local --decorate'
 alias gic='git checkout'
 
 # rg
-alias s='rg'
+alias s='rg -S'
 
 # docker
 alias docker-ip="docker inspect -f '{{ .NetworkSettings.IPAddress }}'"
