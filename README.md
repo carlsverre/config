@@ -54,6 +54,38 @@ machines. Periodically I even get this working on OSX. :)
 
 ## Update Nix (on a non-nixos machine)
 
-```
+```sh
 sudo -i sh -c 'nix-channel --update && nix-env -iA nixpkgs.nix && systemctl daemon-reload'
+```
+
+## Modify input device settings via Xorg.conf.d
+
+* Tested on Debian
+* Add files to `/usr/share/X11/xorg.conf.d`
+
+**Kensington Expert Wireless TB**
+
+```xorg
+Section "InputClass"
+    Identifier "Expert Wireless TB"
+    MatchProduct "Expert Wireless TB"
+    Driver "libinput"
+    Option "AccelProfile" "adaptive"
+    Option "AccelSpeed" "-0.5"
+    Option "ScrollMethod" "button"
+    Option "ScrollButton" "8"
+    Option "ButtonMapping" "1 8 3 4 5 6 7 2 9"
+EndSection
+```
+
+**Microsoft Sculpt**
+
+```xorg
+Section "InputClass"
+        Identifier      "Microsoft Keyboard"
+        MatchIsKeyboard "on"
+        MatchProduct    "Microsoft"
+        MatchProduct    "Nano Transceiver"
+        Option          "XkbOptions" "caps:swapescape"
+EndSection
 ```

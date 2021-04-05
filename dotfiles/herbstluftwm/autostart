@@ -9,6 +9,7 @@ hc emit_hook reload
 # startup scripts
 xsetroot -solid '#262626'
 autorandr -cf
+compton &
 
 # remove all existing keybindings
 hc keyunbind --all

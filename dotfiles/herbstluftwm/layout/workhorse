@@ -1,4 +1,4 @@
-(split horizontal:0.24:0
+(split horizontal:0.28:0
     (clients vertical:0)
     (split horizontal:0.6:0
         (clients vertical:0)

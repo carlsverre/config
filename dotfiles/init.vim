@@ -25,6 +25,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'plasticboy/vim-markdown'
 Plug 'cheap-glitch/vim-v'
+Plug 'ledger/vim-ledger'
 
 " Initialize plugin system
 call plug#end()
