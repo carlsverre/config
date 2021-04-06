@@ -49,6 +49,7 @@ machines. Periodically I even get this working on OSX. :)
 ## Other things I like to have
 
 * [keybase](https://keybase.io/)
+* [pyenv](https://github.com/pyenv/pyenv#installation)
 
 # Helpful Snippets
 
