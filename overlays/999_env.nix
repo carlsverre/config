@@ -1,11 +1,9 @@
 self: super:
 
 let
-  # nixpkgs-stable 20.09
-  pkgs-stable = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/65c9cc79f1d179713c227bf447fb0dac384cdcda.tar.gz") {};
-
-  # nixpkgs-unstable Nov 24 2020
-  pkgs-unstable = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/6625284c397b44bc9518a5a1567c1b5aae455c08.tar.gz") {};
+  # https://github.com/NixOS/nixpkgs/commits/release-20.09
+  # Apr 6 2021
+  pkgs-stable = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/cb2fbad3456863402ff74d8ac05ecf358ce5797d.tar.gz") {};
 in
   {
     dev-env = super.buildEnv {
@@ -32,7 +30,7 @@ in
         pkgs-stable.autojump
         pkgs-stable.direnv
         pkgs-stable.fasd
-        pkgs-unstable.fzf
+        pkgs-stable.fzf
         pkgs-stable.jq
         pkgs-stable.patchelf
         pkgs-stable.ripgrep

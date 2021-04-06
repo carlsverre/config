@@ -157,7 +157,7 @@ endif
 "------  Filetype tweaks  ------"
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab nolist
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType markdown setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType markdown setlocal ts=2 sts=2 sw=2 expandtab wrap linebreak tw=0
 autocmd FileType vlang setlocal ts=4 sts=4 sw=4 noexpandtab nolist
 autocmd FileType go setlocal ts=4 sts=4 sw=4 noexpandtab nolist
 
@@ -165,6 +165,14 @@ au BufWritePost *.re silent! ReasonPrettyPrint
 
 "------  Python Stuff  ------"
 let g:python_highlight_all=1
+
+if filereadable(expand("~/.pyenv/versions/py3nvim/bin/python"))
+    let g:python3_host_prog = "~/.pyenv/versions/py3nvim/bin/python"
+endif
+
+if filereadable(expand("~/.pyenv/versions/py2nvim/bin/python"))
+    let g:python_host_prog = "~/.pyenv/versions/py2nvim/bin/python"
+endif
 
 "------  Whitespace  ------"
 

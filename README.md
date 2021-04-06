@@ -90,3 +90,27 @@ Section "InputClass"
         Option          "XkbOptions" "caps:swapescape"
 EndSection
 ```
+
+## Setup pyenv
+Requires [pyenv](https://github.com/pyenv/pyenv#installation) and [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv) to be installed first.
+
+```bash
+# ensure these are up to date before proceeding
+py2_version=2.7.18
+py3_version=3.9.4
+
+# install versions
+# if you have compile errors make sure you have all the python compilation dependencies installed
+pyenv install $py3_version
+pyenv install $py2_version
+pyenv global $py3_version $py2_version
+pip install --upgrade pip
+pip2 install --upgrade pip
+
+pyenv virtualenv $py3_version py3nvim
+pyenv activate py3nvim
+pip install pynvim
+pyenv virtualenv $py2_version py2nvim
+pyenv activate py2nvim
+pip install pynvim
+```
