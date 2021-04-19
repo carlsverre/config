@@ -19,5 +19,6 @@
     default = simple
 [pull]
     default = simple
+    ff = only
 [include]
     path = .gitconfig.local

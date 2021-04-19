@@ -87,7 +87,7 @@ Section "InputClass"
         MatchIsKeyboard "on"
         MatchProduct    "Microsoft"
         MatchProduct    "Nano Transceiver"
-        Option          "XkbOptions" "caps:swapescape"
+        Option          "XkbOptions" "caps:escape"
 EndSection
 ```
 
