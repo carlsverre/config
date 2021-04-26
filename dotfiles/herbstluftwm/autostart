@@ -46,8 +46,8 @@ hc keybind $Mod-Shift-k     shift up
 hc keybind $Mod-Shift-l     shift right
 
 # splitting frames
-hc keybind $Mod-d chain , split right , focus -e r
-hc keybind $Mod-Shift-d chain , split bottom , focus -e d
+# hc keybind $Mod-d chain , split right , focus -e r
+# hc keybind $Mod-Shift-d chain , split bottom , focus -e d
 
 # explode the current frame
 hc keybind $Mod-Control-space split explode
