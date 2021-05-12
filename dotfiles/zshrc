@@ -8,11 +8,11 @@ fi
 # load colors
 autoload -U colors && colors
 
+source ~/.zsh/completion
 source ~/.zsh/dircolors
 source ~/.zsh/nix
 source ~/.zsh/aliases
 source ~/.zsh/autojump
-source ~/.zsh/completion
 source ~/.zsh/config
 source ~/.zsh/direnv
 source ~/.zsh/fzf

@@ -1,5 +1,8 @@
 # vim:set ft=sh:
 
+fpath+=${HOME}/.zsh/functions
+fpath+=${HOME}/.nix-profile/share/zsh/site-functions
+
 autoload -Uz compinit
 compinit
 zmodload -a complist
@@ -9,8 +12,6 @@ zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zshcache
 zstyle :compinstall filename "$HOME/.zshrc"
-
-fpath+=${HOME}/.zsh/functions
 
 # MOSH completion
 compdef mosh=ssh
