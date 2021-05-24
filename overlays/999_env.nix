@@ -2,8 +2,8 @@ self: super:
 
 let
   # https://github.com/NixOS/nixpkgs/commits/release-20.09
-  # Apr 6 2021
-  pkgs-stable = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/cb2fbad3456863402ff74d8ac05ecf358ce5797d.tar.gz") {};
+  # May 24 2021
+  pkgs-stable = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/b8f96258307d2f38df2c3674ea89eb10b7d6c4c5.tar.gz") {};
 
   # nixpkgs-unstable Nov 24 2020
   pkgs-unstable = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/6625284c397b44bc9518a5a1567c1b5aae455c08.tar.gz") {};

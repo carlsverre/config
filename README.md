@@ -39,17 +39,17 @@ machines. Periodically I even get this working on OSX. :)
 
 * Run `./install` to sync dotfiles into the homedir
 * Run `nix-env -i dev-env` to install environment
-* Install python dependencies
+* Setup the rest of the tooling in this readme
 
 ## Post Install Tooling
 
 * [rustup](https://rustup.rs/)
 * [nvm](https://github.com/nvm-sh/nvm)
+* [pyenv](https://github.com/pyenv/pyenv#installation)
 
 ## Other things I like to have
 
 * [keybase](https://keybase.io/)
-* [pyenv](https://github.com/pyenv/pyenv#installation)
 
 # Helpful Snippets
 
