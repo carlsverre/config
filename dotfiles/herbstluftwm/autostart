@@ -135,6 +135,8 @@ hc rule focus=on
 # try to place floats non-overlapping by default
 hc rule floatplacement=smart
 
+# reminder: use xprop to lookup window details
+
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' floating=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
@@ -142,6 +144,11 @@ hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 # always float certain apps
 hc rule class=Pavucontrol floating=on floatplacement=center
 hc rule class=Blueman-manager floating=on floatplacement=center
+
+hc rule class=Steam floating=on floatplacement=center
+hc rule class~"steam_app.*" floating=on floatplacement=center
+
+hc rule class~"steam_app.*" floating=on floatplacement=center
 
 hc set tree_style '╾│ ├└╼─┐'
 
