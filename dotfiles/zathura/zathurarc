@@ -1,5 +1,5 @@
 set font                        "Hack NF 12"
-set recolor                     true
+set recolor                     false
 set completion-group-bg         "#002b36"
 set completion-group-fg         "#839496"
 set completion-bg               "#073642"
