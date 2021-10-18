@@ -91,6 +91,18 @@ Section "InputClass"
 EndSection
 ```
 
+**Apple Magic Keyboard**
+
+```
+Section "InputClass"
+  Identifier      "Apple Inc. Magic Keyboard"
+  MatchProduct    "Apple Inc. Magic Keyboard"
+  MatchVendor     "Apple_Inc."
+  MatchIsKeyboard "on"
+  Option          "XkbOptions" "caps:escape,altwin:swap_alt_win"
+EndSection
+```
+
 ## Setup pyenv
 Requires [pyenv](https://github.com/pyenv/pyenv#installation) and [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv) to be installed first.
 
