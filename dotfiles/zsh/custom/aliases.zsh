@@ -1,7 +1,7 @@
 # vim:set ft=bash:
 
 # unix
-if [[ "$(uname)" = "Darwin" ]] ; then
+if [[ "$(uname)" = "Darwin" ]]; then
     alias ls='ls -Ghv'
     alias ll='ls -l'
     alias la='ls -A'

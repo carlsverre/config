@@ -1,28 +1,16 @@
-PROFILE_ZSH=0
-if [[ ${PROFILE_ZSH} -eq 1 ]]; then zmodload zsh/zprof; fi
-
-if [ -f ~/.localrc.before ]; then
-    . ~/.localrc.before
+if [ -f ${HOME}/.localrc.before ]; then
+    source ${HOME}/.localrc.before
 fi
 
-# load colors
-autoload -U colors && colors
+if [[ ${PROFILE_ZSH:0} -eq 1 ]]; then zmodload zsh/zprof; fi
 
-source ~/.zsh/completion
-source ~/.zsh/dircolors
-source ~/.zsh/nix
-source ~/.zsh/aliases
-source ~/.zsh/autojump
-source ~/.zsh/config
-source ~/.zsh/direnv
-source ~/.zsh/fzf
-source ~/.zsh/go
-source ~/.zsh/node
-source ~/.zsh/path
-source ~/.zsh/prompt
+export ZSH_HOME="${HOME}/.zsh"
 
-if [ -f ~/.localrc ]; then
-    . ~/.localrc
+source "${ZSH_HOME}/antigen.zsh"
+antigen init "${ZSH_HOME}/antigenrc.zsh"
+
+if [ -f ${HOME}/.localrc ]; then
+    source ${HOME}/.localrc
 fi
 
 if [[ ${PROFILE_ZSH} -eq 1 ]]; then zprof; fi

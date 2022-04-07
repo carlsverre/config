@@ -1,5 +1,0 @@
-# vim:set ft=bash:
-
-if [[ "$(uname)" != "Darwin" ]] ; then
-    eval $(dircolors ${HOME}/.zsh/dircolors.256dark)
-fi
