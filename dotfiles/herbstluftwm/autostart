@@ -141,6 +141,8 @@ hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' floating=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 
+hc rule class=Kazam floating=on
+
 # always float certain apps
 hc rule class=Pavucontrol floating=on floatplacement=center
 hc rule class=Blueman-manager floating=on floatplacement=center
