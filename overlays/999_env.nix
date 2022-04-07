@@ -14,10 +14,7 @@ in
         pkgs-stable.nix-prefetch-git
 
         # go
-        pkgs-stable.go
-        pkgs-stable.gotools
-        pkgs-stable.golint
-        pkgs-stable.dep
+        pkgs-stable.go_1_17
 
         # dev-tools
         (pkgs-stable.neovim.override {
